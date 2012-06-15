@@ -1,0 +1,511 @@
+/*
+* JEZ Rego Joomla! 1.5 Template :: Stylesheets :: layout styling
+*
+* @package		JEZ Rego
+* @version		1.5.0
+* @author		JoomlaEZ.com
+* @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
+* @license		Commercial Proprietary
+*
+* Please visit http://www.joomlaez.com/ for more information
+*/
+
+/*----------------------------------------------------------------------------*/
+
+/*********
+* Header *
+*********/
+
+#jezHeader {
+	background: #393a35 url(../images/bg_header.png) 0 100% repeat-x;
+	height: 75px;
+	width: 100%;
+}
+#jezHeader > .container {
+	min-width: 800px;
+}
+
+#jezLogo {
+	margin: 16px 0 0 5.667em;
+}
+#jezLogo img.logo {
+	height: 46px;
+	width: 111px;
+}
+
+#jezNav {
+	height: 75px;
+	position: relative;
+	width: auto;
+	z-index: 10;
+}
+#modUser3 {
+	height: 30px;
+	margin: 45px 18.917em 0 0;
+}
+#modTop {
+	bottom: 8px;
+	min-width: 122px;
+	position: absolute;
+	right: 3.833em;
+}
+
+/* font resizer */
+#increaseFontSize, #resetFontSize, #decreaseFontSize {
+	color: #f4e0e2;
+	display: block;
+	float: left;
+	font-weight: bold;
+	height: 19px;
+	line-height: 19px;
+	text-align: center;
+	text-decoration: none;
+	width: 19px;
+}
+#increaseFontSize {
+	font-size: 15px;
+}
+#resetFontSize {
+	font-size: 13px;
+}
+#decreaseFontSize {
+	font-size: 11px;
+}
+#increaseFontSize:hover, #resetFontSize:hover, #decreaseFontSize:hover {
+	background: url(../images/font_resizer-a.png) 0 0 no-repeat;
+	color: #626262;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*******
+* Body *
+*******/
+
+#jezPage {
+	background-color: #d4d3cf;
+	padding-top: 10px;
+}
+#jezMain {
+	margin: 0 0 0 19.333em;
+	padding-bottom: 10px;
+}
+#jezLocal, #jezSub {
+	padding: 3px 0 5px;
+}
+#modUser4 {
+	margin-left: 19.333em;
+}
+#modUser1, #modUser2,
+#jezLocal, #jezSub {
+	width: 16.417em;
+}
+#modUser2,
+#jezSub {
+	margin-right: 2.5em;
+}
+#modUser4.tc, #modUser1.tc,
+#jezMain.tc, #jezLocal.tc {
+	margin-right: 0;
+}
+
+.gr3 #modUser4,
+.gr3 #jezMain {
+	width: 41.333em;
+}
+.gr3 #modUser1,
+.gr3 #jezLocal {
+	margin-left: -58.167em;
+}
+
+.gr2 #modUser4,
+.gr2 #jezMain {
+	width: 58.5em;
+}
+.gr2 #modUser4.tc,
+.gr2 #jezMain.tc {
+	margin-left: 2.167em;
+}
+.gr2 #modUser1.expandLeft, .gr2 #modUser2.expandRight,
+.gr2 #jezLocal.expandLeft, .gr2 #jezSub.expandRight {
+	width: 57.833em;
+}
+.gr2 #modUser1,
+.gr2 #jezLocal {
+	margin-left: -75.333em;
+}
+.gr2 #modUser1.expandBoth, .gr2 #modUser1.expandLeft,
+.gr2 #jezLocal.expandBoth, .gr2 #jezLocal.expandLeft {
+	margin-left: 2.5em;
+}
+.gr2 #modUser1.expandBoth, .gr2 #modUser2.expandBoth,
+.gr2 #jezLocal.expandBoth, .gr2 #jezSub.expandBoth {
+	width: 37.083em;
+}
+.gr2 #modUser2.expandRight,
+.gr2 #jezSub.expandRight {
+	float: left;
+	margin: 0 .333em 0 19.667em;
+}
+
+.gr1 #modUser4,
+.gr1 #jezMain {
+	margin-left: 2.167em;
+	width: 75.667em;
+}
+.gr1 #modUser1, .gr1 #modUser2,
+.gr1 #jezLocal, .gr1 #jezSub {
+	float: left;
+	margin-left: 2.5em;
+	width: 75em;
+}
+
+/* Top block */
+#jezPage.hasTop {
+	position: relative;
+	padding-top: 214px;
+}
+#jezTop {
+	height: 194px;
+	overflow: hidden;
+	position: absolute;
+	top: 14px;
+	z-index: 5;
+}
+
+/* user4 module position :: `_special` class suffix */
+#modUser4.special {
+	height: inherit;
+	overflow: hidden;
+	position: relative;
+}
+#modUser4.special h3 {
+	display: none;
+}
+#modUser4.special .user4SpecialTL,
+#modUser4.special .user4SpecialTR,
+#modUser4.special .user4SpecialBL,
+#modUser4.special .user4SpecialBR {
+	width: 12px;
+	height: 50%;
+	position: absolute;
+}
+#modUser4.special .user4SpecialTL {
+	background: transparent url(../images/mod_user4-tl.png) 0 0 no-repeat;
+	left: 0;
+	top: 0;
+}
+#modUser4.special .user4SpecialTR {
+	background: transparent url(../images/mod_user4-tr.png) 0 0 no-repeat;
+	right: 0;
+	top: 0;
+}
+#modUser4.special .user4SpecialBL {
+	background: transparent url(../images/mod_user4-bl.png) 0 100% no-repeat;
+	bottom: 0;
+	left: 0;
+}
+#modUser4.special .user4SpecialBR {
+	background: transparent url(../images/mod_user4-br.png) 0 100% no-repeat;
+	bottom: 0;
+	right: 0;
+}
+
+/* user1 (heading only) & left module position :: rounded corners */
+#jezLocal .jezRounded6Imgs {
+	margin-bottom: 9px;
+}
+#jezLocal .jezRounded6Imgs .hd {
+	background-image: url(../images/mod_left-hl.png);
+}
+#jezLocal .jezRounded6Imgs .hd .c {
+	background-image: url(../images/mod_left-hr.png);
+}
+#jezLocal .jezRounded6Imgs .bd {
+	background-image: url(../images/mod_left-bl.png);
+}
+#jezLocal .jezRounded6Imgs .bd .c {
+	background-image: url(../images/mod_left-br.png);
+	color: #fff;
+}
+#jezLocal .jezRounded6Imgs .ft {
+	background-image: url(../images/mod_left-fl.png);
+}
+#jezLocal .jezRounded6Imgs .ft .c {
+	background-image: url(../images/mod_left-fr.png);
+}
+#modUser1 .jezRounded6Imgs h3,
+#jezLocal .jezRounded6Imgs h3 {
+	background: url(../images/mod_left-hd.png) no-repeat;
+	color: #2c2c2c;
+	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
+	font-size: 1em;
+	height: 36px;
+	line-height: 36px;
+	margin-bottom: -11px;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	top: -18px;
+	width: 107px;
+}
+#modUser1 .jezRounded6Imgs h3,
+#jezLocal .black h3 {
+	color: #de6400;
+	margin-bottom: -8px;
+}
+#jezLocal .jezRounded6Imgs a {
+	color: #fff;
+}
+
+/* user1, user2, left (` black` class suffix) and right module positions :: rounded corners */
+#modUser1 .jezRounded6Imgs,
+#modUser2 .jezRounded6Imgs,
+#jezSub .jezRounded6Imgs,
+#jezLocal .black {
+	margin-bottom: 9px;
+}
+#modUser1 .jezRounded6Imgs .hd,
+#modUser2 .jezRounded6Imgs .hd,
+#jezSub .jezRounded6Imgs .hd,
+#jezLocal .black .hd {
+	background-image: url(../images/mod_right-hl.png);
+}
+#modUser1 .jezRounded6Imgs .hd .c,
+#modUser2 .jezRounded6Imgs .hd .c,
+#jezSub .jezRounded6Imgs .hd .c,
+#jezLocal .black .hd .c {
+	background-image: url(../images/mod_right-hr.png);
+}
+#modUser1 .jezRounded6Imgs .bd,
+#modUser2 .jezRounded6Imgs .bd,
+#jezSub .jezRounded6Imgs .bd,
+#jezLocal .black .bd {
+	background-image: url(../images/mod_right-bl.png);
+}
+#modUser1 .jezRounded6Imgs .bd .c,
+#modUser2 .jezRounded6Imgs .bd .c,
+#jezSub .jezRounded6Imgs .bd .c,
+#jezLocal .black .bd .c {
+	background-image: url(../images/mod_right-br.png);
+}
+#modUser1 .jezRounded6Imgs .bd .c .s,
+#modUser2 .jezRounded6Imgs .bd .c .s,
+#jezSub .jezRounded6Imgs .bd .c .s,
+#jezLocal .black .bd .c .s {
+	margin: 0 1px;
+	background-image: url(../images/mod_right-s.png);
+}
+#modUser1 .jezRounded6Imgs .bd .c .s,
+#modUser2 .jezRounded6Imgs .bd .c .s {
+	color: #d4d3cf;
+	height: 158px;
+}
+#jezSub .jezRounded6Imgs .bd .c .s {
+	color: #fff;
+}
+#modUser1 .jezRounded6Imgs .ft,
+#modUser2 .jezRounded6Imgs .ft,
+#jezSub .jezRounded6Imgs .ft,
+#jezLocal .black .ft {
+	background-image: url(../images/mod_right-fl.png);
+}
+#modUser1 .jezRounded6Imgs .ft .c,
+#modUser2 .jezRounded6Imgs .ft .c,
+#jezSub .jezRounded6Imgs .ft .c,
+#jezLocal .black .ft .c {
+	background-image: url(../images/mod_right-fr.png);
+}
+#modUser2 .jezRounded6Imgs h3,
+#jezSub .jezRounded6Imgs h3 {
+	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
+	font-size: 1.083em;
+	position: relative;
+	margin-bottom: -8px;
+	text-transform: uppercase;
+	top: -14px;
+}
+#jezSub .jezRounded6Imgs h3 {
+	background: url(../images/mod_right-hd.png) 100% 50% no-repeat;
+	color: #40feff;
+}
+#modUser2 .jezRounded6Imgs h3,
+#jezSub .orange h3 {
+	background: url(../images/mod_right-hd_orange.png) 100% 50% no-repeat;
+	color: #ff7300;
+}
+
+/* user4 module position and component output wrapper :: rounded corners */
+#modUser4 .jezRounded6Imgs {
+	margin-top: -3px;
+}
+#modUser4 .jezRounded6Imgs .hd,
+#jezMain.jezRounded6Imgs .hd {
+	background-image: url(../images/com_hl.png);
+}
+#modUser4 .jezRounded6Imgs .hd .c,
+#jezMain.jezRounded6Imgs .hd .c {
+	background-image: url(../images/com_hr.png);
+}
+#modUser4 .jezRounded6Imgs .bd,
+#jezMain.jezRounded6Imgs .bd {
+	background-image: url(../images/com_bl.png);
+}
+#modUser4 .jezRounded6Imgs .bd .c,
+#jezMain.jezRounded6Imgs .bd .c {
+	background-image: url(../images/com_br.png);
+}
+#modUser4 .jezRounded6Imgs .bd .c .s {
+	height: 158px;
+	padding: 3px 1.5em;
+}
+#modUser4 .jezRounded6Imgs .ft,
+#jezMain.jezRounded6Imgs .ft {
+	background-image: url(../images/com_fl.png);
+}
+#modUser4 .jezRounded6Imgs .ft .c,
+#jezMain.jezRounded6Imgs .ft .c {
+	background-image: url(../images/com_fr.png);
+}
+
+/* bottom module position */
+#modBottom .moduletable {
+	margin-bottom: 0;
+	padding-bottom: 14px;
+}
+
+/* tool module position */
+#modTool {
+	position: absolute;
+	right: 18px;
+	top: 18px;
+}
+
+/* theme switcher */
+#jezThemeSwitcher {
+	background: url(../images/theme_switcher.png) 0 0 no-repeat;
+	height: auto;
+	position: absolute;
+	padding-top: 18px;
+	right: 6px;
+	top: 93px;
+	width: 18px;
+}
+#jezPage.hasTop #jezThemeSwitcher {
+	top: 14px;
+}
+#jezThemeSwitcher a {
+	display: block;
+	height: 12px;
+	margin-top: 6px;
+	width: 18px;
+}
+#jezThemeSwitcher #activeTheme {
+	cursor: default;
+}
+#jezThemeSwitcher .black {
+	background: url(../images/theme_black.png) 0 0 no-repeat;
+}
+#jezThemeSwitcher .blue {
+	background: url(../images/theme_blue.png) 0 0 no-repeat;
+}
+#jezThemeSwitcher .green {
+	background: url(../images/theme_green.png) 0 0 no-repeat;
+}
+#jezThemeSwitcher .leaf {
+	background: url(../images/theme_leaf.png) 0 0 no-repeat;
+}
+#jezThemeSwitcher .orange {
+	background: url(../images/theme_orange.png) 0 0 no-repeat;
+}
+#jezThemeSwitcher .violet {
+	background: url(../images/theme_violet.png) 0 0 no-repeat;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*********
+* Extras *
+*********/
+
+#jezExtras {
+	background: #000 url(../images/bg_extras.png) 0 0 repeat-x;
+	width: 100%;
+}
+
+#jezExtras .gr4 .moduletable {
+	width: 16.417em;
+}
+#jezExtras .gr4 .fl .moduletable {
+	margin-left: 3.083em;
+}
+#jezExtras .gr4 #modUser7 .moduletable {
+	margin-left: 3.167em;
+}
+
+#jezExtras .gr3 .moduletable {
+	width: 23em;
+}
+#jezExtras .gr3 .fl .moduletable {
+	margin-left: 3em;
+}
+
+#jezExtras .gr2 .moduletable {
+	width: 36.25em;
+}
+#jezExtras .gr2 .fl .moduletable {
+	margin-left: 2.5em;
+}
+
+#jezExtras .gr1 .moduletable {
+	margin-left: 2.5em;
+	width: 75em;
+}
+
+#jezExtras .first .moduletable {
+	margin-left: 2.5em;
+}
+#jezExtras .fr .moduletable {
+	margin-right: 2.5em;
+}
+
+#jezExtras .moduletable {
+	color: #fff;
+	margin-bottom: 29px;
+	margin-top: 13px;
+}
+#jezExtras .moduletable h3 {
+	color: #dd8200;
+	font-family: "MS Reference Sans Serif", Helvetica, Jamrul, sans-serif;
+	margin-bottom: 2px;
+}
+
+#modUser9 {
+	float: right;
+	margin-right: 18.917em;
+}
+#jezExtras #modUser9 .moduletable {
+	margin: 0;
+	width: auto;
+}
+#jezExtras #modUser9 .moduletable h3 {
+	display: none;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*********
+* Footer *
+*********/
+
+#jezFooter {
+	background: #fff url(../images/bg_footer.png) 0 0 repeat-x;
+	padding-top: 17px;
+}
+#modFooter {
+	margin-left: 2.5em;
+}
+#modSyndicate {
+	margin-right: 2.5em;
+}

@@ -1,0 +1,101 @@
+/*
+* JEZ Rego Joomla! 1.5 Template :: Stylesheets :: elements styling
+*
+* @package		JEZ Rego
+* @version		1.5.0
+* @author		JoomlaEZ.com
+* @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
+* @license		Commercial Proprietary
+*
+* Please visit http://www.joomlaez.com/ for more information
+*/
+
+/*----------------------------------------------------------------------------*/
+
+/****************
+* Common styles *
+****************/
+
+/* navigation :: root menu */
+.menu #current a, .menu .active a,
+.menu #current .separator, .menu .active .separator,
+.menu-nav #current a, .menu-nav .active a,
+.menu-nav #current .separator, .menu-nav .active .separator {
+	color: #00a50e;
+}
+
+/*********************
+* Individual modules *
+*********************/
+
+/* mod_poll */
+.mod_poll .row0 {
+	color: #00e313;
+}
+.mod_poll button, .mod_poll a.button {
+	background: url(../images/button_green.png) 50% 50% no-repeat;
+}
+
+/* mod_stats / mod_whosonline */
+.mod_stats {
+	color: #00e313;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************
+* Individual components *
+************************/
+
+/* com_content */
+.contentheading {
+	background: url(../images/heading_content.png) 100% 75% no-repeat;
+	color: #00a50e;
+}
+.content_article a {
+	color: #17ac23;
+}
+.readon a {
+	background: url(../images/arrow.png) 0 50% no-repeat;
+	color: #2fb339;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*****************************************************
+* Nested wrappers and module positions customization *
+*****************************************************/
+
+/* user3 module position :: mod_mainmenu (root menu) */
+#modUser3 .menu > li:hover > a, #modUser3 .menu > #current > a, #modUser3 .menu > .active > a,
+#modUser3 .menu > li:hover > .separator, #modUser3 .menu > #current > .separator, #modUser3 .menu > .active > .separator,
+#modUser3 .menu-nav > li:hover > a, #modUser3 .menu-nav > #current > a, #modUser3 .menu-nav > .active > a,
+#modUser3 .menu-nav > li:hover > .separator, #modUser3 .menu-nav > #current > .separator, #modUser3 .menu-nav > .active > .separator {
+	color: #00a50e;
+}
+
+/* user1 module position :: JEZ Arguo Joomla Slideshow Module */
+.jezTextShow .index .indexWrapper .indexScroller .indexIndexes .itemThumb#activeIndex{
+	background: url(../images/index_al.png) left center no-repeat !important;
+}
+.jezTextShow .index .indexWrapper .indexScroller .indexIndexes .itemThumb#activeIndex span{
+	background: url(../images/index_ar.png) right center no-repeat !important;
+}
+
+/* user2 module position :: mod_login */
+#modUser2 .mod_login button, #modUser2 .mod_login a.button {
+	background: url(../images/button_green.png) 50% 50% no-repeat;
+}
+
+/* breadcrumb module position :: mod_breadcrumbs */
+#modBreadcrumb .breadcrumb_current {
+	color: #17ac23;
+}
+
+/* user9 module position :: mod_mainmenu */
+#modUser9 .menu li:hover a, #modUser9 .menu #current a, #modUser9 .menu .active a,
+#modUser9 .menu li:hover .separator, #modUser9 .menu #current .separator, #modUser9 .menu .active .separator,
+#modUser9 .menu-nav li:hover a, #modUser9 .menu-nav #current a, #modUser9 .menu-nav .active a,
+#modUser9 .menu-nav li:hover .separator, #modUser9 .menu-nav #current .separator, #modUser9 .menu-nav .active .separator {
+	color: #00a50e;
+}

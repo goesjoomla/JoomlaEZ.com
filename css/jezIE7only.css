@@ -1,0 +1,20 @@
+hr{margin:0 0 1.667em}
+legend+*{margin-top:1.5em}
+input[type='text'],input[type='password']{margin-bottom:0;margin-top:-.1em}
+select{height:expression(parseInt(this.size) >1 ? (parseInt(this.size) * 1.5)+'em':'auto');margin-bottom:-.1em}
+select[size='1']{margin:-.1em 0 0}
+input[type='radio']{vertical-align:baseline}
+input[type='button'],input[type='submit'],input[type='reset']{margin-bottom:-.1em}
+textarea{margin-bottom:-.214em}
+textarea.shortest{margin-bottom:-.357em}
+textarea.shorter{margin-bottom:-.357em}
+ul{margin-left:2em}
+ol{margin-left:2.417em}
+ol ol{margin:0 0 0 2.417em}
+img.icon{vertical-align:top}
+button,a.button{margin:-.417em .5em -.417em 0}
+a.button{padding:.333em .5em}
+table.borders{display:inline}
+.fl{display:inline}
+.fr{display:inline}
+.tc{margin-right:1.5%}

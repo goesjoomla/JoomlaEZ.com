@@ -1,0 +1,65 @@
+/*
+* JoomlaEZ.com's CSS Framework
+*
+* @package		General Rules
+* @version		1.0.0
+* @author		JoomlaEZ.com
+* @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
+* @license		Commercial Proprietary
+*
+* Please visit http://www.joomlaez.com/ for more information
+*/
+
+/*----------------------------------------------------------------------------*/
+
+/******************************
+* Reset browser`s default CSS *
+******************************/
+
+/* global reset */
+html, body, object, iframe, div, span, img, /* basic tags */
+h1, h2, h3, h4, h5, h6, /* heading */
+p, em, a, /* paragraph, char format, links */
+pre, code, dfn, /* output */
+acronym, abbr, address, blockquote, del, q, /* blocks */
+form, fieldset, legend, label, /* input */
+ul, ol, li, dl, dt, dd, /* lists */
+table, caption, thead, tbody, tfoot, tr, th, td /* tables */
+{
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th, td {
+	text-align: left;
+}
+
+/* remove possible quote marks (") from <q>, <blockquote> */
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*************************************************
+* Grids for design, testing typography & layouts *
+*************************************************/
+
+.showgrids {
+	background: url(./grids.png);
+}

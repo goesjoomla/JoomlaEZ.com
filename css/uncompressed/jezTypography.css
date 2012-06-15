@@ -1,0 +1,858 @@
+/*
+* JoomlaEZ.com's CSS Framework
+*
+* @package		Typographic Rules
+* @version		1.0.0
+* @author		JoomlaEZ.com
+* @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
+* @license		Commercial Proprietary
+*
+* Please visit http: //joomlaez.com/ for more information
+*/
+
+/*----------------------------------------------------------------------------*/
+
+/*****************************************
+* Styles for common (semantic HTML) tags *
+*****************************************/
+
+/* basic tags */
+body {
+	font: 75%/1.5em Arial, Helvetica, sans-serif; /* 12px (1em) font-size by 18px (1.5em) line-height in almost all browsers */
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+}
+
+/*
+* NOTE:
+*
+* - To calculate em value for any property other than font-size, use following formula:
+*
+*			1 / element_font_size_in_pixels * desired_pixels = em_value
+*
+*   For example, if the element's font size is 12px and you want to set 18px for line-height
+*   property then the correct em value is:
+*
+*			1 / 12px * 18px = 1.5em
+*
+* - To calculate em value for font-size property, use following formula:
+*
+*			1 / parent_font_size_in_pixels * desired_pixels = em_value
+*
+*   For example, if you want to set 12px for an element's font-size property while the parent
+*   element of that element has font-size property set to 16px then the correct em value is:
+*
+*			1 / 16px * 12px = 0.75em
+*/
+
+hr {
+	margin: 0 0 1.333em; /* 0 0 16px */
+}
+
+/* heading */
+h1, h2 {
+	letter-spacing: 2px;
+	word-spacing: .1em;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #333;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 2.25em; /* 27px */
+	line-height: 1.333em; /* 36px (1 / 27px * 36px = 1.333em) */
+	margin-bottom: .667em; /* 18px (1 / 27px * 18px = 0.667em) */
+}
+h2 {
+	font-size: 2em; /* 24px */
+	line-height: 1.5em; /* 36px (1 / 24px * 36px = 1.5em) */
+	margin-bottom: .75em; /* 18px (1 / 24px * 18px = 0.75em) */
+}
+h3 {
+	font-size: 1.75em; /* 21px */
+	margin-bottom: .857em; /* 18px (1 / 21px * 18px = 0.857em) */
+}
+h4 {
+	font-size: 1.5em; /* 18px */
+	margin-bottom: 1em; /* 18px (1 / 18px * 18px = 1em) */
+}
+h5, h6 {
+	font-size: 1.25em; /* 15px */
+	font-weight: bold;
+	margin-bottom: 1.2em; /* 18px (1 / 15px * 18px = 1.2em) */
+}
+
+/* paragraph */
+p {
+	color: #222;
+	letter-spacing: .03em; /* 0.36px */
+	margin-bottom: 1.5em; /* 18px */
+	word-spacing: .08em; /* 0.96px */
+}
+p img {
+	float: left;
+	margin: 0 1em 1.5em 0; /* 0 12px 18px 0 */
+}
+
+/* char format */
+font, basefont {
+	font: inherit; /* deprecated */
+}
+em {
+	font-style: italic;
+}
+big {
+	font: inherit;
+	font-size: 1.25em; /* 15px */
+	line-height: 1em; /* make it best-fit in 1 line */
+}
+strong {
+	font-weight: bold;
+}
+small, sup, sub {
+	font-size: .75em; /* 9px */
+	line-height: 1em; /* make it best-fit in 1 line */
+}
+sup {
+	vertical-align: 45%;
+}
+sub {
+	vertical-align: -15%;
+}
+
+/* output */
+pre, code, tt {
+	color: #c33;
+	font: inherit; /* resets browser's default */
+	line-height: 1.5em; /* resets browser's default */
+}
+pre, code {
+	margin: 0 1em 1.5em; /* 0 12px 18px */
+	white-space: pre;
+}
+kbd, var, samp {
+	font-family: monaco, "Lucida Console", courier, monospace;
+	line-height: 1em; /* make it best-fit in 1 line */
+}
+dfn {
+	border-bottom: .083em solid #000; /* 1px */
+	font-style: italic;
+	font-weight: bold;
+}
+dfn[title] {
+	border-bottom: .083em solid #ccc; /* 1px */
+	cursor: help;
+}
+
+/* blocks */
+acronym, abbr {
+	border-bottom: .083em dotted #000; /* 1px */
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+acronym[title], abbr[title] {
+	border-bottom: .083em solid #ccc; /* 1px */
+	cursor: help;
+}
+a acronym, a abbr {
+	border: 0;
+}
+
+address {
+	font-style: italic;
+	margin-bottom: 1.5em; /* 18px */
+}
+blockquote {
+	border-left: .25em solid #ccc; /* 3px */
+	font-style: italic;
+	margin: 0 1em 1.5em; /* 0 12px 18px */
+	padding-left: .75em; /* 9px */
+}
+cite {
+	font-style: italic;
+}
+ins {
+	border-bottom: .083em solid #ccc; /* 1px */
+}
+del {
+	color: #666;
+	text-decoration: line-through;
+}
+
+/* links */
+a {
+	outline: none;
+	text-decoration: underline;
+}
+a:link {
+	color: #36c;
+}
+a:hover {
+	color: #c33;
+}
+a:active {
+	color: #000;
+}
+a:visited {
+	color: #99c;
+}
+
+/* input */
+fieldset {
+	border: .083em solid #ccc; /* 1px */
+	margin-bottom: 1.5em; /* 18px */
+	padding: 1.417em 1em; /* 17px 12px */
+}
+fieldset div {
+	margin-bottom: 1.5em; /* 18px */
+}
+fieldset:last-child, fieldset > div:last-child, fieldset div div {
+	margin-bottom: 0;
+}
+
+legend {
+	color: #888;
+	font-size: 1.25em; /* 15px */
+	font-weight: bold;
+	margin-bottom: .067em; /* 1px (1 / 15px * 1px = 0.067em) */
+	padding: 0 .5em; /* 0 8.5px */
+}
+
+label {
+	font-weight: bold;
+}
+input, select {
+	cursor: pointer;
+	font-size: .833em; /* 10px */
+	vertical-align: top;
+}
+
+input[type='text'], input[type='password'], select {
+	background-color: #fff;
+	border: .1em solid #ccc; /* 1px (1 / 10px * 1px = 0.1em) */
+	margin-bottom: .1em; /* 1px */
+}
+select.focus, /* IE 6 */
+input[type='text']:focus, input[type='password']:focus, select:focus {
+	border-color: #888;
+	outline: .2em solid #ffa; /* 2px (1 / 10px * 2px = 0.2em) */
+}
+
+input[type='radio'], input[type='checkbox'] {
+	height: 1.8em; /* 18px */
+	margin: 0;
+	width: 1.8em; /* 18px (1 / 10px * 18px = 1.8em) */
+}
+
+input[type='button'], input[type='submit'], input[type='reset'] {
+	margin-top: -.1em; /* -1px */
+}
+html>/**/body input[type='button'], html>/**/body input[type='submit'],
+html>/**/body input[type='reset'], x:-moz-any-link, x:default { /* Firefox 3 */
+	margin-bottom: -.1em; /* -1px */
+	margin-top: -.2em; /* -2px */
+}
+
+textarea {
+	background-color: #fff;
+	border: .071em solid #ccc; /* 1px (1 / 14px * 1px = 0.071em) */
+	font: inherit;
+	font-size: 1.167em; /* 14px */
+	height: 7.714em; /* 108px */
+	margin: -.143em 0; /* -2px 0 */
+	padding: .071em .143em; /* 1px 2px */
+	width: 98%;
+}
+
+input[type='text'], input[type='password'], textarea {
+	cursor: text;
+}
+select.hover, textarea.hover, /* IE 6 */
+input[type='text']:hover, input[type='password']:hover, select:hover, textarea:hover {
+	border-color: #aaa;
+}
+textarea.focus, /* IE 6 */
+textarea:focus {
+	border-color: #888;
+	outline: .143em solid #ffa; /* 2px outline (1 / 14px * 2px = 0.143em) */
+}
+
+select[size] {
+	font-size: 1em; /* 12px */
+	margin: 0;
+}
+select[size='1'] {
+	font-size: .833em; /* 10px */
+	margin-bottom: .1em; /* 1px */
+}
+select[size='2'] {
+	height: 3em; /* 36px */
+}
+select[size='3'] {
+	height: 4.5em; /* 54px */
+}
+select[size='4'] {
+	height: 6em; /* 72px */
+}
+select[size='5'] {
+	height: 7.5em; /* 90px */
+}
+select[size='6'] {
+	height: 9em; /* 108px */
+}
+select[size='7'] {
+	height: 10.5em; /* 126px */
+}
+select[size='8'] {
+	height: 12em; /* 144px */
+}
+select[size='9'] {
+	height: 13.5em; /* 162px */
+}
+
+/* lists */
+ul {
+	list-style-position: outside;
+	margin: 0 0 1.5em 1.5em; /* 0 0 18px 18px */
+}
+ul li {
+	padding-left: .417em; /* 5px */
+}
+ol {
+	list-style-type: decimal;
+	margin: 0 0 1.5em 1.917em;/* 0 0 18px 23px */
+}
+ol ol {
+	margin-left: 1.917em; /* 23px */
+}
+ul ol, ol ul {
+	margin-left: 1.417em; /* 17px */
+}
+
+dl {
+	margin: 0 1em 1.5em; /* 0 12px 18px */
+}
+dl dt {
+	font-weight: bold;
+	margin-top: 1.5em; /* 18px */
+}
+dl dt:first-child {
+	margin-top: 0;
+}
+dl dd {
+	margin-left: 2em; /* 24px */
+}
+
+/* tables */
+table {
+	margin-bottom: 1.5em; /* 18px */
+}
+caption {
+	font-family: Georgia, serif;
+	text-align: center;
+}
+thead {
+	background-color: #ddd;
+}
+tfoot {
+	background-color: #eee;
+	font-style: italic;
+}
+th, thead td {
+	font-weight: bold;
+}
+tr, th, td {
+	padding: 0 1em; /* 0 12px */
+}
+
+/*----------------------------------------------------------------------------*/
+
+/********************
+* Styles for images *
+********************/
+
+/* images inside paragraph */
+p img.right {
+	float: right;
+	margin: 0 0 1.5em 1em; /* 0 0 18px 12px */
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*******************************
+* Additional styles for blocks *
+*******************************/
+
+blockquote.qmarks {
+	border: 0;
+	border-bottom: .083em solid #ccc; /* 1px */
+	border-top: .083em solid #ccc; /* 1px */
+	color: #666;
+	margin: 0 1em 1.417em; /* 0 12px 17px */
+	padding: 1.417em 1em 0; /* 17px 12px 0 */
+}
+blockquote.qmarks p {
+	color: #666;
+}
+blockquote.qmarks *:first-child:before {
+	content: "\201C";
+}
+blockquote.qmarks *:last-child:after {
+	content: "\201D";
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*********************
+* Iconize text links *
+*********************/
+
+/* makes sure the icons are not cut */
+a[href^="http:"], a[href^="mailto:"], a[href^="aim:"],
+a[href$=".pdf"], a[href$=".doc"], a[href$=".xls"], a[href$=".rss"], a[href$=".rdf"] {
+	background-position: right top;
+	background-repeat: no-repeat;
+	padding-right: 2em; /* 24px */
+}
+
+/* file types */
+a[href$=".pdf"] {
+	background-image: url(../images/icons/silk/page_white_acrobat.png);
+}
+a[href$=".doc"] {
+	background-image: url(../images/icons/silk/page_white_word.png);
+}
+a[href$=".xls"] {
+	background-image: url(../images/icons/silk/page_white_excel.png);
+}
+
+/* misc */
+a[href$=".rss"],
+a[href$=".rdf"] {
+	background-image: url(../images/icons/silk/feed.png);
+}
+a[href^="aim:"] {
+	background-image: url(../images/icons//silk/comments.png);
+}
+
+/* external */
+a[href^="http:"] {
+	background: url(../images/icons/external.png) right center no-repeat;
+	padding-right: 1.25em; /* 15px */
+}
+a[href^="mailto:"] {
+	background-image: url(../images/icons/silk/email.png);
+}
+
+/* use this class if a link gets an icon when it shouldn't */
+a.noicon {
+	background: none;
+	padding: 0;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************************
+* Additional styles for input forms *
+************************************/
+
+textarea.shortest {
+	height: 2.571em; /* 36px (1 / 14px * 36px = 2.571em) */
+}
+textarea.shorter {
+	height: 5.143em; /* 72px (1 / 14px * 72px = 5.143em) */
+}
+textarea.longer {
+	height: 10.286em; /* 144px (1 / 14px * 144px = 10.286em) */
+}
+textarea.longest {
+	height: 20.571em; /* 288px (1 / 14px * 288px = 20.571em) */
+}
+
+/*----------------------------------------------------------------------------*/
+
+/********************************
+* Additional styles for buttons *
+********************************/
+
+/*
+* Usage:
+*
+*	<button type="submit" class="positive">
+*		<img src="css/blueprint/plugins/buttons/icons/tick.png" alt=""/> Save
+*	</button>
+*
+*	<a class="button" href="/password/reset/">
+*		<img src="css/blueprint/plugins/buttons/icons/key.png" alt=""/> Change Password
+*	</a>
+*
+*	<a href="#" class="button negative">
+*		<img src="css/blueprint/plugins/buttons/icons/cross.png" alt=""/> Cancel
+*	</a>
+*/
+
+/* general */
+button, a.button {
+	background-color: #ddd;
+	border: .083em solid #a0a0a0; /* 1px */
+	border-left: .083em solid #e0e0e0; /* 1px */
+	border-top: .083em solid #e0e0e0; /* 1px */
+	color: #565656;
+	cursor: pointer;
+	font: inherit;
+	font-weight: bold;
+	margin: -.25em .5em -.25em 0; /* -3px 6px -3px 0 */
+	white-space: nowrap;
+}
+
+button {
+	height: 2em; /* 24px */
+	overflow: visible;
+	padding: .083em .5em .25em; /* 1px 6px 3px */
+	width: auto;
+}
+a.button {
+	display: block;
+	float: left;
+	height: 1.5em; /* 18px */
+	padding: .167em .5em; /* 2px 6px */
+	text-decoration: none;
+}
+
+button img, a.button img {
+	border: 0;
+	float: none;
+	height: 1.333em; /* 16px */
+	margin: 0 .5em -.333em 0; /* 0 6px 4px 0 */
+	padding: 0;
+	width: 1.333em; /* 16px */
+}
+button:hover, a.button:hover {
+	background-color: #dff4ff;
+	color: #369;
+}
+button:focus, a.button:active {
+	background-color: #6299c5;
+	color: #fff;
+}
+
+/* positive color */
+button.positive, a.positive {
+	color: #529214;
+}
+button.positive:hover, a.positive:hover {
+	background-color: #e6efc2;
+	color: #529214;
+}
+button.positive:focus, a.positive:active {
+	background-color: #529214;
+	color: #fff;
+}
+
+/* negative color */
+button.negative, a.negative {
+	color: #d12f19;
+}
+button.negative:hover, a.negative:hover {
+	background: #fbe3e4;
+	color: #d12f19;
+}
+button.negative:focus, a.negative:active {
+	background-color: #d12f19;
+	color: #fff;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/****************
+* Iconize lists *
+****************/
+
+ul.accept, ul.add, ul.bell, ul.star, ul.tick, .starburst {
+	list-style: none;
+}
+
+ul.accept li, ul.add li, ul.bell li, ul.star li, ul.tick li,
+li ul.accept li, li ul.add li, li ul.bell li, li ul.star li, li ul.tick li {
+	background: url(../images/icons/silk/accept.png) left top no-repeat;
+	line-height: 1.5em; /* 18px */
+	padding-left: 24px;
+}
+ul.add li, li ul.add li {
+	background-image: url(../images/icons/silk/add.png);
+}
+ul.bell li, li ul.bell li {
+	background-image: url(../images/icons/silk/bell.png);
+}
+ul.star li, li ul.star li {
+	background-image: url(../images/icons/silk/star.png);
+}
+ul.tick li, li ul.tick li {
+	background-image: url(../images/icons/silk/tick.png);
+}
+
+ul.starburst li {
+	background: url(../images/icons/starburst.png) left top no-repeat;
+	line-height: 3em; /* 36px */
+	padding-left: 42px;
+}
+ol.starburst li {
+	line-height: 3em; /* 36px */
+	padding-left: 42px;
+}
+.starburst li.i1, ol.starburst li[value='1'] {
+	background: url(../images/icons/nums/1.png) left top no-repeat;
+}
+.starburst li.i2, ol.starburst li[value='2'] {
+	background: url(../images/icons/nums/2.png) left top no-repeat;
+}
+.starburst li.i3, ol.starburst li[value='3'] {
+	background: url(../images/icons/nums/3.png) left top no-repeat;
+}
+.starburst li.i4, ol.starburst li[value='4'] {
+	background: url(../images/icons/nums/4.png) left top no-repeat;
+}
+.starburst li.i5, ol.starburst li[value='5'] {
+	background: url(../images/icons/nums/5.png) left top no-repeat;
+}
+.starburst li.i6, ol.starburst li[value='6'] {
+	background: url(../images/icons/nums/6.png) left top no-repeat;
+}
+.starburst li.i7, ol.starburst li[value='7'] {
+	background: url(../images/icons/nums/7.png) left top no-repeat;
+}
+.starburst li.i8, ol.starburst li[value='8'] {
+	background: url(../images/icons/nums/8.png) left top no-repeat;
+}
+.starburst li.i9, ol.starburst li[value='9'] {
+	background: url(../images/icons/nums/9.png) left top no-repeat;
+}
+.starburst li.i10, ol.starburst li[value='10'] {
+	background: url(../images/icons/nums/10.png) left top no-repeat;
+}
+.starburst li.etc {
+	background: url(../images/icons/nums/etc.png) left top no-repeat;
+}
+
+/*
+* should use below class together with above classes to have
+* more space (1 line) between iconized list's items
+*/
+.morespace {
+	margin-top: 1.5em; /* 18px */
+}
+.morespace li {
+	margin-bottom: 1.5em; /* 18px */
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*******************************
+* Additional styles for tables *
+*******************************/
+
+table.borders {
+	border-left: .083em solid #ccc; /* 1px */
+	border-top: .083em solid #ccc; /* 1px */
+	margin-bottom: 1.417em; /* 17px */
+}
+@-moz-document url-prefix() { /* Firefox */
+	table.borders {
+		margin-bottom: 1.5em; /* 18px */
+	}
+}
+table.borders caption {
+	line-height: 3em; /* 36px */
+}
+table.borders th, table.borders td {
+	border-bottom: .083em solid #ccc; /* 1px */
+	border-right: .083em solid #ccc; /* 1px */
+	padding: .667em 1em .75em 1em; /* 8px 12px 9px 12px */
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*****************************
+* Additional styles for text *
+*****************************/
+
+.byline {
+	color: #666666;
+	display: block;
+	font-family: "Lucida Grande", Tahoma;
+	font-size: .833em; /* 10px */
+	font-variant: normal;
+	font-weight: lighter;
+	letter-spacing: .4em; /* 4px (1 / 10px * 4px = 0.4em) */
+	line-height: 1.8em; /* 18px */
+	margin-bottom: 1.8em; /* 18px */
+	padding-left: 1.2em; /* 12px */
+	text-transform: uppercase;
+}
+
+.oldbook {
+	font-family: "Book Antiqua", "Warnock Pro", "Goudy Old Style", "Palatino", Georgia, serif;
+}
+span.oldbook {
+	line-height: 1em; /* make it best-fit in 1 line */
+}
+
+.note {
+	color: #333;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+}
+span.note {
+	line-height: 1em; /* make it best-fit in 1 line */
+}
+
+.fancy { /* serif italic dramatic text style */
+	color: #666;
+	font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, serif;
+	font-style: italic;
+	font-weight: normal;
+}
+span.fancy {
+	line-height: 1em; /* make it best-fit in 1 line */
+}
+
+.caps { /* small caps style */
+	font-variant: small-caps;
+	font-weight: bold;
+	letter-spacing: .083em; /* 1px */
+	padding: 0 .167em; /* 0 2px */
+	text-transform: lowercase;
+}
+
+.small {
+	font-size: .75em; /* 9px */
+}
+span.small {
+	line-height: 1em; /* make it best-fit in 1 line */
+}
+p.small {
+	margin-bottom: 2em; /* 18px */
+}
+
+.large {
+	font-size: 1.25em; /* 15px */
+}
+span.large {
+	line-height: 1em; /* make it best-fit in 1 line */
+}
+p.large {
+	margin-bottom: 1.2em; /* 18px */
+}
+
+.hide {
+	display: none;
+}
+.quiet {
+	color: #666;
+}
+.loud {
+	color: #000;
+}
+.highlight {
+	background-color: #ff0;
+}
+.thin {
+	font-weight: lighter;
+}
+.bold {
+	font-weight: bold;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*****************************
+* Additional colors for text *
+*****************************/
+
+.water {
+	color: #5582d1;
+}
+.earth {
+	color: #4e3e2c;
+}
+.air {
+	color: #f1fff7;
+}
+.fire {
+	color: #ff8a19;
+}
+.wine {
+	color: #4a040a;
+}
+.beer {
+	color: #F0C030;
+}
+.caffe {
+	color: #473523;
+}
+.caffe-cream {
+	color: #b68d3d;
+}
+.espresso {
+	color: #2c1901;
+}
+.caramel {
+	color: #ab671f;
+}
+.chocolate {
+	color: #290200;
+}
+.black-pepper {
+	color: #444334;
+}
+.pepper-lite {
+	color: #8d8a72;
+}
+.lipstick {
+	color: #c20c0c;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/****************
+* Message boxes *
+****************/
+
+.error, .notice, .success {
+	border: 0.167em solid #ddd; /* 2px */
+	display: block; /* switchs inline element to block element */
+	margin-bottom: 1.5em; /* 18px */
+	padding: 1.333em 1em; /* 16px 12px */
+}
+.error {
+	background-color: #fbe3e4;
+	border-color: #fbc2c4;
+	color: #8a1f11;
+}
+.notice {
+	background-color: #fff6bf;
+	border-color: #ffd324;
+	color: #514721;
+}
+.success {
+	background-color: #e6efc2;
+	border-color: #c6d880;
+	color: #264409;
+}
+.error a {
+	background: none;
+	color: #8a1f11;
+	padding: 0;
+}
+.notice a {
+	background: none;
+	color: #514721;
+	padding: 0;
+}
+.success a {
+	background: none;
+	color: #264409;
+	padding: 0;
+}

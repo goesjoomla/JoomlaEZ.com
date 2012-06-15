@@ -1,0 +1,339 @@
+/*
+* JoomlaEZ.com's CSS Framework
+*
+* @package		Base Layouts Rules
+* @version		1.0.0
+* @author		JoomlaEZ.com
+* @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
+* @license		Commercial Proprietary
+*
+* Please visit http://www.joomlaez.com/ for more information
+*/
+
+/*----------------------------------------------------------------------------*/
+
+/*****************************
+* General rules for wrappers *
+*****************************/
+
+.container {
+	margin: 0 auto;
+	text-align: left;
+}
+.fluid {
+	float: none;
+	width: auto;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.clr {
+	clear: both;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/***************************************
+* Clearing floats without extra markup *
+***************************************/
+
+/*
+* NOTE:
+*
+* This class is here only for backward compatible with existing works that
+* heavily use floating elements and .clearfix method.
+*
+* If you are creating something new based on this css framework, use the .tr
+* class (defined in the "Tableless tables" section below) instead to wrap floating
+* elements.
+*/
+
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+.clearfix {
+	display: inline-block;
+}
+html[xmlns] .clearfix {
+	display: block;
+}
+* html .clearfix {
+	height: 1%;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*******************
+* Tableless tables *
+*******************/
+
+/* table row */
+.tr:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+.tr {
+	display: inline-block;
+}
+html[xmlns] .tr {
+	display: block;
+}
+* html .tr {
+	height: 1%;
+}
+
+/* table cell */
+.tc {
+	margin-right: 2%;
+}
+
+/* grids */
+.gr1 > .fl, .gr1 > .fr, .gr1 > .tc {
+	margin-right: 0;
+	width: 100%;
+}
+.gr2 > .fl, .gr2 > .fr, .gr2 > .tc {
+	width: 49%;
+}
+.gr3 > .fl, .gr3 > .fr, .gr3 > .tc {
+	width: 32%;
+}
+/* because Opera ignores decimal in percentage width, we need to do some stupid works */
+.gr4 > .fl, .gr4 > .fr {
+	width: 24%;
+}
+.gr4 > .tc {
+	width: 23%;
+}
+.gr4 > .tc:first-child {
+	width: 24%;
+}
+.gr5 > .fl, .gr5 > .fr {
+	width: 19%;
+}
+.gr5 > .tc {
+	width: 18%;
+}
+.gr5 > .tc:first-child {
+	width: 19%;
+}
+
+/* predefined cells width */
+.w10p {
+	width: 10%;
+}
+.tc.w10p {
+	width: 8%;
+}
+
+.w20p {
+	width: 20%;
+}
+.tc.w20p {
+	width: 18%;
+}
+
+.w30p {
+	width: 30%;
+}
+.tc.w30p {
+	width: 28%;
+}
+
+.w40p {
+	width: 40%;
+}
+.tc.w40p {
+	width: 38%;
+}
+
+.w50p {
+	width: 50%;
+}
+.tc.w50p {
+	width: 48%;
+}
+
+.w60p {
+	width: 60%;
+}
+.tc.w60p {
+	width: 58%;
+}
+
+.w70p {
+	width: 70%;
+}
+.tc.w70p {
+	width: 68%;
+}
+
+.w80p {
+	width: 80%;
+}
+.tc.w80p {
+	width: 78%;
+}
+
+.w90p {
+	width: 90%;
+}
+.tc.w90p {
+	width: 88%;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************
+* Predefined alignments *
+************************/
+
+.tal {
+	text-align: left;
+}
+.tac {
+	text-align: center;
+}
+.tar {
+	text-align: right;
+}
+.taj {
+	text-align: justify;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*********************************************
+* Common rounded corners wrappers techniques *
+*********************************************/
+
+/* Joomla rounded module (creates rounded corners the same way as Joomla`s technique for rounded module wrapper) */
+div.module, div.module_menu, div.module_text {
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	margin-bottom: 1.5em; /* 18px */
+}
+div.module div, div.module_menu div, div.module_text div {
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+div.module div div, div.module_menu div div, div.module_text div div {
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+div.module div div div, div.module_menu div div div, div.module_text div div div {
+	background-position: right top;
+	background-repeat: no-repeat;
+	padding: 1.5em; /* 18px */
+}
+div.module div div div div, div.module_menu div div div div, div.module_text div div div div {
+	background: none;
+	padding: 0;
+}
+
+/* rounded using 6 images and 6 nested divs */
+.jezRounded6ImgsNested {
+	background-position: left top;
+	background-repeat: repeat-y;
+	margin-bottom: 1.5em; /* 18px */
+}
+.jezRounded6ImgsNested div.in1 {
+	background-position: right top;
+	background-repeat: repeat-y;
+}
+.jezRounded6ImgsNested div.in2 {
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+.jezRounded6ImgsNested div.in3 {
+	background-position: right top;
+	background-repeat: no-repeat;
+}
+.jezRounded6ImgsNested div.in4 {
+	background-position: left bottom;
+	background-repeat: no-repeat;
+}
+.jezRounded6ImgsNested div.in5 {
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	padding: 1.5em; /* 18px */
+}
+
+/* rounded using 6 images (creates rounded corners using schillmania.com`s `More Rounded Corners With CSS` technique) */
+.jezRounded6Imgs {
+	margin-bottom: 1.5em; /* 18px */
+}
+.jezRounded6Imgs div.hd, .jezRounded6Imgs div.bd, .jezRounded6Imgs div.ft {
+	background-position: left top;
+	background-repeat: no-repeat;
+	margin-right: 18px;
+}
+.jezRounded6Imgs div.hd div.c, .jezRounded6Imgs div.bd div.c, .jezRounded6Imgs div.ft div.c {
+	background-position: right top;
+	background-repeat: no-repeat;
+	height: 1.5em; /* 18px */
+	margin-right: -18px;
+}
+.jezRounded6Imgs div.bd, .jezRounded6Imgs div.bd div.c {
+	background-repeat: repeat-y;
+}
+.jezRounded6Imgs div.bd div.c {
+	height: auto;
+	padding: 0 1.5em; /* 0 18px */
+}
+
+/* rounded using 1 image (creates rounded corners using schillmania.com`s `Even More Rounded Corners With CSS` technique) */
+.jezRounded1Img {
+	margin: 0 0 1.5em 1.5em; /* 0 0 18px 18px */
+	position: relative;
+}
+.jezRounded1Img div.inner {
+	background-position: right top;
+	background-repeat: no-repeat;
+	padding: 1.5em 1.5em 0 0; /* 18px 18px 0 0 */
+	position: relative;
+	z-index: 98;
+}
+.jezRounded1Img div.wrapper {
+	/* enable scrolling if content is overflown */
+	overflow: auto;
+	position: static;
+}
+.jezRounded1Img div.t {
+	background-position: left top;
+	background-repeat: no-repeat;
+	height: 100%;
+	left: 0;
+	margin-left: -1.5em; /* -18px */
+	position: absolute;
+	top: 0;
+	width: 1.5em; /* 18px */
+}
+.jezRounded1Img div.b {
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	height: 1.5em; /* 18px */
+	position: relative;
+	width: 100%;
+	z-index: 0;
+}
+.jezRounded1Img div.b div {
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	margin-left: -1.5em; /* -18px */
+	height: 1.5em; /* 18px */
+	position: relative;
+	width: 1.5em; /* 18px */
+}

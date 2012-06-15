@@ -1,0 +1,1215 @@
+/*
+* JEZ Rego Joomla! 1.5 Template :: Stylesheets :: elements styling
+*
+* @package		JEZ Rego
+* @version		1.5.0
+* @author		JoomlaEZ.com
+* @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
+* @license		Commercial Proprietary
+*
+* Please visit http://www.joomlaez.com/ for more information
+*/
+
+/*----------------------------------------------------------------------------*/
+
+/****************
+* Common styles *
+****************/
+
+/* dev panel link */
+a#dev_panel_link {
+	float: none;
+	margin: 0;
+	position: absolute;
+	right: 1em;
+	top: 1em;
+}
+
+/* popup */
+body.raw #jezMain {
+	margin: 1.5em 2% 0;
+	width: 96%;
+}
+
+/* navigation :: root menu */
+ul.menu, ul.menu-nav {
+	list-style: none;
+	margin: 0;
+}
+ul.menu li, ul.menu-nav li {
+	border-bottom: 1px solid #bbb;
+}
+ul.menu li:hover, ul.menu #current, ul.menu .active,
+ul.menu-nav li:hover, ul.menu-nav #current, ul.menu-nav .active {
+	background-color: #aeaeae;
+}
+ul.menu li a, ul.menu li .separator,
+ul.menu-nav li a, ul.menu-nav li .separator {
+	color: #fff;
+	display: block;
+	font-family: "MS Reference Sans Serif", Helvetica, Jamrul, sans-serif;
+	font-weight: bold;
+	line-height: 24px;
+	text-decoration: none;
+}
+ul.menu #current a, ul.menu .active a,
+ul.menu #current .separator, ul.menu .active .separator,
+ul.menu-nav #current a, ul.menu-nav .active a,
+ul.menu-nav #current .separator, ul.menu-nav .active .separator {
+	color: #de6400;
+}
+ul.menu #current a, ul.menu-nav #current a {
+	cursor: default;
+}
+ul.menu #current li a, ul.menu-nav #current li a {
+	cursor: pointer;
+}
+ul.menu li img, ul.menu-nav li img {
+	float: left;
+	margin-right: .5em;
+}
+
+/* navigation :: sub menus */
+ul.menu ul, ul.menu-nav ul {
+	margin-bottom: 0;
+}
+ul.menu ul li, ul.menu-nav ul li {
+	border-bottom: 0;
+}
+ul.menu ul a, ul.menu ul .separator,
+ul.menu-nav ul a, ul.menu-nav ul .separator {
+	font-weight: normal;
+}
+ul.menu #current ul a, ul.menu .active ul a,
+ul.menu #current ul .separator, ul.menu .active ul .separator,
+ul.menu-nav #current ul a, ul.menu-nav .active ul a,
+ul.menu-nav #current ul .separator, ul.menu-nav .active ul .separator {
+	color: #fff;
+}
+ul.menu ul a:hover, ul.menu-nav ul a:hover {
+	text-decoration: underline;
+}
+
+/* system messages */
+#jezMain.jezRounded6Imgs > div.bd > div.c > div.s > .notice {
+	margin: 0;
+}
+dl#system-message {
+	margin-bottom: 0;
+}
+dl#system-message dt {
+	font-size: 1.75em;
+	line-height: 1.714em;
+	text-decoration: underline;
+}
+dl#system-message dt, dl#system-message dd {
+	background-color: transparent;
+	border: 0;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* tool tips */
+.tool-tip {
+	border: .083em solid #888;
+}
+.tool-title {
+	background-color: #888;
+	padding: .5em 0;
+	text-align: center;
+}
+.tool-text {
+	background-color: #eee;
+	padding: .5em;
+}
+
+/* pagination */
+.pagenavcounter {
+	color: #888;
+}
+.pagenavbar, .pages_links, .pages_counter {
+	color: #888;
+	text-align: center;
+}
+.pages_links, .pages_counter {
+	padding-bottom: 1.5em;
+}
+
+/* listing */
+ul.listing {
+	list-style: none;
+	margin-left: 0;
+}
+ul.listing li {
+	padding-left: 0;
+}
+table.listing tfoot td {
+	font-style: normal;
+}
+table.listing tfoot .pages_links, table.listing tfoot .pages_counter {
+	margin-bottom: 0;
+}
+
+/* forms */
+.filter {
+	margin-bottom: 1.5em;
+}
+img.calendar {
+	cursor: pointer;
+}
+div.calendar {
+	width: auto;
+}
+label.invalid {
+	color: red;
+}
+input.invalid, textarea.invalid {
+	border-color: red;
+}
+html>/**/body table.mceEditor, x:-moz-any-link, x:default { /* FF3 */
+	margin-bottom: -.083em;
+}
+.button2-left {
+	float: left;
+	margin-right: 2em;
+}
+#publish_up_img, #publish_down_img {
+	border: 0;
+	margin-bottom: -.25em;
+}
+
+/* info */
+.info {
+	color: #999;
+}
+.info span {
+	display: block;
+}
+.info img, .info img.right {
+	margin-bottom: 0;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*********************
+* Individual modules *
+*********************/
+
+/* mod_archive / mod_latestnews / mod_mostread / mod_related_items / mod_sections / com_content more articles lists */
+.content_blog .more ul {
+	list-style: none;
+}
+.mod_archive, .mod_latestnews, .mod_mostread, .mod_relateditems, .mod_sections {
+	margin-bottom: 0;
+}
+.content_blog .more ul li, ul.mod_archive li, ul.mod_latestnews li, ul.mod_mostread li, ul.mod_relateditems li, ul.mod_sections li {
+	background: url(../images/icons/silk/newspaper.png) 0 .167em no-repeat;
+	padding-left: 1.75em;
+}
+ul.mod_archive li {
+	background-image: url(../images/icons/silk/package.png);
+}
+ul.mod_latestnews li {
+	background-image: url(../images/icons/silk/new.png);
+}
+ul.mod_relateditems li {
+	background-image: url(../images/icons/silk/newspaper_link.png);
+}
+ul.mod_sections li {
+	background-image: url(../images/icons/silk/folder.png);
+}
+
+/* mod_banners */
+.bannerheader {
+	font-weight: bold;
+}
+.banneritem a {
+	line-height: 3em;
+}
+.bannerfooter {
+	text-align: right;
+}
+
+/* mod_breadcrumbs */
+.mod_breadcrumbs {
+	margin-left: .25em;
+}
+.breadcrumb_separator {
+	margin: 0 .25em;
+}
+
+/* mod_feed */
+.mod_feed .listing img {
+	float: left;
+	margin-right: 1em;
+}
+
+/* mod_login */
+.mod_login fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+.mod_login fieldset div {
+	margin-bottom: .25em;
+}
+.mod_login #form-login-password div {
+	height: inherit;
+	margin-bottom: inherit;
+}
+.mod_login .inputbox {
+	width: 8em;
+}
+.mod_login ul {
+	list-style: none;
+	margin: 0 0 .25em;
+}
+.mod_login ul li, .mod_login ul li:hover {
+	background: none !important;
+	padding: 0 !important;
+}
+.mod_login #form-login-button {
+	margin-top: 1em;
+}
+.mod_login button, .mod_login a.button {
+	margin-right: 0;
+}
+.mod_login a.button {
+	color: #565656;
+}
+.mod_login a.button:hover {
+	color: #369;
+}
+.mod_login a.button:active {
+	color: #fff;
+}
+.mod_login .post {
+	margin: 1.5em 0 0;
+}
+
+/* OpenID authentication */
+input.system-openid {
+	background: #fff url(http://openid.net/login-bg.gif) 0 50% no-repeat;
+	padding-left: 18px;
+}
+.mod_login input.system-openid {
+	width: 6.5em;
+}
+
+/* mod_poll */
+.mod_poll h4 {
+	color: #fff;
+	font: inherit;
+}
+.mod_poll fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+.mod_poll fieldset div {
+	margin-bottom: 0;
+}
+.mod_poll input {
+	margin: 5px;
+}
+.mod_poll label {
+	display: block;
+	font-weight: normal;
+	margin: 5px 0;
+}
+.mod_poll .row0 {
+	color: #40feff;
+}
+.mod_poll .row1 {
+	background-color: #222;
+}
+.mod_poll #form-poll-button {
+	margin-top: 7px;
+}
+.mod_poll button, .mod_poll a.button {
+	background: url(../images/button_cyan.png) 50% 50% no-repeat;
+	border: 0;
+	color: #fff;
+	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	height: 24px;
+	line-height: 22px;
+	margin: 0 0 -8px;
+	padding: 0;
+	text-align: center;
+	width: 63px;
+}
+.mod_poll button {
+	padding-bottom: 3px;
+}
+
+/* mod_search */
+.mod_search {
+	position: relative;
+}
+.mod_search .inputbox {
+	margin-right: 24px;
+	min-width: 122px;
+	width: 100%;
+}
+.mod_search .button {
+	background: url(../images/icons/search.png) 0 50% no-repeat;
+	border: 0;
+	font-size: 0;
+	height: 48px;
+	position: absolute;
+	right: -26px;
+	top: -13px;
+	width: 48px;
+	z-index: 99;
+}
+
+/* mod_stats / mod_whosonline */
+.mod_stats, .mod_whosonline {
+	margin-bottom: 0;
+}
+.mod_stats {
+	color: #40feff;
+}
+.mod_stats strong {
+	color: #fff;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************
+* Individual components *
+************************/
+
+/* com_content */
+.contentheading {
+	background: url(../images/heading_content.png) 100% 75% no-repeat;
+	color: #d65100;
+	font-size: 20px;
+	padding-right: 48px;
+}
+.article_heading .contentheading {
+	background: none;
+	padding: 0;
+}
+.content_archive .contentheading {
+	background: none;
+	font-size: 1.5em;
+	padding: 0;
+}
+.buttonheading {
+	display: block;
+	height: 3em;
+}
+.buttonheading a img {
+	margin: .75em 0 0 .5em;
+}
+.content_article .info {
+	margin-top: 1px;
+}
+.content_article .info span {
+	font-family: "MS Reference Sans Serif", Helvetica, Jamrul, sans-serif;
+	font-size: 14px;
+}
+.img_caption.left {
+	float: left;
+	margin-right: 1em;
+}
+.img_caption.right {
+	float: right;
+	margin-left: 1em;
+}
+.img_caption img {
+	border: 2px solid #bababa;
+	margin-bottom: 0 !important;
+}
+.img_caption p {
+	clear: both;
+	color: #606060;
+	font-family: "Century Gothic","Apple Gothic",sans-serif;
+	font-size: 11px;
+	text-align: center;
+}
+.content_article a {
+	color: #d65100;
+}
+.readon a {
+	background: url(../images/arrow.png) 0 50% no-repeat;
+	color: #b1602e;
+	font-family: "MS Reference Sans Serif", Helvetica, Jamrul, sans-serif;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+/* com_content :: article layout */
+.content_article .pagenavcounter {
+	margin: -1.5em 0 1.5em;
+}
+.contenttoc {
+	float: right;
+	margin: 0 0 1.5em 1.5em;
+}
+.contenttoc th {
+	background-color: #d9d9d9;
+	padding: 0 1em;
+	text-align: center;
+}
+.contenttoc td {
+	padding: 0 1em 0 .5em;
+}
+.toclink {
+	background: url(../images/icons/silk/bullet_orange.png) 0 0 no-repeat;
+	padding-left: 1.75em;
+}
+.content_article h3 img { /* see Extensions article of Joomla's default content */
+	/* h3's font-size is set to 16px in JoomlaEZ.com's CSS Framework */
+	height: 1em;
+	width: 1em;
+}
+
+/* com_content :: article submission layout */
+.content_pagebreak fieldset {
+	border-color: transparent;
+	margin-bottom: 0;
+}
+
+/* com_content :: front page / category / section blog layout */
+.article_separator {
+	display: block;
+	height: 11px;
+}
+li .article_separator {
+	height: 0;
+}
+.content_blog .intro .tr {
+	background: url(../images/separator.png) 50% 100% no-repeat;
+}
+.content_blog .intro .tr {
+	margin-bottom: 1.5em;
+	padding-bottom: 1.5em;
+}
+.content_blog .intro .last {
+	background: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.content_blog .more {
+	padding-bottom: 1.5em;
+}
+.content_blog .more strong {
+	border-bottom: .083em solid;
+	line-height: 3em;
+}
+
+/* com_contact */
+.contact_category a[href^="mailto:"], .contact a[href^="mailto:"] {
+	background: none;
+	padding: 0;
+}
+
+/* com_contact :: standard contact layout */
+.contact .info img {
+	margin-top: -3em;
+}
+.contact .form-validate {
+	margin-top: 1.5em;
+}
+.gr3 #jezMain .contact .captcha .w30p {
+	width: 18%;
+}
+.gr3 #jezMain .contact .captcha .w70p {
+	width: 80%;
+}
+
+/* com_mailto */
+form.mailto {
+	margin: 0 1em;
+}
+form.mailto .close {
+	margin-bottom: 1.5em;
+}
+.mailto_sent {
+	margin: 0 1em 1.5em;
+}
+
+/* com_newsfeeds */
+.newsfeed .listing img {
+	float: left;
+	margin-right: 1em;
+}
+
+/* com_poll */
+.poll div[class^="polls_color"] {
+	border: 0 !important;
+}
+
+/* com_search */
+.search #options_switcher {
+	cursor: pointer;
+}
+
+/* com_user :: default logout layout */
+.user_logout .tac {
+	margin-bottom: 1.5em;
+}
+
+/* com_user :: default registration layout */
+.gr3 #jezMain .user_register .captcha .w30p {
+	width: 18%;
+}
+.gr3 #jezMain .user_register .captcha .w70p {
+	width: 80%;
+}
+
+/* com_weblinks :: category list layout */
+.weblinks_category table.listing p.intro {
+	margin-bottom: 0;
+}
+.weblinks_category table.listing img {
+	float: left;
+	margin-right: 1em;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*****************************************************
+* Nested wrappers and module positions customization *
+*****************************************************/
+
+/* user3 module position :: mod_mainmenu (root menu) */
+#modUser3 ul.menu li, #modUser3 ul.menu-nav li {
+	border-bottom: 0;
+	float: left;
+	padding: 0;
+}
+#modUser3 ul.menu li:hover, #modUser3 ul.menu #current, #modUser3 ul.menu .active,
+#modUser3 ul.menu-nav li:hover, #modUser3 ul.menu-nav #current, #modUser3 ul.menu-nav .active {
+	background: none;
+}
+#modUser3 ul.menu li a, #modUser3 ul.menu li .separator, /* normal state */
+#modUser3 ul.menu-nav li a, #modUser3 ul.menu-nav li .separator {
+	background: url(../images/menu_top-l.png) 0 0 no-repeat;
+	color: #e8e8e8;
+	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
+	font-weight: bold;
+	line-height: 30px;
+	margin-right: 33px;
+	padding-left: 21px;
+}
+#modUser3 ul.menu li a span, #modUser3 ul.menu li .separator span,
+#modUser3 ul.menu-nav li a span, #modUser3 ul.menu-nav li .separator span {
+	background: url(../images/menu_top-r.png) 100% 0 no-repeat;
+	display: block;
+	margin-right: -33px;
+	padding-right: 21px;
+}
+#modUser3 ul.menu li:hover a, #modUser3 ul.menu #current a, #modUser3 ul.menu .active a, /* hover state */
+#modUser3 ul.menu li:hover .separator, #modUser3 ul.menu #current .separator, #modUser3 ul.menu .active .separator,
+#modUser3 ul.menu-nav li:hover a, #modUser3 ul.menu-nav #current a, #modUser3 ul.menu-nav .active a,
+#modUser3 ul.menu-nav li:hover .separator, #modUser3 ul.menu-nav #current .separator, #modUser3 ul.menu-nav .active .separator {
+	background-image: url(../images/menu_top-la.png);
+	color: #de6400;
+}
+#modUser3 ul.menu li:hover a span, #modUser3 ul.menu #current a span, #modUser3 ul.menu .active a span,
+#modUser3 ul.menu li:hover .separator span, #modUser3 ul.menu #current .separator span, #modUser3 ul.menu .active .separator span,
+#modUser3 ul.menu-nav li:hover a span, #modUser3 ul.menu-nav #current a span, #modUser3 ul.menu-nav .active a span,
+#modUser3 ul.menu-nav li:hover .separator span, #modUser3 ul.menu-nav #current .separator span, #modUser3 ul.menu-nav .active .separator span {
+	background-image: url(../images/menu_top-ra.png);
+}
+#modUser3 ul.menu li li a, #modUser3 ul.menu li li .separator, /* stop sub-menu item from inheriting style */
+#modUser3 ul.menu-nav li li a, #modUser3 ul.menu-nav li li .separator,
+#modUser3 ul.menu li li a span, #modUser3 ul.menu li li .separator span,
+#modUser3 ul.menu-nav li li a span, #modUser3 ul.menu-nav li li .separator span,
+#modUser3 ul.menu li:hover li a, #modUser3 ul.menu #current li a, #modUser3 ul.menu .active li a,
+#modUser3 ul.menu li:hover li .separator, #modUser3 ul.menu #current li .separator, #modUser3 ul.menu .active li .separator,
+#modUser3 ul.menu-nav li:hover li a, #modUser3 ul.menu-nav #current li a, #modUser3 ul.menu-nav .active li a,
+#modUser3 ul.menu-nav li:hover li .separator, #modUser3 ul.menu-nav #current li .separator, #modUser3 ul.menu-nav .active li .separator,
+#modUser3 ul.menu li:hover li a span, #modUser3 ul.menu #current li a span, #modUser3 ul.menu .active li a span,
+#modUser3 ul.menu li:hover li .separator span, #modUser3 ul.menu #current li .separator span, #modUser3 ul.menu .active li .separator span,
+#modUser3 ul.menu-nav li:hover li a span, #modUser3 ul.menu-nav #current li a span, #modUser3 ul.menu-nav .active li a span,
+#modUser3 ul.menu-nav li:hover li .separator span, #modUser3 ul.menu-nav #current li .separator span, #modUser3 ul.menu-nav .active li .separator span {
+	color: #000;
+	background-image: none;
+	margin: 0;
+	padding: auto;
+}
+#modUser3 ul.menu li li a span, #modUser3 ul.menu li li .separator span,
+#modUser3 ul.menu-nav li li a span, #modUser3 ul.menu-nav li li .separator span,
+#modUser3 ul.menu li:hover li a span, #modUser3 ul.menu #current li a span, #modUser3 ul.menu .active li a span,
+#modUser3 ul.menu li:hover li .separator span, #modUser3 ul.menu #current li .separator span, #modUser3 ul.menu .active li .separator span,
+#modUser3 ul.menu-nav li:hover li a span, #modUser3 ul.menu-nav #current li a span, #modUser3 ul.menu-nav .active li a span,
+#modUser3 ul.menu-nav li:hover li .separator span, #modUser3 ul.menu-nav #current li .separator span, #modUser3 ul.menu-nav .active li .separator span {
+	padding: 0;
+}
+
+/* user3 module position :: mod_mainmenu (dropdown / flyout menus) */
+#modUser3 ul.menu ul, #modUser3 ul.menu-nav ul {
+	list-style: none;
+	margin: 0 0 0 -4px;
+	position: absolute;
+	width: 183px;
+	z-index: 10;
+}
+#modUser3 ul.menu ul li, #modUser3 ul.menu ul li:hover, #modUser3 ul.menu ul #current, #modUser3 ul.menu ul .active,
+#modUser3 ul.menu-nav ul li, #modUser3 ul.menu-nav ul li:hover, #modUser3 ul.menu-nav ul #current, #modUser3 ul.menu-nav ul .active {
+	background: url(../images/menu_drop-t.png) 0 0 repeat-y;
+	display: block;
+	float: none;
+	padding: 0 5px;
+	width: 173px;
+}
+#modUser3 ul.menu ul .last, #modUser3 ul.menu ul .last:hover, #modUser3 ul.menu ul .last#current, #modUser3 ul.menu ul .last.active,
+#modUser3 ul.menu-nav ul .last, #modUser3 ul.menu-nav ul .last:hover, #modUser3 ul.menu-nav ul .last#current, #modUser3 ul.menu-nav ul .last.active {
+	background: url(../images/menu_drop-b.png) 0 100% no-repeat;
+	padding-bottom: 7px;
+}
+#modUser3 ul.menu ul a, #modUser3 ul.menu ul .separator, /* normal state */
+#modUser3 ul.menu-nav ul a, #modUser3 ul.menu-nav ul .separator {
+	border-bottom: 1px solid #e0e0dd;
+	border-top: 1px solid #bdbcb8;
+	color: #000;
+	font-family: "MS Reference Sans Serif", Helvetica, Jamrul, sans-serif;
+	font-weight: normal;
+	line-height: 28px;
+	overflow: hidden;
+	padding: 0 11px 0 21px;
+}
+#modUser3 ul.menu ul a, #modUser3 ul.menu ul .separator, /* reset hover state */
+#modUser3 ul.menu-nav ul a, #modUser3 ul.menu-nav ul .separator {
+	text-decoration: none;
+}
+#modUser3 ul.menu ul .parent a, #modUser3 ul.menu ul .parent .separator, /* mark parent */
+#modUser3 ul.menu-nav ul .parent a, #modUser3 ul.menu-nav ul .parent .separator {
+	background: url(../images/icons/silk/arrow_right.png) 96% 50% no-repeat;
+}
+#modUser3 ul.menu ul li:hover a, #modUser3 ul.menu ul li:hover .separator, /* level 1 hover state */
+#modUser3 ul.menu-nav ul li:hover a, #modUser3 ul.menu-nav ul li:hover .separator,
+#modUser3 ul.menu ul li:hover li:hover a, #modUser3 ul.menu ul li:hover li:hover .separator, /* level 2 hover state */
+#modUser3 ul.menu-nav ul li:hover li:hover a, #modUser3 ul.menu-nav ul li:hover li:hover .separator,
+#modUser3 ul.menu ul li:hover li:hover li:hover a, #modUser3 ul.menu ul li:hover li:hover li:hover .separator, /* level 3 hover state */
+#modUser3 ul.menu-nav ul li:hover li:hover li:hover a, #modUser3 ul.menu-nav ul li:hover li:hover li:hover .separator {
+	background-color: #c4c3bf;
+	border-bottom: 1px solid #d5d5d2;
+	border-top: 1px solid #b0afab;
+}
+#modUser3 ul.menu ul li:hover ul a, #modUser3 ul.menu ul li:hover ul .separator, /* level 2 normal state */
+#modUser3 ul.menu-nav ul li:hover ul a, #modUser3 ul.menu-nav ul li:hover ul .separator,
+#modUser3 ul.menu ul li:hover li:hover ul a, #modUser3 ul.menu ul li:hover li:hover ul .separator, /* level 3 normal state */
+#modUser3 ul.menu-nav ul li:hover li:hover ul a, #modUser3 ul.menu-nav ul li:hover li:hover ul .separator {
+	background-color: transparent;
+	border-bottom: 1px solid #e0e0dd;
+	border-top: 1px solid #bdbcb8;
+}
+#modUser3 ul.menu ul #current a, #modUser3 ul.menu ul .active a, /* any level active state */
+#modUser3 ul.menu ul #current .separator, #modUser3 ul.menu ul .active .separator,
+#modUser3 ul.menu-nav ul #current a, #modUser3 ul.menu-nav ul .active a,
+#modUser3 ul.menu-nav ul #current .separator, #modUser3 ul.menu-nav ul .active .separator {
+	background-color: #c4c3bf !important;
+	border-bottom: 1px solid #d5d5d2 !important;
+	border-top: 1px solid #b0afab !important;
+}
+#modUser3 ul.menu .level1.first a, #modUser3 ul.menu .level1.first .separator,
+#modUser3 ul.menu-nav .level1.first a, #modUser3 ul.menu-nav .level1.first .separator {
+	border-top: 0;
+}
+#modUser3 ul.menu ul ul, #modUser3 ul.menu-nav ul ul {
+	margin: -25px 0 0 168px;
+	opacity: 1;
+}
+#modUser3 ul.menu li ul, #modUser3 ul.menu li:hover ul ul, #modUser3 ul.menu li li:hover ul ul,
+#modUser3 ul.menu-nav li ul, #modUser3 ul.menu-nav li:hover ul ul, #modUser3 ul.menu-nav li li:hover ul ul {
+	left: -999em;
+}
+#modUser3 ul.menu li:hover ul, #modUser3 ul.menu li li:hover ul, #modUser3 ul.menu li li li:hover ul,
+#modUser3 ul.menu-nav li:hover ul, #modUser3 ul.menu-nav li li:hover ul, #modUser3 ul.menu-nav li li li:hover ul {
+	left: auto;
+}
+
+/* user1 module position :: JEZ Arguo Joomla Slideshow Module */
+#modUser1 .jezTextShow .control {
+	bottom: 21px;
+	position: absolute;
+	width: 100%;
+}
+#modUser1 .jezTextShow .control .backward,
+#modUser1 .jezTextShow .control .forward {
+	position: absolute;
+	top: -17px;
+	width: 6px;
+	z-index: 99;
+}
+#modUser1 .jezTextShow .control .backward {
+	left: 0;
+}
+#modUser1 .jezTextShow .control .forward {
+	right: 0;
+}
+#modUser1 .jezTextShow .horizontal {
+	bottom: 21px;
+}
+#modUser1 .jezTextShow .horizontal .indexWrapper .indexScroller .indexIndexes {
+	margin: 0 auto;
+}
+#modUser1 .jezTextShow .index .indexWrapper .indexScroller .indexIndexes .itemThumb {
+	padding: 0 0 0 7px;
+	width: 0;
+}
+#modUser1 .jezTextShow .horizontal .indexWrapper .indexScroller .indexIndexes .itemThumb:first-child {
+	margin-left: 0;
+}
+#modUser1 .jezTextShow .index .indexWrapper .indexScroller .indexIndexes .itemThumb span {
+	margin-left: -2px;
+}
+
+/* user4 module position :: special class suffix */
+#modUser4.special h4, #modUser4.special a {
+	color: #fff;
+	font-family: "Century Gothic","Apple Gothic",sans-serif;
+	line-height: 1em;
+}
+#modUser4.special h4 {
+	font-size: 24px;
+	margin: 6px 0 6px 1em;
+}
+#modUser4.special a {
+	text-decoration: none;
+}
+#modUser4.special .readon {
+	float: right;
+	margin: 2px 1em 0 0;
+}
+#modUser4.special .readon a {
+	background: none;
+	font-size: 11px;
+	margin: 0;
+}
+
+/* user2 module position :: mod_login */
+#modUser2 .mod_login fieldset {
+	margin: 0 -4px;
+}
+#modUser2 .mod_login fieldset div {
+	margin: 0;
+}
+#modUser2 .mod_login #form-login-username, #modUser2 .mod_login #form-login-password {
+	margin-bottom: 9px;
+}
+#modUser2 .mod_login #form-login-username .fl, #modUser2 .mod_login #form-login-password .fl {
+	float: right;
+}
+#modUser2 .mod_login #form-login-username .fr, #modUser2 .mod_login #form-login-password .fr {
+	float: left;
+}
+#modUser2 .mod_login label, #modUser2 .mod_login label {
+	color: #999;
+	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
+	font-weight: normal;
+	line-height: 29px;
+	margin-left: 6px;
+}
+#modUser2 .mod_login #form-login-remember label {
+	line-height: 1.5em;
+	margin-left: 0;
+}
+#modUser2 .mod_login .inputbox {
+	background-color: black;
+	border: 1px solid #555;
+	color: #999;
+	padding: 7px;
+	width: 7.167em;
+}
+#modUser2 .mod_login .checkbox {
+	padding: 0;
+}
+#modUser2 .mod_login .system-openid {
+	background-position: .5em 50%;
+	padding-left: 2.417em;
+	width: 5.333em;
+}
+#modUser2 .mod_login ul {
+	margin: 0;
+}
+#modUser2 #form-login-forgot {
+	float: left;
+}
+#modUser2 #openid-switcher {
+	float: right;
+}
+#modUser2 #form-login-forgot .forgot-username,
+#modUser2 #openid-support .openid-link {
+	display: none;
+}
+#modUser2 .mod_login a {
+	color: #999;
+	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
+	font-weight: normal;
+	text-decoration: none;
+}
+#modUser2 .mod_login #form-login-button {
+	padding: 6px 4px 0;
+}
+#modUser2 .mod_login button, #modUser2 .mod_login a.button, #modUser2 .mod_logout button {
+	background: url(../images/button_orange.png) 50% 50% no-repeat;
+	border: 0;
+	color: #fff;
+	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	height: 24px;
+	line-height: 22px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 63px;
+}
+#modUser2 .mod_login button, #modUser2 .mod_logout button {
+	padding-bottom: 3px;
+}
+#modUser2 .mod_login button img, #modUser2 .mod_login a.button img, #modUser2 .mod_logout button img {
+	display: none;
+}
+
+/* left module position :: mod_login (reset link style) */
+#jezLocal .mod_login a.button {
+	color: #565656;
+}
+#jezLocal .mod_login a.button:hover {
+	color: #369;
+}
+#jezLocal .mod_login a.button:active {
+	color: #fff;
+}
+
+/* left module position :: list style for black class suffix */
+.black ul {
+	list-style: none;
+	margin: 0;
+}
+.black li {
+	background-image: url(../images/dot.png);
+	background-position: 5px 49% !important;
+	background-repeat: no-repeat;
+	padding: 4px 4px 4px 26px !important;
+}
+.black li:hover {
+	background-color: #444;
+}
+.black li a {
+	text-decoration: none;
+}
+
+/* left module position :: mod_mainmenu (reset list style) */
+.jezRounded6Imgs ul.menu li {
+	background-image: none;
+	padding: 0 0 0 .417em !important;
+}
+.jezRounded6Imgs ul.menu li:hover {
+	background-color: #aeaeae;
+}
+
+/* breadcrumb module position :: mod_breadcrumbs */
+#modBreadcrumb {
+	border-bottom: 1px solid #ccc;
+	color: #999;
+	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
+	position: relative;
+	top: -4px;
+}
+#modBreadcrumb .mod_breadcrumbs, #modBreadcrumb .breadcrumb_separator {
+	margin: 0;
+}
+#modBreadcrumb .mod_breadcrumbs a {
+	text-decoration: none;
+}
+#modBreadcrumb .breadcrumb_separator img {
+	vertical-align: 5%;
+}
+#modBreadcrumb .breadcrumb_current {
+	color: #d65100;
+}
+
+/* component output wrapper :: message boxes */
+#jezComponent .notice {
+	background-color: #FFEE8B;
+}
+#jezComponent .success {
+	background-color: #D6E59A;
+}
+#jezComponent .error {
+	background-color: #F5B7B8;
+}
+
+/* user9 module position :: mod_mainmenu */
+#modUser9 ul.menu li, #modUser9 ul.menu-nav li {
+	border-bottom: 0;
+	float: left;
+	padding: 0;
+}
+#modUser9 ul.menu li:hover, #modUser9 ul.menu #current, #modUser9 ul.menu .active,
+#modUser9 ul.menu-nav li:hover, #modUser9 ul.menu-nav #current, #modUser9 ul.menu-nav .active {
+	background: none;
+}
+#modUser9 ul.menu a, #modUser9 ul.menu .separator,
+#modUser9 ul.menu-nav a, #modUser9 ul.menu-nav .separator {
+	background: url(../images/menu_bottom-l.png) 0 0 no-repeat;
+	color: #e8e8e8;
+	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
+	font-weight: bold;
+	line-height: 30px;
+	margin-right: 34px;
+	padding-left: 21px;
+}
+#modUser9 ul.menu a span, #modUser9 ul.menu .separator span,
+#modUser9 ul.menu-nav a span, #modUser9 ul.menu-nav .separator span {
+	background: url(../images/menu_bottom-r.png) 100% 0 no-repeat;
+	display: block;
+	margin-right: -34px;
+	padding-right: 21px;
+}
+#modUser9 ul.menu li:hover a, #modUser9 ul.menu #current a, #modUser9 ul.menu .active a,
+#modUser9 ul.menu li:hover .separator, #modUser9 ul.menu #current .separator, #modUser9 ul.menu .active .separator,
+#modUser9 ul.menu-nav li:hover a, #modUser9 ul.menu-nav #current a, #modUser9 ul.menu-nav .active a,
+#modUser9 ul.menu-nav li:hover .separator, #modUser9 ul.menu-nav #current .separator, #modUser9 ul.menu-nav .active .separator {
+	background-image: url(../images/menu_bottom-la.png);
+	color: #de6400;
+}
+#modUser9 ul.menu li:hover a span, #modUser9 ul.menu #current a span, #modUser9 ul.menu .active a span,
+#modUser9 ul.menu li:hover .separator span, #modUser9 ul.menu #current .separator span, #modUser9 ul.menu .active .separator span,
+#modUser9 ul.menu-nav li:hover a span, #modUser9 ul.menu-nav #current a span, #modUser9 ul.menu-nav .active a span,
+#modUser9 ul.menu-nav li:hover .separator span, #modUser9 ul.menu-nav #current .separator span, #modUser9 ul.menu-nav .active .separator span {
+	background-image: url(../images/menu_bottom-ra.png);
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*********************************
+* Individual Page Styling Sample *
+*********************************/
+
+/* increase body width */
+body.larger #jezMain {
+	margin-left: -1.5em;
+	width: 83em;
+}
+
+/* 3 equal width columns layout */
+body.three-equal-width .gr3 #jezMain {
+	margin-left: 26.667em;
+	width: 26.667em;
+}
+body.three-equal-width .gr3 #jezSub,
+body.three-equal-width .gr3 #jezLocal {
+	width: 26em;
+}
+body.three-equal-width .gr3 #jezLocal {
+	margin-left: -53.333em;
+}
+body.three-equal-width .gr3 #jezSub {
+	margin-right: 0;
+}
+
+/* 2 equal width columns layout */
+body.two-equal-width .gr2 #jezMain {
+	margin-left: 40.5em;
+	width: 37.333em;
+}
+body.two-equal-width .gr2 #jezLocal {
+	width: 37.333em;
+}
+
+/* swap position of 2 columns layout */
+body.swap-position .gr2 #jezMain {
+	margin-left: 2.167em;
+}
+body.swap-position .gr2 #jezLocal {
+	float: right;
+	margin-right: 2.5em;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/***********************************
+* Individual Module Styling Sample *
+***********************************/
+
+/* restyle #1 */
+#jezSub .restyle-1 {
+	margin: 0 -6px 0 -2px;
+}
+#jezSub .restyle-1 .hd {
+	background-image: url(../images/dark_drip-hl.png);
+	margin-right: 24px;
+}
+#jezSub .restyle-1 .hd .c {
+	background-image: url(../images/dark_drip-hr.png);
+	height: 20px;
+	margin-right: -24px;
+}
+#jezSub .restyle-1 .bd {
+	background-image: url(../images/dark_drip-bl.png);
+	margin-right: 24px;
+}
+#jezSub .restyle-1 .bd .c {
+	background-image: url(../images/dark_drip-br.png);
+	margin-right: -24px;
+}
+#jezSub .restyle-1 .bd .c .s {
+	background-image: url(../images/dark_drip-s.png);
+	margin: 0 8px 0 4px;
+	padding: 0 1em;
+}
+#jezSub .restyle-1 .ft {
+	background-image: url(../images/dark_drip-fl.png);
+	margin-right: 24px;
+}
+#jezSub .restyle-1 .ft .c {
+	background-image: url(../images/dark_drip-fr.png);
+	height: 76px;
+	margin-right: -24px;
+}
+#jezSub .restyle-1 h3 {
+	background: url(../images/icons/silk/color_swatch.png) 0 50% no-repeat;
+	padding-left: 24px;
+}
+
+/* restyle #2 */
+#jezSub .restyle-2 {
+	margin: 0 -6px 0 -2px;
+}
+#jezSub .restyle-2 .hd {
+	background-image: url(../images/red_drip-hl.png);
+	margin-right: 24px;
+}
+#jezSub .restyle-2 .hd .c {
+	background-image: url(../images/red_drip-hr.png);
+	height: 20px;
+	margin-right: -24px;
+}
+#jezSub .restyle-2 .bd {
+	background-image: url(../images/red_drip-bl.png);
+	margin-right: 24px;
+}
+#jezSub .restyle-2 .bd .c {
+	background-image: url(../images/red_drip-br.png);
+	margin-right: -24px;
+}
+#jezSub .restyle-2 .bd .c .s {
+	background-image: url(../images/red_drip-s.png);
+	margin: 0 8px 0 4px;
+	padding: 0 1em;
+}
+#jezSub .restyle-2 .ft {
+	background-image: url(../images/red_drip-fl.png);
+	margin-right: 24px;
+}
+#jezSub .restyle-2 .ft .c {
+	background-image: url(../images/red_drip-fr.png);
+	height: 76px;
+	margin-right: -24px;
+}
+#jezSub .restyle-2 h3 {
+	background: url(../images/icons/silk/color_wheel.png) 0 50% no-repeat;
+	padding-left: 24px;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/**************************************
+* Individual Menu Item Styling Sample *
+**************************************/
+
+body.menu-item-styling .editions ul.menu li {
+	border: 0;
+	padding: 0 !important;
+}
+
+body.menu-item-styling ul.menu li.buy-pro-1990-usd {
+	list-style: none;
+	margin-left: -5px;
+}
+body.menu-item-styling ul.menu li.buy-pro-1990-usd a {
+	display: block;
+	width: 171px;
+	height: 171px;
+	background: url(../images/buy_now.png) 0 0 no-repeat;
+}
+body.menu-item-styling ul.menu li.buy-pro-1990-usd a span {
+	display: none;
+}
+
+body.menu-item-styling ul.menu li.download-free {
+	list-style: none;
+	background: url(../images/button_l.png) 0 50% no-repeat;
+	margin-right: 18px;
+}
+body.menu-item-styling ul.menu li.download-free a {
+	display: block;
+	width: auto;
+	background: url(../images/button_r.png) 100% 50% no-repeat;
+	margin-right: -18px;
+	padding-left: 15px;
+}
+body.menu-item-styling ul.menu li.download-free a span {
+	background: url(../images/icons/silk/arrow_down.png) 0 50% no-repeat;
+	padding-left: 21px;
+	line-height: 3em;
+	font-weight: bold;
+}
+
+
+/*----------------------------------------------------------------------------*/
+
+/*********************************
+* Other styles for demonstration *
+*********************************/
+
+.jezTextShow .itemContainer .item .itemContent p {
+	margin-bottom: 0;
+}
+
+.pro-only {
+	margin-left: .25em;
+	padding: 0 .5em;
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+}
+
+.theme-switcher, .template-customization {
+	list-style: none;
+	margin-bottom: 0;
+}
+.theme-switcher li {
+	background: url(../images/theme_black.png) left .333em no-repeat;
+	padding-left: 2em;
+}
+.theme-switcher .blue {
+	background-image: url(../images/theme_blue.png);
+}
+.theme-switcher .green {
+	background-image: url(../images/theme_green.png);
+}
+.theme-switcher .leaf {
+	background-image: url(../images/theme_leaf.png);
+}
+.theme-switcher .orange {
+	background-image: url(../images/theme_orange.png);
+}
+.theme-switcher .violet {
+	background-image: url(../images/theme_violet.png);
+}
+
+.template-customization {
+	margin-left: 5em;
+}
+.template-customization li {
+	background: url(../images/icons/silk/overlays.png) left .333em no-repeat;
+	padding-left: 2em;
+}
+.template-customization .module-restyling {
+	background-image: url(../images/icons/silk/layers.png);
+}
+.template-customization .menu-item-restyling {
+	background-image: url(../images/icons/silk/link_edit.png);
+}
