@@ -1,5 +1,5 @@
-All JoomlaEZ.com's extensions and templates for Joomla! 1.5 series
-==================================================================
+All JoomlaEZ.com's extensions and templates for Joomla! 1.5.x
+=============================================================
 
 Hello everybody,
 
