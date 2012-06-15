@@ -1,0 +1,95 @@
+.jezTextShow,
+.jezTextShow .itemContainer{height:100%;width:100%}
+.jezTextShow .itemContainer{position:relative}
+
+.jezTextShow .itemContainer .item{height:auto;left:0;position:absolute;top:0;width:100%}
+.jezTextShow .itemContainer .item .itemTitle{color:#d4d3cf;font-family:"Trebuchet MS",Tahoma,Verdana,sans-serif;font-weight:bold}
+.jezTextShow .itemContainer .item .itemTitle a{color:#d4d3cf}
+.jezTextShow .itemContainer .item .itemContent{font-family:"Trebuchet MS",Tahoma,Verdana,sans-serif}
+
+.jezTextShow .itemContainer .accordion{position:relative;margin-bottom:3px}
+.jezTextShow .itemContainer .accordion .switcher{font:bold 13px/18px Arial,Helvetica,sans-serif;text-align:left;border:1px solid #CCC;background:#F6F6F6 url(images/plus.png) 98% center no-repeat;color:#666;cursor:pointer;padding:3px 5px;margin-bottom:5px}
+.jezTextShow .itemContainer .accordion .active{background-image:url(images/minus.png)}
+.jezTextShow .itemContainer .accordion .itemContent{padding-bottom:5px}
+
+.jezTextShow .control-horizontal{float:left;height:17px;width:auto}
+.jezTextShow .control-vertical{height:auto;top:0;width:17px}
+.jezTextShow .control-horizontal a,
+.jezTextShow .control-vertical a{color:#6a6a68;cursor:pointer;display:block;float:left;font-size:0;height:17px;text-align:right;text-decoration:none}
+.jezTextShow .control-horizontal a{margin:0 4px}
+.jezTextShow .control-vertical a{float:none;margin:4px 0}
+
+.jezTextShow .control-horizontal .fastBackward,
+.jezTextShow .control-vertical .fastBackward{background:url(images/backward.gif) center right repeat-x;text-align:right;width:7px}
+.jezTextShow .control-horizontal .backward,
+.jezTextShow .control-vertical .backward{background:url(images/backward.gif) center right repeat-x;text-align:right;width:12px}
+.jezTextShow .control-horizontal .play,
+.jezTextShow .control-vertical .play{width:6px;text-align:left}
+.jezTextShow .control-horizontal .paused,
+.jezTextShow .control-vertical .paused{background:url(images/forward.gif) center center no-repeat}
+.jezTextShow .control-horizontal .playing,
+.jezTextShow .control-vertical .playing{background:url(images/pause.gif) center center no-repeat}
+.jezTextShow .control-horizontal .forward,
+.jezTextShow .control-vertical .forward{background:url(images/forward.gif) center left repeat-x;text-align:left;width:12px}
+.jezTextShow .control-horizontal .fastForward,
+.jezTextShow .control-vertical .fastForward{background:url(images/forward.gif) center left repeat-x;text-align:left;width:7px}
+
+.jezTextShow .index-horizontal,
+.jezTextShow .index-vertical{position:relative}
+.jezTextShow .index-horizontal{float:left;height:17px;width:auto}
+.jezTextShow .index-vertical{height:auto;top:0;width:auto}
+
+.jezTextShow .index-horizontal .indexWrapper{height:17px}
+.jezTextShow .index-vertical .indexWrapper{width:auto}
+
+.jezTextShow .index-horizontal .withScrollingButtons{margin:0 12px;width:auto}
+.jezTextShow .index-vertical .withScrollingButtons{height:auto;margin:12px 0}
+
+.jezTextShow .index-horizontal .toBegin,
+.jezTextShow .index-vertical .toBegin{color:#6a6a68;cursor:pointer;display:block;font-size:0;position:absolute;text-align:right;text-decoration:none}
+.jezTextShow .index-horizontal .toBegin{background:url(images/backward.gif) right center no-repeat;height:17px;left:0;top:0;width:6px}
+.jezTextShow .index-vertical .toBegin{background:url(images/upward.gif) center bottom no-repeat;height:6px;top:0;width:17px}
+
+.jezTextShow .index-horizontal .toEnd,
+.jezTextShow .index-vertical .toEnd{color:#6a6a68;cursor:pointer;display:block;font-size:0;position:absolute;text-align:left;text-decoration:none}
+.jezTextShow .index-horizontal .toEnd{background:url(images/forward.gif) left center no-repeat;height:17px;right:0;top:0;width:6px}
+.jezTextShow .index-vertical .toEnd{background:url(images/downward.gif) center top no-repeat;bottom:0;height:6px;width:17px}
+
+.jezTextShow .index-horizontal .indexWrapper .indexScroller,
+.jezTextShow .index-vertical .indexWrapper .indexScroller{overflow:hidden}
+.jezTextShow .index-horizontal .indexWrapper .indexScroller{height:17px}
+.jezTextShow .index-vertical .indexWrapper .indexScroller{width:auto}
+
+.jezTextShow .index-horizontal .indexWrapper .indexScroller .indexIndexes,
+.jezTextShow .index-vertical .indexWrapper .indexScroller .indexIndexes{position:relative}
+.jezTextShow .index-horizontal .indexWrapper .indexScroller .indexIndexes{height:17px}
+.jezTextShow .index-vertical .indexWrapper .indexScroller .indexIndexes{width:auto}
+
+.jezTextShow .index-horizontal .indexWrapper .indexScroller .indexIndexes .itemThumb,
+.jezTextShow .index-vertical .indexWrapper .indexScroller .indexIndexes .itemThumb{background:url(images/index_l.png) left center no-repeat;color:#555553;cursor:pointer;font-size:10px;height:17px;line-height:17px;margin-right:10px;padding:0 0 0 10px;text-align:center;text-decoration:none;width:auto}
+* html .jezTextShow .index-horizontal .indexWrapper .indexScroller .indexIndexes .itemThumb,
+* html .jezTextShow .index-vertical .indexWrapper .indexScroller .indexIndexes .itemThumb{background-image:url(images/index_l.gif);margin-right:0;width:1%;white-space:nowrap}
+.jezTextShow .index-horizontal .indexWrapper .indexScroller .indexIndexes .itemThumb{float:left;margin-left:4px}
+.jezTextShow .index-vertical .indexWrapper .indexScroller .indexIndexes .itemThumb{display:block;margin-top:4px;margin-bottom:0}
+
+.jezTextShow .index-horizontal .indexWrapper .indexScroller .indexIndexes .itemThumb span,
+.jezTextShow .index-vertical .indexWrapper .indexScroller .indexIndexes .itemThumb span{background:url(images/index_r.png) right center no-repeat;display:block;height:17px;line-height:17px;margin-right:-10px;padding-right:10px}
+* html .jezTextShow .index-horizontal .indexWrapper .indexScroller .indexIndexes .itemThumb span,
+* html .jezTextShow .index-vertical .indexWrapper .indexScroller .indexIndexes .itemThumb span{background-image:url(images/index_r.gif);margin-right:0}
+
+.jezTextShow .index-horizontal .indexWrapper .indexScroller .indexIndexes .hover,
+.jezTextShow .index-vertical .indexWrapper .indexScroller .indexIndexes .hover{color:#d4d3cf;text-decoration:none}
+
+.jezTextShow .index-horizontal .indexWrapper .indexScroller .indexIndexes .itemThumb#activeIndex,
+.jezTextShow .index-vertical .indexWrapper .indexScroller .indexIndexes .itemThumb#activeIndex{background:url(images/index_al.png) left center no-repeat;color:#d4d3cf;cursor:default}
+* html .jezTextShow .index-horizontal .indexWrapper .indexScroller .indexIndexes .itemThumb#activeIndex,
+* html .jezTextShow .index-vertical .indexWrapper .indexScroller .indexIndexes .itemThumb#activeIndex{background-image:url(images/index_al.gif)}
+
+.jezTextShow .index-horizontal .indexWrapper .indexScroller .indexIndexes .itemThumb#activeIndex span,
+.jezTextShow .index-vertical .indexWrapper .indexScroller .indexIndexes .itemThumb#activeIndex span{background:url(images/index_ar.png) right center no-repeat}
+* html .jezTextShow .index-horizontal .indexWrapper .indexScroller .indexIndexes .itemThumb#activeIndex span,
+* html .jezTextShow .index-vertical .indexWrapper .indexScroller .indexIndexes .itemThumb#activeIndex span{background-image:url(images/index_ar.gif)}
+
+.left{float:left;margin-right:3px}
+.right{float:right;margin-left:3px}
+.tool-tip{z-index:999}

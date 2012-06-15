@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * JEZ Arguo Joomla! 1.5 Module :: Installer
+ *
+ * @package		JEZ Arguo
+ * @version		1.1.4
+ * @author		JoomlaEZ.com
+ * @copyright	Copyright (C) 2008 JoomlaEZ.com. All rights reserved
+ * @license		Commercial Proprietary
+ *
+ * Please visit http://joomlaez.com/ for more information
+ */
+-->
+<install type="module" version="1.5.0">
+	<name>JEZ Arguo</name>
+	<author>JoomlaEZ.com</author>
+	<creationDate>November 2009</creationDate>
+	<copyright>Copyright (C) 2008, 2009 JoomlaEZ.com. All rights reserved</copyright>
+	<license>Commercial Proprietary</license>
+	<authorEmail>pr@joomlaez.com</authorEmail>
+	<authorUrl>http://www.joomlaez.com/</authorUrl>
+	<version>1.1.4</version>
+	<description>JEZ Arguo - Fully Customization, Smooth Effect Joomla Slideshow Module.</description>
+	<files>
+		<filename module="mod_JEZ_Arguo">mod_JEZ_Arguo.php</filename>
+		<filename>index.html</filename>
+		<filename>jezBaseFx.js</filename>
+		<filename>jezTextShow.js</filename>
+		<filename>jezSlideshow.js</filename>
+		<filename>helper.php</filename>
+		<filename>mod_JEZ_Arguo.xml</filename>
+		<filename>tmpl/default.css</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+		<filename>tmpl/_item.php</filename>
+		<filename>tmpl/images/backward.gif</filename>
+		<filename>tmpl/images/downward.gif</filename>
+		<filename>tmpl/images/forward.gif</filename>
+		<filename>tmpl/images/index_al.gif</filename>
+		<filename>tmpl/images/index_al.png</filename>
+		<filename>tmpl/images/index_ar.gif</filename>
+		<filename>tmpl/images/index_ar.png</filename>
+		<filename>tmpl/images/index_l.gif</filename>
+		<filename>tmpl/images/index_l.png</filename>
+		<filename>tmpl/images/index_r.gif</filename>
+		<filename>tmpl/images/index_r.png</filename>
+		<filename>tmpl/images/logo.png</filename>
+		<filename>tmpl/images/minus.png</filename>
+		<filename>tmpl/images/pause.gif</filename>
+		<filename>tmpl/images/plus.png</filename>
+		<filename>tmpl/images/upward.gif</filename>
+		<filename>xmlElements/categories.php</filename>
+		<filename>xmlElements/checkbox.php</filename>
+		<filename>xmlElements/desc.php</filename>
+		<filename>xmlElements/editor.php</filename>
+		<filename>xmlElements/index.html</filename>
+		<filename>xmlElements/k2categories.php</filename>
+		<filename>xmlElements/k2tags.php</filename>
+		<filename>xmlElements/lists.php</filename>
+		<filename>xmlElements/sections.php</filename>
+		<filename>xmlElements/title.php</filename>
+	</files>
+	<params addpath="/modules/mod_JEZ_Arguo/xmlElements">
+		<param name="@title" type="title" default="" label="Joomla Slideshow Module JEZ Arguo" url="http://www.joomlaez.com/" image="../modules/mod_JEZ_Arguo/tmpl/images/logo.png">
+		<![CDATA[
+			<p>
+				Joomla slideshow module <strong>JEZ Arguo</strong> is a module developed to display fading news / messages
+				that pauses between each others with nice transition effects.
+			</p>
+			<p>
+				<strong>JEZ Arguo</strong> has 2 difference editions: <a href="http://joomlaez.com/editions-comparison.html"
+				title="Free and PRO editions comparison" target="_blank">free and PRO</a>. These 2 editions share almost same key
+				features. The free edition is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"
+				title="Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported license" target="_blank">Creative Commons
+				Attribution-Noncommercial-Share Alike 3.0 Unported</a> license and is valid for use on personal non-commercial website only.
+				The PRO edition is <a href="http://joomlaez.com/licenses-comparison.html"
+				title="PRO edition's single domain and unlimited domains licenses comparison" target="_blank">Commercial Proprietary</a>
+				and is valid for use on any kind of websites.
+			</p>
+			<p>
+				Please visit <a href="http://joomlaez.com" title="JoomlaEZ.com's home page" target="_blank">JoomlaEZ.com</a>
+				for full features list, editions comparison, licenses comparison, getting started guide, documentation and get
+				support on using / implementing <strong>JEZ Arguo</strong>.
+			</p>
+		]]>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param name="cache" type="list" default="0" label="Caching" description="Select whether to cache the content of this module">
+			<option value="1">Use Global</option>
+			<option value="0">No Caching</option>
+		</param>
+		<param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@title" type="title" default="" label="Content Retrieval Settings" />
+		<param name="@desc" type="desc" default="" label="Joomla Content Component"><![CDATA[
+			<p>Retrieve content created with Joomla's default content component.</p>
+			<p>
+				In Joomla administration panel, go to <a href="index.php?option=com_content" title="Articles Manager" target="_blank">
+				Content -> Article Manager</a> to find article IDs. Separate multiple articles with '|' character.
+			</p>
+		]]></param>
+		<param name="content" type="radio" default="0" label=" " description="">
+			<option value="1">Enable</option>
+			<option value="0">Disable</option>
+		</param>
+		<param name="content_sections" type="sections" size="15" default="" label="Sections" description="Query for articles belonging to selected section(s)" />
+		<param name="content_categories" type="categories" size="15" default="" label="Categories" description="Query for articles belonging to selected categor(y/ies)" />
+		<param name="content_articles" type="text" size="45%" default="" label="Article IDs" description="Query for articles which IDs speficied here. Separate multiple articles with '|' character." />
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="content_allconds" type="radio" default="0" label="Meet All Conditions" description="Only query for articles which meet all conditions specified above">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="content_ordering" type="list" default="noorder" label="Articles Ordering" description="How to order queried articles?">
+			<option value="random">Randomize</option>
+			<option value="date">Oldest first</option>
+			<option value="rdate">Most recent first</option>
+			<option value="alpha">Title alphabetical</option>
+			<option value="ralpha">Title reverse-alphabetical</option>
+			<option value="hits">Most hits first</option>
+			<option value="rhits">Least hits first</option>
+			<option value="ordering">Ordering</option>
+			<option value="noorder">Leave as is</option>
+		</param>
+		<param name="content_limit" type="text" default="0" label="Limitation" description="Limit articles retrieval to the number specified here. Input 0 to disable limitation." />
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="content_unpublished" type="radio" default="0" label="Show Unpublished" description="Query for unpublished articles also">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="content_archived" type="radio" default="0" label="Show Archieved" description="Query for archieved item also">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="content_frontpage" type="radio" default="0" label="Frontpage Only" description="Query for articles assigned to show in frontpage only">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@desc" type="desc" default="" label="Joomla Newsfeeds Component"><![CDATA[
+			<p>Retrieve content managed with Joomla's default newsfeeds component.</p>
+			<p>
+				In Joomla administration panel, go to <a href="index.php?option=com_newsfeeds" title="Newsfeeds Manager" target="_blank">
+				Components -> News Feeds -> Feeds</a> to find newsfeed ID. Separate multiple newsfeeds with '|' character.
+			</p>
+		]]></param>
+		<param name="newsfeeds" type="text" size="45%" default="" label="Newsfeed IDs" description="Get content from newsfeeds which IDs speficied here. Separate multiple newsfeeds with '|' character." />
+		<param name="newsfeeds_limit" type="text" default="0" label="Limitation" description="Limit articles retrieval via newsfeed to the number specified here. Input 0 to disable limitation." />
+		<param name="newsfeeds_unpublished" type="radio" default="0" label="Query Unpublished" description="Get content from unpublished newsfeeds also">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@desc" type="desc" default="" label="Joomla Modules"><![CDATA[
+			<p>Render specified modules and use as content for slideshow.</p>
+			<p>
+				In Joomla administration panel, go to <a href="index.php?option=com_modules" title="Modules Manager" target="_blank">
+				Extensions -> Module Manager</a> to find module ID. Separate multiple modules with '|' character.
+			</p>
+		]]></param>
+		<param name="modules" type="text" size="45%" default="" label="Module IDs" description="Use modules which IDs speficied here as content for slideshow. Separate multiple modules with '|' character." />
+		<param name="modules_ordering" type="list" default="noorder" label="Modules Ordering" description="How to order queried modules?">
+			<option value="random">Randomize</option>
+			<option value="alpha">Title alphabetical</option>
+			<option value="ralpha">Title reverse-alphabetical</option>
+			<option value="ordering">Ordering</option>
+			<option value="noorder">Leave as is</option>
+		</param>
+		<param name="modules_unpublished" type="radio" default="0" label="Render Unpublished" description="Render unpublished modules also">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modules_title" type="list" default="-1" label="Show Title" description="Show module title?">
+			<option value="1">Always show</option>
+			<option value="0">Always hide</option>
+			<option value="-1">Follow module parameter</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@desc" type="desc" default="" label="K2 CCK Extension"><![CDATA[
+			<p>Retrieve content created with K2 content construction kit extension.</p>
+			<p>
+				In Joomla administration panel, go to <a href="index.php?option=com_k2&task=items" title="K2 Items Manager" target="_blank">
+				Components -> K2 -> Items</a> to find K2 item IDs. Separate multiple K2 items with '|' character.
+			</p>
+		]]></param>
+		<param name="k2" type="radio" default="0" label=" " description="">
+			<option value="1">Enable</option>
+			<option value="0">Disable</option>
+		</param>
+		<param name="k2_cats" type="k2categories" size="15" default="" label="K2 Categories" description="Query for items belonging to selected K2 categor(y/ies)" />
+		<param name="k2_tags" type="k2tags" size="15" default="" label="K2 Tags" description="Query for items assigned selected K2 tag(s)" />
+		<param name="k2_items" type="text" size="45%" default="" label="K2 Item IDs" description="Query for K2 items which IDs speficied here. Separate multiple K2 items with '|' character." />
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="k2_allconds" type="radio" default="0" label="Meet All Conditions" description="Only query for K2 items which meet all conditions specified above">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="k2_ordering" type="list" default="noorder" label="K2 Items Ordering" description="How to order queried K2 items?">
+			<option value="random">Randomize</option>
+			<option value="date">Oldest first</option>
+			<option value="rdate">Most recent first</option>
+			<option value="alpha">Title alphabetical</option>
+			<option value="ralpha">Title reverse-alphabetical</option>
+			<option value="ordering">Ordering</option>
+			<option value="noorder">Leave as is</option>
+		</param>
+		<param name="k2_limit" type="text" default="0" label="Limitation" description="Limit K2 items retrieval to the number specified here. Input 0 to disable limitation." />
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="k2_nested" type="radio" default="0" label="Nested Categories" description="Also query for items belonging to nested categor(y/ies) of selected K2 categor(y/ies) above">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="k2_unpublished" type="radio" default="0" label="Show Unpublished" description="Query for unpublished K2 items also">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="k2_featured" type="radio" default="0" label="Featured Only" description="Query for featured K2 items only">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@desc" type="desc" default="" label="XML Document"><![CDATA[
+			<p>Get data from specified XML document then use as content for slideshow.</p>
+			<p>
+				Input either the relative path from Joomla root directory to internal
+				XML document or the full URL to external XML document.
+			</p>
+		]]></param>
+		<param name="xml" type="text" size="90%" default="" label="Document URI" description="" />
+		<param name="xml_utf8" type="radio" default="0" label="UTF-8 Encoded XML" description="Is the specified XML document UTF-8 encoded?">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="xml_limit" type="text" default="0" label="Limitation" description="Limit data entries retrieval to the number specified here. Input 0 to disable limitation." />
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="xml_itemNode" type="text" default="item" label="Items Node" description="Specify the node name (XML tag) to parse for content items here" />
+		<param name="xml_titleNode" type="text" default="title" label="Title Node" description="Specify the node name (XML tag) for individual item's title here" />
+		<param name="xml_contentNode" type="text" default="description" label="Content Node" description="Specify the node name (XML tag) for individual item's content here" />
+		<param name="xml_linkNode" type="text" default="link" label="Link Node" description="Specify the node name (XML tag) for individual item's associated link here" />
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@title" type="title" default="" label="Behavior Settings" />
+		<param name="words" type="text" default="0" label="Words Count" description="Limit content of each slide to the number of words specified here. Input 0 for no limitation." />
+		<param name="image" type="radio" default="0" label="Show Image?" description="Display image embeded in slide content?">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="item_title" type="radio" default="1" label="Show Title?" description="Show slide title? Does not affect modules.">
+			<option value="1">Show</option>
+			<option value="0">Hide</option>
+		</param>
+		<param name="title_tag" type="list" default="h3" label="Title Format" description="Markup tag to be used for slide title">
+			<option value="h1">Heading level 1</option>
+			<option value="h2">Heading level 2</option>
+			<option value="h3">Heading level 3</option>
+			<option value="h4">Heading level 4</option>
+			<option value="h5">Heading level 5</option>
+			<option value="h6">Heading level 6</option>
+		</param>
+		<param name="link_title" type="radio" default="0" label="Linked Title" description="Make the slide title linkable if has associated link? Does not affect modules.">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="intro_only" type="radio" default="1" label="Intro Only" description="Show only the intro text of retrieved content? Does not affect modules and content retrieved from newsfeeds, XML document.">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="readmore" type="radio" default="1" label="Read More" description="Show 'Read more' if has associated link? Does not affect modules.">
+			<option value="1">Show</option>
+			<option value="0">Hide</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+	</params>
+	<params group="advanced">
+		<param name="@title" type="title" default="" label="Initialization Settings" description="&lt;p&gt;Choose an event to initialize the slideshow:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;h4&gt;onDomReady&lt;/h4&gt; Recommended for text-only slideshow.&lt;/li&gt;&lt;li&gt;&lt;h4&gt;onLoad&lt;/h4&gt; Recommended for slideshow with image embeded in slideshow item.&lt;/li&gt;&lt;/ul&gt;" />
+		<param name="initializeOn" type="list" default="domready" label="Initialize On" description="">
+			<option value="domready">onDomReady</option>
+			<option value="load">onLoad</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@title" type="title" default="" label="Output Settings" />
+		<param name="instanceID" type="text" size="5" default="" label="Instance ID" description="If you plan to use more than one instance of this module, enter an unique ID for this instance here" />
+		<param name="navigableBrowsing" type="radio" default="0" label="Navigable Browsing" description="Add support for browser backward and forward buttons so, if slideshow item has been switched (by timed slideshow or user interaction) users can always use their browser's backward and forward buttons to navigate already viewed slideshow items. This is done by: 1. Create unique URL segment (#) link for each item index. This will allow users bookmark individual slideshow item. 2. Update browser's address bar when following control buttons is clicked: backward, fast backward, forward, fast forward.">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@title" type="title" default="" label="Playback Settings" />
+		<param name="enableShuffle" type="radio" default="0" label="Enable shuffle mode" description="Play slideshow in random order?">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="timed" type="radio" default="1" label="Timed slideshow" description="Show next item automatically after certain time pass">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="delay" type="text" size="5" default="5000" label="Delay time" description="Show next item automatically after the time defined here pass" />
+		<param name="autoStop" type="radio" default="1" label="Stop automatically" description="If enabled will stop timed slideshow automatically on user activity such as manually change to previous/next/certain item or act on form embeded in a content item">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@title" type="title" default="" label="Control Panel Settings" />
+		<param name="@desc" type="desc" default="" label="Control Buttons" description="&lt;p&gt;You can show/hide any slideshow control button. Control panel will be disabled automatically if all control buttons is set to hide.&lt;/p&gt;" />
+		<param name="showPlay" type="radio" default="0" label="Show play/pause button" description="Show play/pause button to play/stop slideshow">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="showBackward" type="radio" default="1" label="Show backward button" description="Display button to show previous slideshow item with transition effect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="showFastBackward" type="radio" default="0" label="Show fast backward button" description="Display button to show previous slideshow item without transition effect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="showForward" type="radio" default="1" label="Show forward button" description="Display button to show next slideshow item with transition effect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="showFastForward" type="radio" default="0" label="Show fast forward button" description="Display button to show next slideshow item without transition effect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@desc" type="desc" default="" label="Layout" description="&lt;p&gt;Set orientation, position and alignment for slideshow control buttons.&lt;/p&gt;" />
+		<param name="controlOrientation" type="list" default="horizontal" label="Control buttons orientation" description="Display control buttons horizontally or vertically?">
+			<option value="horizontal">Horizontal</option>
+			<option value="vertical">Vertical</option>
+		</param>
+		<param name="controlPosHoriz" type="radio" default="bottom" label="Horizontal buttons position" description="Place horizontal buttons at top or bottom edge?">
+			<option value="top">Top</option>
+			<option value="bottom">Bottom</option>
+		</param>
+		<param name="controlAlignHoriz" type="list" default="center" label="Horizontal buttons alignment" description="Align the horizontal buttons to left, center or right?">
+			<option value="left">Left</option>
+			<option value="center">Center</option>
+			<option value="right">Right</option>
+		</param>
+		<param name="controlPosVert" type="radio" default="right" label="Vertical buttons position" description="Place vertical buttons at left or right edge?">
+			<option value="left">Left</option>
+			<option value="right">Right</option>
+		</param>
+		<param name="controlAlignVert" type="list" default="middle" label="Vertical buttons alignment" description="Align the vertical buttons to top, middle or bottom?">
+			<option value="top">Top</option>
+			<option value="middle">Middle</option>
+			<option value="bottom">Bottom</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@title" type="title" default="" label="Index Panel Settings" />
+		<param name="showIndex" type="radio" default="1" label="Show index" description="Display items indexes">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="indexesType" type="list" default="numeric" label="Indexes Type" description="Use numeric, item title or mix of numeric and item title for indexes?">
+			<option value="numeric">Numeric</option>
+			<option value="title">Item Title</option>
+			<option value="both">Both</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="jTips" type="radio" default="0" label="Use Joomla! Tips" description="If indexes type is numeric, use Joomla's tool-tips script to display slideshow item title when mouse-over its index">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@desc" type="desc" default="" label="Layout" description="&lt;p&gt;Set orientation, position and alignment for slideshow items indexes.&lt;/p&gt;" />
+		<param name="indexControlRel" type="radio" default="after" label="Index panel relation" description="If index panel is placed in same edge with control panel, place it before/above or after/below control panel?">
+			<option value="before">Before</option>
+			<option value="after">After</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="indexesOrientation" type="list" default="horizontal" label="Indexes orientation" description="Display indexes of all items horizontally or vertically?">
+			<option value="horizontal">Horizontal</option>
+			<option value="vertical">Vertical</option>
+		</param>
+		<param name="indexPosHoriz" type="radio" default="bottom" label="Horizontal indexes position" description="Place horizontal indexes at top or bottom edge?">
+			<option value="top">Top</option>
+			<option value="bottom">Bottom</option>
+		</param>
+		<param name="indexAlignHoriz" type="list" default="center" label="Horizontal indexes alignment" description="Align the horizontal indexes to left, center or right?">
+			<option value="left">Left</option>
+			<option value="center">Center</option>
+			<option value="right">Right</option>
+		</param>
+		<param name="indexPosVert" type="radio" default="right" label="Vertical indexes position" description="Place vertical indexes at left or right edge?">
+			<option value="left">Left</option>
+			<option value="right">Right</option>
+		</param>
+		<param name="indexAlignVert" type="list" default="middle" label="Vertical indexes alignment" description="Align the vertical indexes to top, middle or bottom?">
+			<option value="top">Top</option>
+			<option value="middle">Middle</option>
+			<option value="bottom">Bottom</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@desc" type="desc" default="" label="Scrolling" description="&lt;p&gt;If there are too many items indexes and scrolling needed to surf from beginning to ending of them, display scrolling buttons or not? If scrolling buttons is disabled, scrolling will be triggered when visitor/user moves his/her mouse to left/top or right/bottom edges of index panel.&lt;/p&gt;" />
+		<param name="showScrollingButtons" type="radio" default="0" label="Scrolling buttons" description="">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="reverseScroll" type="radio" default="0" label="Reverse scroll" description="If enabled will automatically scroll to ending if reach beginning of items indexes and vice versa. Only effective when scrolling buttons is enabled">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@title" type="title" default="" label="Slideshow Effect Settings" />
+		<param name="fxDuration" type="text" size="5" default="500" label="Effect duration" description="Duration, in miliseconds, for every effect to complete" />
+		<param name="transitionFx" type="list" default="crossfade" label="Transition effect" description="Transition effect used to switch from one item to another">
+			<option value="fade">Fade to Item</option>
+			<option value="crossfade">Cross Fade</option>
+			<option value="fadebg">Fade to Background</option>
+			<option value="accordion">Accordion</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+	</params>
+</install>
