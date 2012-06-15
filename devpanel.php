@@ -1,39 +1,20 @@
 <?php
 /*
-* JEZ Rego Joomla! 1.5 Template :: Wrappers :: dev mode panel
+* JEZ Thema Joomla! 1.5 Theme Base :: Wrappers :: dev mode panel
 *
-* @package		JEZ Rego
-* @version		1.5.0
+* @package		JEZ Thema
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
 * @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 
 // no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-if (!(isset($_COOKIE['jezTplName']) && isset($_COOKIE['jezTplDir']))) {
-	// get template directory
-	$tpl_dir = dirname(__FILE__);
-	setcookie('jezTplDir', $tpl_dir);
-
-	// get the active template
-	$template = basename($tpl_dir);
-	setcookie('jezTplName', $template);
-} else {
-	$tpl_dir = $_COOKIE['jezTplDir'];
-	$template = $_COOKIE['jezTplName'];
-}
-
-// is language loaded?
-if ( preg_match('/\?*JEZ_REGO\?*/', JText::_('JEZ_REGO')) ) {
-	$lang =& JFactory::getLanguage();
-	$lang->load( "tpl_{$template}", $tpl_dir );
-}
-
-// require JEZ Rego helper
+// require JEZ Thema helper
 define( 'TEMPLATE_PATH', dirname(__FILE__) );
 require_once(TEMPLATE_PATH.DS.'helper.php');
 
@@ -117,22 +98,15 @@ window.addEvent('domready', function () {
 });
 
 var jezDevParams = {};
+var jezDevQString = '';
 function submitchange() {
-	// checking for valid parameters combination
-	if (typeof jezDevParams['tpl_layoutUnit'] != 'undefined') {
-		if (typeof jezDevParams['tpl_tplWidth'] == 'undefined' || typeof jezDevParams['tpl_leftWidth'] == 'undefined' || typeof jezDevParams['tpl_rightWidth'] == 'undefined') {
-			if (!confirm("You have changed layout unit but leave either template, left or right column width unchanged which might cause layout broken.\nAre you sure you want to submit changes?"))
-				return;
-		}
+	var currentHref = opener.location.href;
+	if (jezDevQString != '') {
+		currentHref = currentHref.replace(jezDevQString, '');
+		jezDevQString = '';
 	}
 
-	var currentHref = (typeof opener != 'undefined' && opener != null) ? opener.location.href : parent.location.href;
-	jezDevQString = '';
-
 	$each(jezDevParams, function(v, k) {
-		// clear previous instance of recently changed param
-		currentHref = currentHref.replace(new RegExp('(\\?|\\&)' + k + '=[^\\&]+', 'g'), '');
-
 		if (jezDevQString != '')
 			jezDevQString += '&';
 
@@ -148,17 +122,10 @@ function submitchange() {
 
 	if (currentHref.indexOf('?') > -1)
 		jezDevQString = '&' + jezDevQString;
-	else if (currentHref.indexOf('&') > -1) {
-		currentHref = currentHref.replace('&', '?');
-		jezDevQString = '&' + jezDevQString;
-	}
 	else
 		jezDevQString = '?' + jezDevQString;
 
-	if (typeof opener != 'undefined' && opener != null)
-		opener.location.href = currentHref + jezDevQString + segment;
-	else
-		parent.location.href = currentHref + jezDevQString + segment;
+	opener.location.href = currentHref + jezDevQString + segment;
 }
 // ]]></script>
 <form>
@@ -178,27 +145,8 @@ $form = preg_replace('/input type="radio" name="params\[([^\]]+)\]"/i', 'input t
 $form = preg_replace('/input type="text" name="params\[([^\]]+)\]"/i', 'input type="text" name="tpl_\\1" onchange="jezDevParams[this.name] = this.value;"', $form);
 $form = preg_replace('/<tr>[\r\n]<td class="paramlist_value" colspan="2"><input type="hidden"([^>]+)><\/td>[\r\n]<\/tr>/i', '<input type="hidden"\\1>', $form);
 
-if (strtoupper(JRequest::getCmd('hl')) == 'PRO') {
-	// pro only parameters
-	$pro_params = array(
-		'tpl_fontSet', 'tpl_layoutUnit', 'tpl_tplWidth', 'tpl_leftWidth', 'tpl_rightWidth', 'tpl_hdHeight', 'tpl_topHeight',
-		'tpl_theme', 'tpl_switchThemeViaPageClassSuffix', 'tpl_switchThemeViaUrl', 'tpl_showThemeSwitcher',
-		'tpl_logoAlt', 'tpl_logoWidth', 'tpl_logoHeight', 'tpl_topNoCenterExpand', 'tpl_dev_panel'
-	);
-
-	// mark pro only parameters
-	foreach ($pro_params AS $pro_param) {
-		if (preg_match('/<select name="'.$pro_param.'"[^\r^\n]*>[^\r^\n]+<\/select>/', $form))
-			$form = preg_replace('/<select name="'.$pro_param.'"([^\r^\n]*)>([^\r^\n]+)<\/select>/', '<select name="'.$pro_param.'"\\1>\\2</select> <span class="pro-only">PRO ONLY</span>', $form);
-		elseif (preg_match('/<input type="text" name="'.$pro_param.'"[^\r^\n]*\/>/', $form))
-			$form = preg_replace('/<input type="text" name="'.$pro_param.'"([^\r^\n]*)\/>/', '<input type="text" name="'.$pro_param.'"\\1/> <span class="pro-only">PRO ONLY</span>', $form);
-		elseif (preg_match('/<input type="radio" name="'.$pro_param.'"[^\r^\n]*\/>[\r\n][\t\s]*<label for="[^\r^\n]+">[^\r^\n]+<\/label>[\r\n]<\/td>/', $form))
-			$form = preg_replace('/<input type="radio" name="'.$pro_param.'"([^\r^\n]*)\/>([\r\n][\t\s]*<label for="[^\r^\n]+">[^\r^\n]+<\/label>[\r\n])<\/td>/', '<input type="radio" name="'.$pro_param.'"\\1/>\\2 <span class="pro-only">PRO ONLY</span>'."\n</td>", $form);
-	}
-}
-
 // set form as component output
-$this->setTitle( JText::_('JEZ Rego Dev Mode Panel') );
+$this->setTitle( JText::_('JEZ Thema Dev Mode Panel') );
 $this->setBuffer($form, 'component');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -206,19 +154,6 @@ $this->setBuffer($form, 'component');
 <head>
 	<jdoc:include type="head" />
 	<link href="administrator/templates/khepri/css/template.css" rel="stylesheet" type="text/css" />
-	<?php if (strtoupper(JRequest::getCmd('hl')) == 'PRO') : ?>
-	<style type="text/css"><!--
-		.pro-only {
-			background-color: #ff0;
-			font-size: 12px;
-			line-height: 1.5em;
-			margin-left: .25em;
-			padding: 0 .5em;
-			-moz-border-radius: .5em;
-			-webkit-border-radius: .5em;
-		}
-	--></style>
-	<?php endif; ?>
 </head>
 
 <body>

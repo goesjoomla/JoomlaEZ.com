@@ -2,38 +2,30 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://dev.joomla.org/xml/1.5/template-install.dtd">
 <!--
 /*
-* JEZ Rego Joomla! 1.5 Template :: Installer
+* JEZ Thema Joomla! 1.5 Theme Base :: Installer
 *
-* @package		JEZ Rego
-* @version		1.5.0
+* @package		JEZ Thema
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
 * @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 -->
 <install version="1.5" type="template">
-	<name>JEZ_Rego</name>
-	<creationDate>August 2009</creationDate>
+	<name>JEZ_Thema</name>
+	<creationDate>June 2009</creationDate>
 	<author>JoomlaEZ.com</author>
 	<authorEmail>pr@joomlaez.com</authorEmail>
 	<authorUrl>http://www.joomlaez.com/</authorUrl>
 	<copyright>Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.</copyright>
 	<license>Read the included README.txt file or visit http://www.joomlaez.com/ for available editions and licenses details.</license>
-	<version>1.5.4</version>
+	<version>1.1.0</version>
 	<description><![CDATA[
-		<h3 style="margin-top:0">JEZ Rego - Premium quality Joomla! 1.5 template.</h3>
-		<p>
-			Please visit <a href="http://www.joomlaez.com/" target="_blank">JoomlaEZ.com</a> for full features list,
-			editions comparison, licenses comparison and get support on implementing / customizing <strong>JEZ Rego</strong>.
-		</p>
-		<p style="margin-bottom:0">
-			<a href="../templates/jez_rego/COPYRIGHT.txt" target="_blank">Copyright</a> |
-			<a href="../templates/jez_rego/README.txt" target="_blank">Read Me</a> |
-			<a href="../index.php?template=jez_rego&tmpl=installSample">Install Sample Data</a> as seen in
-			<a href="http://demo.joomlaez.com/joomla-theme-jez-rego/" target="_blank">JEZ Rego live demo</a>
-		</p>
+		<p><strong>JEZ Thema - Professional Joomla! 1.5 Template Framework.</strong></p>
+		<p><a href="../index.php?template=jez_thema&tmpl=installSample">Click here</a> to install sample data as seen in
+		<a href="http://demo.joomlaez.com/create-joomla-template-with-jez-thema/" target="_blank">JEZ Thema live demo</a> website.</p>
 	]]></description>
 	<files>
 		<filename>component.php</filename>
@@ -49,13 +41,13 @@
 		<filename>sampleData.sql</filename>
 		<filename>templateDetails.xml</filename>
 		<filename>template_thumbnail.png</filename>
-		<filename>css/csshover3.htc</filename>
-		<filename>css/customize.css.php</filename>
 		<filename>css/grids.png</filename>
 		<filename>css/ie6warning.css</filename>
 		<filename>css/ie7compat.css</filename>
 		<filename>css/index.html</filename>
 		<filename>css/jezFramework.css</filename>
+		<filename>css/jezGridElastic.css</filename>
+		<filename>css/jezGridFixed.css</filename>
 		<filename>css/jezIE6only.css</filename>
 		<filename>css/jezIE7only.css</filename>
 		<filename>css/layouts.css</filename>
@@ -153,6 +145,8 @@
 		<filename>html/mod_feed/index.html</filename>
 		<filename>html/mod_footer/default.php</filename>
 		<filename>html/mod_footer/index.html</filename>
+		<filename>html/mod_JEZ_Arguo/default.php</filename>
+		<filename>html/mod_JEZ_Arguo/index.html</filename>
 		<filename>html/mod_latestnews/default.php</filename>
 		<filename>html/mod_latestnews/index.html</filename>
 		<filename>html/mod_login/default.php</filename>
@@ -184,85 +178,15 @@
 		<filename>html/mod_whosonline/index.html</filename>
 		<filename>html/mod_wrapper/default.php</filename>
 		<filename>html/mod_wrapper/index.html</filename>
-		<filename>images/arrow.png</filename>
-		<filename>images/banner_496x194.jpg</filename>
-		<filename>images/bg_extras.png</filename>
-		<filename>images/bg_footer.png</filename>
-		<filename>images/bg_header.png</filename>
-		<filename>images/button_cyan.png</filename>
 		<filename>images/button_l.png</filename>
-		<filename>images/button_orange.png</filename>
 		<filename>images/button_r.png</filename>
 		<filename>images/buy_now.png</filename>
-		<filename>images/com_bl.png</filename>
-		<filename>images/com_br.png</filename>
-		<filename>images/com_fl.png</filename>
-		<filename>images/com_fr.png</filename>
-		<filename>images/com_hl.png</filename>
-		<filename>images/com_hr.png</filename>
-		<filename>images/dark_drip-bl.png</filename>
-		<filename>images/dark_drip-br.png</filename>
-		<filename>images/dark_drip-fl.png</filename>
-		<filename>images/dark_drip-fr.png</filename>
-		<filename>images/dark_drip-hl.png</filename>
-		<filename>images/dark_drip-hr.png</filename>
-		<filename>images/dark_drip-s.png</filename>
-		<filename>images/dot.png</filename>
-		<filename>images/font_resizer-a.png</filename>
-		<filename>images/heading_content.png</filename>
-		<filename>images/index.html</filename>
+		<filename>images/dialog2-dark-alpha-drip.gif</filename>
+		<filename>images/dialog2-red-drip.gif</filename>
 		<filename>images/logo.png</filename>
-		<filename>images/menu_bottom-l.png</filename>
-		<filename>images/menu_bottom-la.png</filename>
-		<filename>images/menu_bottom-r.png</filename>
-		<filename>images/menu_bottom-ra.png</filename>
-		<filename>images/menu_drop-b.png</filename>
-		<filename>images/menu_drop-t.png</filename>
-		<filename>images/menu_top-l.png</filename>
-		<filename>images/menu_top-la.png</filename>
-		<filename>images/menu_top-r.png</filename>
-		<filename>images/menu_top-ra.png</filename>
-		<filename>images/mod_left-bl.png</filename>
-		<filename>images/mod_left-br.png</filename>
-		<filename>images/mod_left-fl.png</filename>
-		<filename>images/mod_left-fr.png</filename>
-		<filename>images/mod_left-hd.png</filename>
-		<filename>images/mod_left-hl.png</filename>
-		<filename>images/mod_left-hr.png</filename>
-		<filename>images/mod_right-bl.png</filename>
-		<filename>images/mod_right-br.png</filename>
-		<filename>images/mod_right-fl.png</filename>
-		<filename>images/mod_right-fr.png</filename>
-		<filename>images/mod_right-hd.png</filename>
-		<filename>images/mod_right-hd_orange.png</filename>
-		<filename>images/mod_right-hl.png</filename>
-		<filename>images/mod_right-hr.png</filename>
-		<filename>images/mod_right-s.png</filename>
-		<filename>images/mod_user4-bl.png</filename>
-		<filename>images/mod_user4-br.png</filename>
-		<filename>images/mod_user4-tl.png</filename>
-		<filename>images/mod_user4-tr.png</filename>
-		<filename>images/night_city.jpg</filename>
-		<filename>images/red_drip-bl.png</filename>
-		<filename>images/red_drip-br.png</filename>
-		<filename>images/red_drip-fl.png</filename>
-		<filename>images/red_drip-fr.png</filename>
-		<filename>images/red_drip-hl.png</filename>
-		<filename>images/red_drip-hr.png</filename>
-		<filename>images/red_drip-s.png</filename>
-		<filename>images/sample_image-1.jpg</filename>
-		<filename>images/sample_image-2.jpg</filename>
 		<filename>images/separator.png</filename>
 		<filename>images/spacer.gif</filename>
-		<filename>images/theme_black.png</filename>
-		<filename>images/theme_blue.png</filename>
-		<filename>images/theme_green.png</filename>
-		<filename>images/theme_leaf.png</filename>
-		<filename>images/theme_orange.png</filename>
-		<filename>images/theme_switcher.png</filename>
-		<filename>images/theme_violet.png</filename>
 		<filename>images/icons/external.png</filename>
-		<filename>images/icons/index.html</filename>
 		<filename>images/icons/search.png</filename>
 		<filename>images/icons/starburst.png</filename>
 		<filename>images/icons/nums/1.png</filename>
@@ -276,7 +200,6 @@
 		<filename>images/icons/nums/8.png</filename>
 		<filename>images/icons/nums/9.png</filename>
 		<filename>images/icons/nums/etc.png</filename>
-		<filename>images/icons/nums/index.html</filename>
 		<filename>images/icons/silk/accept.png</filename>
 		<filename>images/icons/silk/add.png</filename>
 		<filename>images/icons/silk/anchor.png</filename>
@@ -763,7 +686,6 @@
 		<filename>images/icons/silk/image_delete.png</filename>
 		<filename>images/icons/silk/image_edit.png</filename>
 		<filename>images/icons/silk/image_link.png</filename>
-		<filename>images/icons/silk/index.html</filename>
 		<filename>images/icons/silk/information.png</filename>
 		<filename>images/icons/silk/ipod.png</filename>
 		<filename>images/icons/silk/ipod_cast.png</filename>
@@ -1279,11 +1201,8 @@
 		<filename>images/icons/silk/zoom.png</filename>
 		<filename>images/icons/silk/zoom_in.png</filename>
 		<filename>images/icons/silk/zoom_out.png</filename>
-		<filename>language/index.html</filename>
-		<filename>language/en-GB/en-GB.tpl_jez_rego.ini</filename>
-		<filename>language/en-GB/index.html</filename>
-		<filename>language/en-GB/administrator/en-GB.tpl_jez_rego.ini</filename>
-		<filename>language/en-GB/administrator/index.html</filename>
+		<filename>language/en-GB/en-GB.tpl_jez_thema.ini</filename>
+		<filename>language/en-GB/administrator/en-GB.tpl_jez_thema.ini</filename>
 		<filename>scripts/index.html</filename>
 		<filename>scripts/initialize.js.php</filename>
 		<filename>scripts/jezBase.js</filename>
@@ -1291,10 +1210,8 @@
 		<filename>scripts/jezFontResizer.js</filename>
 		<filename>scripts/jezMenuFx.js</filename>
 		<filename>scripts/jezPngFix.js</filename>
-		<filename>scripts/3rd-party/index.html</filename>
 		<filename>scripts/3rd-party/reflection/attention.png</filename>
 		<filename>scripts/3rd-party/reflection/example.jpg</filename>
-		<filename>scripts/3rd-party/reflection/index.html</filename>
 		<filename>scripts/3rd-party/reflection/license.txt</filename>
 		<filename>scripts/3rd-party/reflection/matic.jpg</filename>
 		<filename>scripts/3rd-party/reflection/readme.html</filename>
@@ -1313,260 +1230,131 @@
 		<filename>scripts/3rd-party/reflection/reflectomatic/reflectomatic.js</filename>
 		<filename>scripts/3rd-party/reflection/reflectomatic/slider.css</filename>
 		<filename>scripts/3rd-party/reflection/reflectomatic/topbg.gif</filename>
-		<filename>themes/index.html</filename>
-		<filename>themes/blue/index.html</filename>
-		<filename>themes/blue/css/index.html</filename>
-		<filename>themes/blue/css/layouts.css</filename>
-		<filename>themes/blue/css/template.css</filename>
-		<filename>themes/blue/images/arrow.png</filename>
-		<filename>themes/blue/images/bg_header.png</filename>
-		<filename>themes/blue/images/button_blue.png</filename>
-		<filename>themes/blue/images/heading_content.png</filename>
-		<filename>themes/blue/images/index.html</filename>
-		<filename>themes/blue/images/index_al.png</filename>
-		<filename>themes/blue/images/index_ar.png</filename>
-		<filename>themes/blue/images/mod_right-hd.png</filename>
-		<filename>themes/green/index.html</filename>
-		<filename>themes/green/css/index.html</filename>
-		<filename>themes/green/css/layouts.css</filename>
-		<filename>themes/green/css/template.css</filename>
-		<filename>themes/green/images/arrow.png</filename>
-		<filename>themes/green/images/bg_header.png</filename>
-		<filename>themes/green/images/button_green.png</filename>
-		<filename>themes/green/images/heading_content.png</filename>
-		<filename>themes/green/images/index.html</filename>
-		<filename>themes/green/images/index_al.png</filename>
-		<filename>themes/green/images/index_ar.png</filename>
-		<filename>themes/green/images/mod_right-hd.png</filename>
-		<filename>themes/leaf/index.html</filename>
-		<filename>themes/leaf/css/index.html</filename>
-		<filename>themes/leaf/css/layouts.css</filename>
-		<filename>themes/leaf/css/template.css</filename>
-		<filename>themes/leaf/images/arrow.png</filename>
-		<filename>themes/leaf/images/bg_header.png</filename>
-		<filename>themes/leaf/images/button_leaf.png</filename>
-		<filename>themes/leaf/images/heading_content.png</filename>
-		<filename>themes/leaf/images/index.html</filename>
-		<filename>themes/leaf/images/index_al.png</filename>
-		<filename>themes/leaf/images/index_ar.png</filename>
-		<filename>themes/leaf/images/mod_right-hd.png</filename>
-		<filename>themes/orange/index.html</filename>
-		<filename>themes/orange/css/index.html</filename>
-		<filename>themes/orange/css/layouts.css</filename>
-		<filename>themes/orange/css/template.css</filename>
-		<filename>themes/orange/images/arrow.png</filename>
-		<filename>themes/orange/images/bg_header.png</filename>
-		<filename>themes/orange/images/button_orange.png</filename>
-		<filename>themes/orange/images/heading_content.png</filename>
-		<filename>themes/orange/images/index.html</filename>
-		<filename>themes/orange/images/index_al.png</filename>
-		<filename>themes/orange/images/index_ar.png</filename>
-		<filename>themes/orange/images/mod_right-hd.png</filename>
-		<filename>themes/violet/index.html</filename>
-		<filename>themes/violet/css/index.html</filename>
-		<filename>themes/violet/css/layouts.css</filename>
-		<filename>themes/violet/css/template.css</filename>
-		<filename>themes/violet/images/arrow.png</filename>
-		<filename>themes/violet/images/bg_header.png</filename>
-		<filename>themes/violet/images/button_violet.png</filename>
-		<filename>themes/violet/images/heading_content.png</filename>
-		<filename>themes/violet/images/index.html</filename>
-		<filename>themes/violet/images/index_al.png</filename>
-		<filename>themes/violet/images/index_ar.png</filename>
-		<filename>themes/violet/images/mod_right-hd.png</filename>
+		<filename>themes/sample/params.ini</filename>
+		<filename>themes/sample/css/ie6only.css</filename>
+		<filename>themes/sample/css/ie7only.css</filename>
+		<filename>themes/sample/css/index.html</filename>
+		<filename>themes/sample/css/layouts.css</filename>
+		<filename>themes/sample/css/template.css</filename>
+		<filename>themes/sample/images/round1img.png</filename>
+		<filename>themes/sample/images/round4imgs-bl.png</filename>
+		<filename>themes/sample/images/round4imgs-br.png</filename>
+		<filename>themes/sample/images/round4imgs-tl.png</filename>
+		<filename>themes/sample/images/round4imgs-tr.png</filename>
+		<filename>themes/sample/images/round6imgs-bl.png</filename>
+		<filename>themes/sample/images/round6imgs-bl_nested.png</filename>
+		<filename>themes/sample/images/round6imgs-br.png</filename>
+		<filename>themes/sample/images/round6imgs-br_nested.png</filename>
+		<filename>themes/sample/images/round6imgs-fl.png</filename>
+		<filename>themes/sample/images/round6imgs-fl_nested.png</filename>
+		<filename>themes/sample/images/round6imgs-fr.png</filename>
+		<filename>themes/sample/images/round6imgs-fr_nested.png</filename>
+		<filename>themes/sample/images/round6imgs-hl.png</filename>
+		<filename>themes/sample/images/round6imgs-hl_nested.png</filename>
+		<filename>themes/sample/images/round6imgs-hr.png</filename>
+		<filename>themes/sample/images/round6imgs-hr_nested.png</filename>
+		<filename>themes/sample/images/ie6/round1img.png</filename>
+		<filename>themes/sample/images/src/rounded_1200x1800.psd</filename>
+		<filename>wrappers/bottom.php</filename>
+		<filename>wrappers/component.php</filename>
 		<filename>wrappers/content.php</filename>
 		<filename>wrappers/extras.php</filename>
 		<filename>wrappers/footer.php</filename>
 		<filename>wrappers/header.php</filename>
-		<filename>wrappers/index.html</filename>
+		<filename>wrappers/local.php</filename>
 		<filename>wrappers/main.php</filename>
+		<filename>wrappers/nav.php</filename>
 		<filename>wrappers/page.php</filename>
+		<filename>wrappers/sub.php</filename>
 		<filename>wrappers/top.php</filename>
+		<filename>wrappers/users.php</filename>
 		<filename>wrappers/wrapper.php</filename>
 		<filename>xmlElements/categories.php</filename>
+		<filename>xmlElements/cdata.php</filename>
 		<filename>xmlElements/checkbox.php</filename>
-		<filename>xmlElements/desc.php</filename>
 		<filename>xmlElements/editor.php</filename>
 		<filename>xmlElements/index.html</filename>
+		<filename>xmlElements/intro.php</filename>
 		<filename>xmlElements/lists.php</filename>
 		<filename>xmlElements/sections.php</filename>
-		<filename>xmlElements/title.php</filename>
 	</files>
 	<languages folder="language/en-GB">
-		<language tag="en-GB">en-GB.tpl_jez_rego.ini</language>
+		<language tag="en-GB">en-GB.tpl_jez_thema.ini</language>
 	</languages>
 	<administration>
 		<languages folder="language/en-GB/administrator">
-			<language tag="en-GB">en-GB.tpl_jez_rego.ini</language>
+			<language tag="en-GB">en-GB.tpl_jez_thema.ini</language>
 		</languages>
 	</administration>
 	<positions>
 		<position>logo</position>
-		<position>user3</position>
 		<position>top</position>
-		<position>user1</position>
+		<position>user3</position>
 		<position>user4</position>
-		<position>user2</position>
-		<position>left</position>
 		<position>breadcrumb</position>
-		<position>right</position>
+		<position>left</position>
+		<position>user1</position>
+		<position>user2</position>
 		<position>bottom</position>
-		<position>tool</position>
+		<position>right</position>
 		<position>user5</position>
 		<position>user6</position>
 		<position>user7</position>
 		<position>user8</position>
-		<position>user9</position>
-		<position>footer</position>
+		<position>inset</position>
 		<position>syndicate</position>
+		<position>footer</position>
+		<position>debug</position>
 	</positions>
-	<params addpath="/templates/jez_rego/xmlElements">
-		<!-- General Parameters -->
-		<param name="@title" type="title" default="" label="General Parameters" />
-		<param name="@desc" type="desc" default="" label="Font Set"><![CDATA[
-			<p style="margin-top:0">
-				Choose a suitable font set for your website. Each font set is actually a combination of 2 fonts: one for
-				content text and the other for heading / main navigation text.
+	<params addpath="/templates/jez_thema/xmlElements">
+		<param name="@cdata" type="cdata" default="" label="JEZ Thema v1.1.0" url="http://www.joomlaez.com/" image="../templates/jez_thema/images/logo.png" open="1">
+		<![CDATA[
+			<p>
+				<strong>JEZ Thema</strong> is not just a pure folders / files structure but a complete Joomla 1.5 template
+				developed to help you create unique, professional Joomla 1.5 template easier and faster.
 			</p>
-			<ul style="margin-bottom:0">
-				<li>
-					<h5>Mixed Goods</h5>
-					<p>Default font set chosen by JoomlaEZ designers when creating the raw design in Photoshop. This
-					is a set of some difference fonts for difference elements, not just heading and content text.</p>
-				</li>
-				<li>
-					<h5>Business / Corporate</h5>
-					<p>Heading text: <strong>Verdana</strong> (general) / <strong>Geneva</strong> (Mac OS)</p>
-					<p>Content text: <strong>Arial</strong> (general) / <strong>Helvetica</strong> (Mac OS)</p>
-				</li>
-				<li>
-					<h5>Personal / Blog</h5>
-					<p>Heading text: <strong>Georgia</strong> (general) / <strong>Serif</strong> (Mac OS)</p>
-					<p>Content text: <strong>Trebuchet MS</strong> (general) / <strong>Helvetica</strong> (Mac OS)</p>
-				</li>
-				<li>
-					<h5>Online News / Magazines</h5>
-					<p>Heading text: <strong>Palatino Linotype</strong> (general) / <strong>Palatino</strong> (Mac OS)</p>
-					<p>Content text: <strong>Times New Roman</strong> (general) / <strong>Times</strong> (Mac OS)</p>
-				</li>
-			</ul>
-		]]></param>
-		<param name="fontSet" type="list" default="mixed" label=" " description="">
-			<option value="mixed">Mixed Goods</option>
-			<option value="corp">Business / Corporate</option>
-			<option value="blog">Personal / Blog</option>
-			<option value="news">Online News / Magazines</option>
+			<p>
+				Please visit <a href="http://www.joomlaez.com/" target="_blank">JoomlaEZ.com</a>
+				for full features list, editions comparison, licenses comparison, getting started guide, documentation and get
+				support on using / implementing <strong>JEZ Thema</strong>.
+			</p>
+			<p>
+				<a href="../templates/jez_thema/COPYRIGHT.txt" target="_blank">Copyright</a> |
+				<a href="../templates/jez_thema/README.txt" target="_blank">Read Me</a> |
+				<a href="http://blog.joomlaez.com/2009/04/how-to-create-unique-joomla-15-template-in-few-minutes/" target="_blank">Getting Started</a>
+			</p>
+		]]>
 		</param>
-		<param name="@desc" type="desc" default="" label="General Layout Parameters"><![CDATA[
-			<p style="margin-top:0">
-				Here you can set layout unit and the overall template width as long as some nested containers' width and/or height.
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="&lt;span style=&quot;border-bottom:.25em solid #999&quot;&gt;Theme Settings&lt;/span&gt;"><![CDATA[
+			<p>You can choose to load sample theme to see how JEZ Thema works.</p>
+			<p><span style="color:red;font-weight:bold">!!! NOTE !!!</span> If sample theme is loaded, its predefined parameters
+			will override appropriated parameters defined below. If you are using <strong>JEZ Thema PRO edition</strong>, you can see
+			sample theme parameters selection / definition in <strong>Dev Mode Panel</strong>.</p>
+		]]></param>
+		<param name="theme" type="list" default="" label="Default Theme" description="">
+			<option value="">No Theme</option>
+			<option value="sample">Sample Theme</option>
+		</param>
+		<param name="@cdata" type="cdata" default="" label="Theme Switching"><![CDATA[
+			<p>
+				Besides specify default theme above, there are 2 additional ways for switching theme for
+				any frontend page outputed by Joomla using JEZ Thema based template:
 			</p>
 			<ul>
-				<li>
-					<h5>Fixed (px unit)</h5>
-					<p>Template and columns' width is always fixed regardless of difference client computer's screen resolution and
-					browser's width and font size.</p>
+				<li style="margin-top:.75em">
+					<h4>Via Page Class Suffix</h4>
+					If enabled, when adding / editing menu item you can specify theme to render page associated with that menu item.
+					This can be done by defining Page Class Suffix parameter in following format <strong>tpl_theme@theme-name</strong>.
+					<br/>
+					For example, to use Orange theme for About Us page, you simply need to input <strong>tpl_theme@orange</strong> as
+					Page Class Suffix for menu item associated with the About Us page.
 				</li>
 				<li>
-					<h5>Elastic (em unit)</h5>
-					<p>Template and columns' width is fixed regardless of difference client computer's screen resolution and
-					browser's width. Template and columns' width will change automatically if visitors change font size either
-					via the template's font resizer tool or in their browser's option.</p>
-				</li>
-				<li>
-					<h5>Fluid (% unit)</h5>
-					<p>Template and columns' width is fixed regardless of difference browser's font size. Template and columns' width
-					will change automatically to fit client computer's screen resolution and browser's width.</p>
-				</li>
-			</ul>
-			<p style="margin-bottom:0">
-				<strong>Template, Left Column and Right Column Width MUST BE specified in the same unit for correct layout rendering!</strong>
-			</p>
-		]]></param>
-		<param name="layoutUnit" type="list" default="elastic" label="Layout Unit" description="">
-			<option value="fixed">Fixed (px unit)</option>
-			<option value="elastic">Elastic (em unit)</option>
-			<option value="fluid">Fluid (% unit)</option>
-		</param>
-		<param name="@desc" type="desc" default="" label="Overall and Column Width"><![CDATA[
-			<p>
-				Specify just the (decimal) number to use in combination with selected layout unit above.
-			</p>
-			<p>
-				If you really need to use unit other than the default selected above, specify (decimal) number
-				immediately followed by either px, em or % unit.
-			</p>
-			<p style="margin-bottom:0">
-				<strong>Template, Left Column and Right Column Width MUST BE specified in the same unit for correct
-				layout rendering!</strong>
-			</p>
-		]]></param>
-		<param name="tplWidth" type="text" default="80" label="Template Width" description="" />
-		<param name="leftWidth" type="text" default="16.417" label="Left Column Width" description="" />
-		<param name="rightWidth" type="text" default="16.417" label="Right Column Width" description="" />
-		<param name="@desc" type="desc" default="" label="Header and Top Block Height"><![CDATA[
-			<p>
-				Specify just the (decimal) number to use in combination with selected layout unit above.
-			</p>
-			<p style="margin-bottom:0">
-				If you really need to use unit other than the default selected above, please remember that while you can
-				specify (decimal) number immediately followed by either px, em or % unit for width, <strong>USE ONLY px
-				or em unit for height!</strong>
-			</p>
-		]]></param>
-		<param name="hdHeight" type="text" default="75px" label="Header Height" description="" />
-		<param name="topHeight" type="text" default="194px" label="Top Block Height" description="" />
-		<param name="@desc" type="desc" default="" label="Raw Output Layout"><![CDATA[
-			<p style="margin-top:0">
-				Raw Output is enabled by passing <strong>tmpl=component</strong> name/value pairs via page URL. Sample uses of Raw
-				Output are pages opened when clicking article's Print and Email icons in Joomla frontend.
-			</p>
-			<p style="margin-bottom:0">
-				Below you can choose whether or not always displaying header and footer in Raw Output page.
-			</p>
-		]]></param>
-		<param name="rawShowHeader" type="radio" default="0" label="Show Header" description="">
-			<option value="1">Yes</option>
-			<option value="0">No</option>
-		</param>
-		<param name="rawShowFooter" type="radio" default="0" label="Show Footer" description="">
-			<option value="1">Yes</option>
-			<option value="0">No</option>
-		</param>
-		<!-- Theme Parameters -->
-		<param name="@title" type="title" default="" label="Color Scheme" />
-		<param name="theme" type="list" default="" label="Default Theme" description="">
-			<option value="">Black</option>
-			<option value="blue">Blue</option>
-			<option value="green">Green</option>
-			<option value="leaf">Leaf</option>
-			<option value="orange">Orange</option>
-			<option value="violet">Violet</option>
-		</param>
-		<param name="@desc" type="desc" default="" label="Theme Switching"><![CDATA[
-			<p style="margin-top:0">
-				Besides specify default theme above, there are 2 additional ways for switching theme for
-				any frontend page outputed by Joomla using JEZ Rego template:
-			</p>
-			<ul style="margin-bottom:0">
-				<li>
-					<h5>Via Page Class Suffix</h5>
-					<p>
-						If enabled, when adding / editing menu item you can specify theme to render page associated with that menu item.
-						This can be done by defining Page Class Suffix parameter in following format <strong>tpl_theme@theme-name</strong>.
-					</p>
-					<p>
-						For example, to use Orange theme for About Us page, you simply need to input <strong>tpl_theme@orange</strong> as
-						Page Class Suffix for menu item associated with the About Us page.
-					</p>
-				</li>
-				<li>
-					<h5>Via URL</h5>
-					<p>
-						If enabled, theme can be switched right in Joomla frontend for any page by passing variable <strong>tpl_theme</strong>
-						via URL. See example below for details:
-					</p>
-<pre style="display:block;border-left:.5em solid #999;padding-left:1em">index.php => Rendered with default theme
+					<h4>Via URL</h4>
+					If enabled, theme can be switched right in Joomla frontend for any page by passing variable <strong>tpl_theme</strong>
+					via URL. See example below for details:<br/>
+<pre style="display:block;margin-top:.75em;border-left:.5em solid #999;padding-left:1em">index.php => Rendered with default theme
 index.php?tpl_theme=blue => Switched to Blue theme
 
 index.php?option=com_search => Rendered with default theme
@@ -1585,27 +1373,279 @@ index.php/contacts.html?tpl_theme=leaf => Switched to Leaf theme</pre>
 			<option value="1">Enable</option>
 			<option value="0">Disable</option>
 		</param>
-		<param name="showThemeSwitcher" type="radio" default="1" label="Theme Switcher" description="If above option is enabled and no any module is configured to show at tool position, show theme switcher?">
-			<option value="1">Enable</option>
-			<option value="0">Disable</option>
-		</param>
-		<!-- Header Block Parameters -->
-		<param name="@title" type="title" default="" label="Header Block" />
-		<param name="logo" type="text" default="templates/jez_rego/images/logo.png" label="Logo Image" description="Relative path from Joomla root dir to your site's logo image" />
-		<param name="logoAlt" type="text" default="" label="Logo Alt Text" description="Alternative text to use for logo img tag's alt attribute. Leave blank to use page title dynamically" />
-		<param name="logoWidth" type="text" default="111px" label="Logo Width" description="Specify just the (decimal) number to use in combination with selected layout unit above. If you really need to use unit other than the default selected above, specify (decimal) number immediately followed by either px, em or % unit" />
-		<param name="logoHeight" type="text" default="46px" label="Logo Height" description="Specify just the (decimal) number to use in combination with selected layout unit above. Please remember that while you can specify (decimal) number immediately followed by either px, em or % unit for width, use only px or em unit for height" />
-		<param name="@desc" type="desc" default="" label="Top Navigation Effect"><![CDATA[
-			<p style="margin:0">
-				If enabled, use JavaScript to create smooth dropdown / flyout effects for multi-level <strong>mod_mainmenu</strong>
-				module configured to show at <strong>user3</strong> module position.
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="&lt;span style=&quot;border-bottom:.25em solid #999&quot;&gt;Dev Mode Settings&lt;/span&gt;"><![CDATA[
+			<p>
+				By enabling dev mode, you can easily turn on/off any position right in frontend via page URL to see how
+				your site looks like when that position is empty or turn on/off any other template parameter, especially effects
+				options, to see the difference.
 			</p>
+			<p><strong>Enabling dev mode is not recommended for production site.</strong></p>
 		]]></param>
-		<param name="navFx" type="radio" default="0" label=" " description="">
-			<option value="1">Enable</option>
-			<option value="0">Disable</option>
+		<param name="dev" type="radio" default="0" label="Enable?" description="">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
 		</param>
-		<param name="navFx_fxDuration" type="text" default="500" label="Effect Duration" description="Effect duration in milliseconds" />
+		<param name="dev_rememberParams" type="radio" default="0" label="Remember Params" description="Use cookie to remember parameters passed in via page URL or form submission">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="dev_cookieLifetime" type="text" size="5" default="0" label="Cookie Lifetime" description="Days to remember parameters passed in via page URL or form submission. 0 to remember till end of current browsing session" />
+		<param name="dev_panel" type="radio" default="1" label="Dev Mode Panel" description="If dev mode is enabled, show dev panel in frontend?">
+			<option value="1">Show</option>
+			<option value="0">Hide</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="&lt;span style=&quot;border-bottom:.25em solid #999&quot;&gt;General Layout Settings&lt;/span&gt;" />
+		<param name="@cdata" type="cdata" default="" label="Wrapper Format"><![CDATA[
+			<p>Choose 1 from following wrapper formats:</p>
+			<ul id="wrappersDesc">
+				<li>
+					<h4>No rounded corners</h4>
+				</li>
+				<li style="margin-top:.75em">
+					<h4>Joomla rounded module</h4>
+					Creates rounded corners the same way as Joomla's technique for rounded module wrapper.
+				</li>
+				<li style="margin-top:.75em">
+					<h4>Rounded using 6 images with 6 nested divs</h4>
+					Creates rounded corners the similar way as Joomla's technique for rounded module wrapper but use 6 images
+					and 6 nested divs instead of 4.
+				</li>
+				<li style="margin-top:.75em">
+					<h4>Rounded using 6 images without nested divs</h4>
+					Creates rounded corners using schillmania.com's <a href="http://www.schillmania.com/content/entries/2006/04/more-rounded-corners/"
+					title="More Rounded Corners With CSS article" target="_blank">More Rounded Corners With CSS</a> technique.
+				</li>
+				<li style="margin-top:.75em">
+					<h4>Rounded using 1 image</h4>
+					Creates rounded corners using schillmania.com's <a href="http://www.schillmania.com/content/projects/even-more-rounded-corners/"
+					title="Even More Rounded Corners With CSS article" target="_blank">Even More Rounded Corners With CSS</a> technique.
+				</li>
+				<li style="margin-top:.75em">
+					<h4>Rounded using 1 image with scrollable content</h4>
+					Using same technique as <strong>Rounded using 1 image</strong> but scrollable if content is overflown.
+				</li>
+			</ul>
+		]]></param>
+		<param name="wrapperPage" type="list" default="plain" label="Page Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Grids-based Layout Type"><![CDATA[
+			<p>Choose 1 from following grids-based layout type:</p>
+			<ul>
+				<li>
+					<h4>Elastic</h4>
+					Use em unit for predefined width and height. This enable content box automatically resizable when
+					user changes his/her browser's font size.
+				</li>
+				<li style="margin-top:.75em">
+					<h4>Fixed</h4>
+					Use px unit for predefined width and height.
+				</li>
+			</ul>
+		]]></param>
+		<param name="layout" type="list" default="elastic" label="Layout Type" description="">
+			<option value="elastic">Elastic</option>
+			<option value="fixed">Fixed</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="grids" type="radio" default="0" label="Show Grids?" description="Display grids of vertical and horizontal lines in frontend to easily align any element correctly. Show grids is not recommended for production site">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Raw Output Layout"><![CDATA[
+			<p>
+				Raw Output is enabled by passing <strong>tmpl=component</strong> name/value pairs via page URL. Sample uses of Raw
+				Output are pages opened when clicking article's Print and Email icons in Joomla frontend.
+			</p>
+			<p>Below you can choose whether or not always displaying header and footer in Raw Output page.</p>
+		]]></param>
+		<param name="rawShowHeader" type="radio" default="0" label="Show Header" description="">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="rawShowFooter" type="radio" default="0" label="Show Footer" description="">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="&lt;span style=&quot;border-bottom:.25em solid #999&quot;&gt;Header Block Settings&lt;/span&gt;" />
+		<param name="@cdata" type="cdata" default="" label="Wrappers Formats"><![CDATA[
+			<p>
+				Choose 1 from following wrapper formats: <strong>no rounded corners</strong>, <strong>Joomla rounded module</strong>,
+				<strong>rounded using 6 images with 6 nested divs</strong>, <strong>rounded using 6 images without nested divs</strong>,
+				<strong>rounded using 1 image</strong> and <strong>rounded using 1 image with scrollable content</strong>.
+			</p>
+			<p><a href="#wrappersDesc" title="Wrapper formats explaination">Click here</a> for wrapper formats explaination.</p>
+		]]></param>
+		<param name="wrapperHeader" type="list" default="plain" label="Header Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
+		</param>
+		<param name="wrapperTop" type="list" default="plain" label="Top Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Modules Chromes"><![CDATA[
+			<p>Choose 1 from following module chromes:</p>
+			<ul id="chromesDesc">
+				<li>
+					<h4>Raw output</h4>
+				</li>
+				<li style="margin-top:.75em">
+					<h4>xHTML</h4>
+					Joomla!'s <strong>xhtml</strong> module chrome.
+				</li>
+				<li style="margin-top:.75em">
+					<h4>Rounded</h4>
+					Joomla!'s <strong>rounded</strong> module chrome.
+				</li>
+				<li style="margin-top:.75em">
+					<h4>jezRounded6ImgsNested</h4>
+					Creates rounded corners the similar way as Joomla!'s <strong>rounded</strong> module chrome but use 6 images
+					and 6 nested divs instead of 4.
+				</li>
+				<li style="margin-top:.75em">
+					<h4>jezRounded6Imgs</h4>
+					Creates rounded corners using schillmania.com's <a href="http://www.schillmania.com/content/entries/2006/04/more-rounded-corners/"
+					title="More Rounded Corners With CSS article" target="_blank">More Rounded Corners With CSS</a> technique.
+				</li>
+				<li style="margin-top:.75em">
+					<h4>jezRounded1Img</h4>
+					Creates rounded corners using schillmania.com's <a href="http://www.schillmania.com/content/projects/even-more-rounded-corners/"
+					title="Even More Rounded Corners With CSS article" target="_blank">Even More Rounded Corners With CSS</a> technique.
+				</li>
+				<li style="margin-top:.75em">
+					<h4>jezRounded1ImgScroll</h4>
+					Using same technique as <strong>Rounded using 1 image</strong> but scrollable if content is overflown.
+				</li>
+			</ul>
+		]]></param>
+		<param name="modLogo" type="radio" default="1" label="Logo Module Position" description="No to always display the logo image specified below in this position or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modLogoChrome" type="list" default="raw" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="modTop" type="radio" default="1" label="Top Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modTopChrome" type="list" default="raw" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="logo" type="text" size="50" default="templates/jez_thema/images/logo.png" label="Site Logo" description="Relative path from Joomla root dir to your site's logo image" />
+		<param name="topNav" type="radio" default="0" label="Top Nav" description="Display in-page navigation (links to main content, sub content, local menu, global menu anchors) at header position">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="&lt;span style=&quot;border-bottom:.25em solid #999&quot;&gt;Global Navigation Settings&lt;/span&gt;" />
+		<param name="@cdata" type="cdata" default="" label="Wrapper Format"><![CDATA[
+			<p>
+				Choose 1 from following wrapper formats: <strong>no rounded corners</strong>, <strong>Joomla rounded module</strong>,
+				<strong>rounded using 6 images with 6 nested divs</strong>, <strong>rounded using 6 images without nested divs</strong>,
+				<strong>rounded using 1 image</strong> and <strong>rounded using 1 image with scrollable content</strong>.
+			</p>
+			<p><a href="#wrappersDesc" title="Wrapper formats explaination">Click here</a> for wrapper formats explaination.</p>
+		]]></param>
+		<param name="wrapperNav" type="list" default="plain" label="Global Nav Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Modules Chromes"><![CDATA[
+			<p>
+				Choose 1 from following module chromes: <strong>raw</strong>, <strong>xhtml</strong>, <strong>rounded</strong>
+				<strong>jezRounded6ImgsNested</strong>, <strong>jezRounded6Imgs</strong>, <strong>jezRounded1Img</strong> and
+				<strong>jezRounded1ImgScroll</strong>.
+			</p>
+			<p><a href="#chromesDesc" title="Module chromes explaination">Click here</a> for module chromes explaination.</p>
+		]]></param>
+		<param name="modUser3" type="radio" default="1" label="User3 Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modUser3Chrome" type="list" default="raw" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="modUser4" type="radio" default="1" label="User4 Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modUser4Chrome" type="list" default="raw" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="modBreadcrumb" type="radio" default="1" label="Breadcrumb Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modBreadcrumbChrome" type="list" default="raw" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="Global Navigation Effects" description="&lt;p&gt;Use Javascript to create dropdown / flyout effects for global navigation (user3 and user4 positions).&lt;/p&gt;" />
+		<param name="navFx" type="radio" default="0" label="Enable?" description="">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="navFx_fxDuration" type="text" size="5" default="500" label="Effect Duration" description="Effect duration in milliseconds" />
 		<param name="navFx_firstSubDirection" type="list" default="vertical" label="Dropdown Direction" description="Direction of dropdown effect (occured when mouse over first level sub menus): vertical, horizontal or both">
 			<option value="vertical">Vertical</option>
 			<option value="horizontal">Horizontal</option>
@@ -1616,297 +1656,544 @@ index.php/contacts.html?tpl_theme=leaf => Switched to Leaf theme</pre>
 			<option value="horizontal">Horizontal</option>
 			<option value="both">Both</option>
 		</param>
-		<param name="@desc" type="desc" default="" label="Font Resizer"><![CDATA[
-			<p style="margin:0">
-				If enabled and there is no any module configured to show at <strong>top</strong> module position, font resizer tool
-				will be displayed at that module position.
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="&lt;span style=&quot;border-bottom:.25em solid #999&quot;&gt;Content Block Settings&lt;/span&gt;" />
+		<param name="@cdata" type="cdata" default="" label="Wrappers Formats"><![CDATA[
+			<p>
+				Choose 1 from following wrapper formats: <strong>no rounded corners</strong>, <strong>Joomla rounded module</strong>,
+				<strong>rounded using 6 images with 6 nested divs</strong>, <strong>rounded using 6 images without nested divs</strong>,
+				<strong>rounded using 1 image</strong> and <strong>rounded using 1 image with scrollable content</strong>.
+			</p>
+			<p><a href="#wrappersDesc" title="Wrapper formats explaination">Click here</a> for wrapper formats explaination.</p>
+		]]></param>
+		<param name="wrapperContent" type="list" default="plain" label="Content Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
+		</param>
+		<param name="wrapperLocal" type="list" default="plain" label="Left Col Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
+		</param>
+		<param name="wrapperMain" type="list" default="plain" label="Center Col Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
+		</param>
+		<param name="wrapperSub" type="list" default="plain" label="Right Col Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
+		</param>
+		<param name="wrapperUsers" type="list" default="plain" label="Users Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
+		</param>
+		<param name="wrapperComponent" type="list" default="plain" label="Component Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Modules Chromes"><![CDATA[
+			<p>
+				Choose 1 from following module chromes: <strong>raw</strong>, <strong>xhtml</strong>, <strong>rounded</strong>
+				<strong>jezRounded6ImgsNested</strong>, <strong>jezRounded6Imgs</strong>, <strong>jezRounded1Img</strong> and
+				<strong>jezRounded1ImgScroll</strong>.
+			</p>
+			<p><a href="#chromesDesc" title="Module chromes explaination">Click here</a> for module chromes explaination.</p>
+		]]></param>
+		<param name="modLeft" type="radio" default="1" label="Left Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modLeftChrome" type="list" default="xhtml" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="modUser1" type="radio" default="1" label="User1 Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modUser1Chrome" type="list" default="xhtml" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="modUser2" type="radio" default="1" label="User2 Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modUser2Chrome" type="list" default="xhtml" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="modBottom" type="radio" default="1" label="Bottom Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modBottomChrome" type="list" default="xhtml" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="modRight" type="radio" default="1" label="Right Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modRightChrome" type="list" default="xhtml" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Home Page Component Output"><![CDATA[
+			<p>
+				Whether or not displaying component output on home page (page associated with default menu item).
 			</p>
 		]]></param>
-		<param name="fontResizer" type="radio" default="1" label=" " description="">
-			<option value="1">Enable</option>
-			<option value="0">Disable</option>
-		</param>
-		<!-- Main Block Parameters -->
-		<param name="@title" type="title" default="" label="Main Block" />
-		<param name="@desc" type="desc" default="" label="Home Page Component Output" description="Whether or not displaying component output on home page (page associated with default menu item)?" />
 		<param name="homeShowComponent" type="radio" default="1" label=" " description="">
 			<option value="1">Show</option>
 			<option value="0">Hide</option>
 		</param>
-		<param name="@desc" type="desc" default="" label="How To Expand If Center Column Not Available" description="If just left and right columns available in top / content block, expand which column: left, right or both?" />
-		<param name="topNoCenterExpand" type="list" default="both" label="Top Block" description="">
+		<param name="noCenterExpand" type="list" default="both" label="No Center Expand" description="If just left and right columns visible in the content block, expand which column: left, right or both">
 			<option value="left">Left</option>
 			<option value="right">Right</option>
 			<option value="both">Both</option>
 		</param>
-		<param name="contentNoCenterExpand" type="list" default="both" label="Content Block" description="">
-			<option value="left">Left</option>
-			<option value="right">Right</option>
-			<option value="both">Both</option>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="&lt;span style=&quot;border-bottom:.25em solid #999&quot;&gt;Extras Block Settings&lt;/span&gt;" />
+		<param name="@cdata" type="cdata" default="" label="Wrapper Format"><![CDATA[
+			<p>
+				Choose 1 from following wrapper formats: <strong>no rounded corners</strong>, <strong>Joomla rounded module</strong>,
+				<strong>rounded using 6 images with 6 nested divs</strong>, <strong>rounded using 6 images without nested divs</strong>,
+				<strong>rounded using 1 image</strong> and <strong>rounded using 1 image with scrollable content</strong>.
+			</p>
+			<p><a href="#wrappersDesc" title="Wrapper formats explaination">Click here</a> for wrapper formats explaination.</p>
+		]]></param>
+		<param name="wrapperExtras" type="list" default="plain" label="Extras Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
 		</param>
-		<!-- Behavior Parameters -->
-		<param name="@title" type="title" default="" label="Behavior" />
-		<param name="@desc" type="desc" default="" label="IE6 Warning" description="Whether or not displaying warning for visitor using IE6 browser?" />
-		<param name="ie6Warning" type="radio" default="1" label=" " description="">
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Modules Chromes"><![CDATA[
+			<p>
+				Choose 1 from following module chromes: <strong>raw</strong>, <strong>xhtml</strong>, <strong>rounded</strong>
+				<strong>jezRounded6ImgsNested</strong>, <strong>jezRounded6Imgs</strong>, <strong>jezRounded1Img</strong> and
+				<strong>jezRounded1ImgScroll</strong>.
+			</p>
+			<p><a href="#chromesDesc" title="Module chromes explaination">Click here</a> for module chromes explaination.</p>
+		]]></param>
+		<param name="modUser5" type="radio" default="1" label="User5 Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modUser5Chrome" type="list" default="xhtml" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="modUser6" type="radio" default="1" label="User6 Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modUser6Chrome" type="list" default="xhtml" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="modUser7" type="radio" default="1" label="User7 Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modUser7Chrome" type="list" default="xhtml" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="modUser8" type="radio" default="1" label="User8 Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modUser8Chrome" type="list" default="xhtml" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="&lt;span style=&quot;border-bottom:.25em solid #999&quot;&gt;Bottom Block Settings&lt;/span&gt;" />
+		<param name="@cdata" type="cdata" default="" label="Wrapper Format"><![CDATA[
+			<p>
+				Choose 1 from following wrapper formats: <strong>no rounded corners</strong>, <strong>Joomla rounded module</strong>,
+				<strong>rounded using 6 images with 6 nested divs</strong>, <strong>rounded using 6 images without nested divs</strong>,
+				<strong>rounded using 1 image</strong> and <strong>rounded using 1 image with scrollable content</strong>.
+			</p>
+			<p><a href="#wrappersDesc" title="Wrapper formats explaination">Click here</a> for wrapper formats explaination.</p>
+		]]></param>
+		<param name="wrapperBottom" type="list" default="plain" label="Bottom Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Modules Chromes"><![CDATA[
+			<p>
+				Choose 1 from following module chromes: <strong>raw</strong>, <strong>xhtml</strong>, <strong>rounded</strong>
+				<strong>jezRounded6ImgsNested</strong>, <strong>jezRounded6Imgs</strong>, <strong>jezRounded1Img</strong> and
+				<strong>jezRounded1ImgScroll</strong>.
+			</p>
+			<p><a href="#chromesDesc" title="Module chromes explaination">Click here</a> for module chromes explaination.</p>
+		]]></param>
+		<param name="modInset" type="radio" default="1" label="Inset Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modInsetChrome" type="list" default="raw" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="modSyndicate" type="radio" default="1" label="Syndicate Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modSyndicateChrome" type="list" default="raw" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="bottomNav" type="radio" default="1" label="Bottom Nav" description="Display browsing navigation (backward, upward links) at bottom position">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="&lt;span style=&quot;border-bottom:.25em solid #999&quot;&gt;Footer Block Settings&lt;/span&gt;" />
+		<param name="@cdata" type="cdata" default="" label="Wrapper Format"><![CDATA[
+			<p>
+				Choose 1 from following wrapper formats: <strong>no rounded corners</strong>, <strong>Joomla rounded module</strong>,
+				<strong>rounded using 6 images with 6 nested divs</strong>, <strong>rounded using 6 images without nested divs</strong>,
+				<strong>rounded using 1 image</strong> and <strong>rounded using 1 image with scrollable content</strong>.
+			</p>
+			<p><a href="#wrappersDesc" title="Wrapper formats explaination">Click here</a> for wrapper formats explaination.</p>
+		]]></param>
+		<param name="wrapperFooter" type="list" default="plain" label="Footer Wrapper" description="">
+			<option value="plain">No rounded corners</option>
+			<option value="module">Joomla rounded module</option>
+			<option value="round6imgs-nested">Rounded using 6 images with 6 nested divs</option>
+			<option value="round6imgs">Rounded using 6 images without nested divs</option>
+			<option value="round1img">Rounded using 1 image</option>
+			<option value="round1img-scroll">Rounded using 1 image with scrollable content</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Modules Chromes"><![CDATA[
+			<p>
+				Choose 1 from following module chromes: <strong>raw</strong>, <strong>xhtml</strong>, <strong>rounded</strong>
+				<strong>jezRounded6ImgsNested</strong>, <strong>jezRounded6Imgs</strong>, <strong>jezRounded1Img</strong> and
+				<strong>jezRounded1ImgScroll</strong>.
+			</p>
+			<p><a href="#chromesDesc" title="Module chromes explaination">Click here</a> for module chromes explaination.</p>
+		]]></param>
+		<param name="modFooter" type="radio" default="1" label="Footer Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modFooterChrome" type="list" default="xhtml" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="modDebug" type="radio" default="1" label="Debug Module Position" description="No to always hide or yes for auto detect">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="modDebugChrome" type="list" default="raw" label="Module Chrome" description="">
+			<option value="raw">Raw</option>
+			<option value="xhtml">xHTML</option>
+			<option value="rounded">Rounded</option>
+			<option value="jezRounded6ImgsNested">jezRounded6ImgsNested</option>
+			<option value="jezRounded6Imgs">jezRounded6Imgs</option>
+			<option value="jezRounded1Img">jezRounded1Img</option>
+			<option value="jezRounded1ImgScroll">jezRounded1ImgScroll</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="&lt;span style=&quot;border-bottom:.25em solid #999&quot;&gt;Behavior Settings&lt;/span&gt;" />
+		<param name="@cdata" type="cdata" default="" label="IE6 Warning"><![CDATA[
+			<p>Whether or not displaying warning for visitor using IE6 browser.</p>
+		]]></param>
+		<param name="ie6warning" type="radio" default="1" label=" " description="">
 			<option value="1">Show</option>
 			<option value="0">Hide</option>
 		</param>
-		<param name="@desc" type="desc" default="" label="PNG-24 Fix for IE6" description="Whether or not enabling PNG-24 fix for IE6 browser?" />
-		<param name="png24Fix" type="radio" default="0" label=" " description="">
-			<option value="1">Enable</option>
-			<option value="0">Disable</option>
+		<param name="@intro" type="intro" default="" label="PNG-24 Fix for IE6" description="&lt;p&gt;Enable PNG-24 fix for IE6 browser for selected images, images that has class &lt;strong&gt;png24&lt;/strong&gt;, or for all images with extension &lt;strong&gt;.png&lt;/strong&gt;?&lt;/p&gt;" />
+		<param name="png24Fix" type="radio" default="1" label="Enable?" description="">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
 		</param>
-		<param name="@desc" type="desc" default="" label="How to Fix?"><![CDATA[
-			<p style="margin:0">
-				Do PNG-24 fix for selected images (images that has class <strong>png24</strong>) or
-				for all images with extension <strong>.png</strong>?
-			</p>
-		]]></param>
-		<param name="png24Fix_for" type="radio" default="selective" label=" " description="">
+		<param name="png24Fix_for" type="list" default="selective" label="Fix What" description="">
 			<option value="selective">Selective</option>
 			<option value="all">All</option>
 		</param>
-		<param name="@desc" type="desc" default="" label="Add Support for Hover/Focus in IE6" description="By enabling this option, the template will add hover/focus state support for list and form elements which is lacked support in IE6." />
-		<param name="ie6Hover" type="radio" default="0" label=" " description="">
-			<option value="1">Enable</option>
-			<option value="0">Disable</option>
-		</param>
-		<param name="@desc" type="desc" default="" label="Vertical Rhythm Support" description="If enabled, the template will automatically add neccessary margin to WYSIWYG editor frame and all images to prevent broken of typography's vertical rhythm." />
-		<param name="keepVR" type="radio" default="0" label=" " description="">
-			<option value="1">Enable</option>
-			<option value="0">Disable</option>
-		</param>
-		<param name="@desc" type="desc" default="" label="Image Reflection Effect"><![CDATA[
-			<p style="margin:0">
-				Load script which render reflection effect to all images that has class <strong>reflect</strong>.
-				<a href="../templates/jez_rego/scripts/3rd-party/reflection/readme.html" title="How to Use Reflection.js"
-				target="_blank">Read details</a>.
-			</p>
-		]]></param>
-		<param name="reflection" type="radio" default="0" label=" " description="">
-			<option value="1">Enable</option>
-			<option value="0">Disable</option>
-		</param>
-		<param name="@desc" type="desc" default="" label="Internal Links Detection" description="List all (sub-)domains, separated by comma, which belong to your site here to prevent affection of external link style to internal link." />
-		<param name="internalLinks" type="text" default="joomlaez,blog.joomlaez,community.joomlaez,demo.joomlaez,dev.joomlaez,support.joomlaez,www.joomlaez" label="Site (Sub-)Domains" description="" />
-		<!-- Link Modalization Parameters -->
-		<param name="@title" type="title" default="" label="Link Modalization"><![CDATA[
-			<p style="margin-top:0">
-				Modify link to open in modal window for all <strong><</strong><strong>a</strong><strong>></strong> elements
-				which match any of following conditions.
-			</p>
-			<p style="margin-bottom:0">
-				Besides the options to convert article's PDF, print and email icons
-				links to open in modal window, you can define up to 10 additional custom modal link conversion rules.
-			</p>
-		]]></param>
-		<param name="modalPdf" type="radio" default="0" label="Modalize PDF Icon Link" description="">
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="Support Hover/Focus in IE6" description="&lt;p&gt;By enabling this option, the template will add hover/focus state support for form elements which is lacked support in IE6.&lt;/p&gt;" />
+		<param name="ie6Hover" type="radio" default="0" label="Enable?" description="">
 			<option value="1">Yes</option>
 			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="Keep Vertical Rhythm?" description="&lt;p&gt;If enabled, the template will automatically add neccessary margin to all images to prevent typography's vertical rhythm broken.&lt;/p&gt;" />
+		<param name="keepVR" type="radio" default="1" label="Enable?" description="">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Reflection Effect for Images"><![CDATA[
+			<p>
+				Load script which render reflection effect to all images that has class <strong>reflect</strong>.
+			</p>
+			<p>
+				<a href="../templates/jez_thema/scripts/3rd-party/reflection/readme.html" title="Reflection.js Settings"
+				target="_blank">Click here</a> for advanced / detailed usage.
+			</p>
+		]]></param>
+		<param name="reflection" type="radio" default="0" label="Enable?" description="">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="(Sub-)domains of Internal Links" description="&lt;p&gt;List all (sub-)domains, separated by comma, which belong to your site here to prevent external link style affection.&lt;/p&gt;" />
+		<param name="internalLinks" type="text" size="70" default="joomlaez,blog.joomlaez,community.joomlaez,demo.joomlaez,dev.joomlaez,support.joomlaez,www.joomlaez" label="Site (Sub-)Domains" description="" />
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Modal Links Creation"><![CDATA[
+			<p>
+				Modify link to open in modal window for all <strong><</strong><strong>a</strong><strong>></strong> elements
+				which match any of following conditions. Besides the options to convert article's PDF, print and email icons
+				links to open in modal window, you can define up to 10 additional custom modal links creation styles below.
+			</p>
+		]]></param>
+		<param name="modalPdf" type="radio" default="0" label="PDF Icon Link" description="">
+			<option value="1">Convert to open in modal window</option>
+			<option value="0">Keep Joomla! default behavior</option>
 		</param>
 		<param name="modalPdfSize" type="text" default="90% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit for PDF icon link" />
 		<param name="@spacer" type="spacer" default=" " label="" description="" />
-		<param name="modalPrint" type="radio" default="0" label="Modalize Print Icon Link" description="">
-			<option value="1">Yes</option>
-			<option value="0">No</option>
+		<param name="modalPrint" type="radio" default="0" label="Print Icon Link" description="">
+			<option value="1">Convert to open in modal window</option>
+			<option value="0">Keep Joomla! default behavior</option>
 		</param>
 		<param name="modalPrintSize" type="text" default="90% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit for Print icon link" />
 		<param name="@spacer" type="spacer" default=" " label="" description="" />
-		<param name="modalEmail" type="radio" default="1" label="Modalize Email Icon Link" description="">
-			<option value="1">Yes</option>
-			<option value="0">No</option>
+		<param name="modalEmail" type="radio" default="1" label="Email Icon Link" description="">
+			<option value="1">Convert to open in modal window</option>
+			<option value="0">Keep Joomla! default behavior</option>
 		</param>
 		<param name="modalEmailSize" type="text" default="80% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit for Email icon link" />
 		<param name="@spacer" type="spacer" default=" " label="" description="" />
-		<param name="modal0" type="radio" default="1" label="Rule #1" description="">
+		<param name="modal0" type="radio" default="1" label=" " description="">
 			<option value="1">Enable</option>
 			<option value="0">Disable</option>
 		</param>
 		<param name="modal0Attr" type="text" default="class" label="Link Attribute" description="Attribute to test" />
 		<param name="modal0Pattern" type="text" default="modalWindow" label="Matching Pattern" description="" />
 		<param name="modal0Match" type="radio" default="regex" label=" " description="">
-			<option value="exact">Exact match</option>
-			<option value="regex">Regular expression</option>
+			<option value="exact">Match pattern exactly</option>
+			<option value="regex">Regular expression matching</option>
 		</param>
 		<param name="modal0Size" type="text" default="90% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit" />
 		<param name="@spacer" type="spacer" default=" " label="" description="" />
-		<param name="modal1" type="radio" default="1" label="Rule #2" description="">
+		<param name="modal1" type="radio" default="1" label=" " description="">
 			<option value="1">Enable</option>
 			<option value="0">Disable</option>
 		</param>
 		<param name="modal1Attr" type="text" default="href" label="Link Attribute" description="Attribute to test" />
 		<param name="modal1Pattern" type="text" default="openid\.net" label="Matching Pattern" description="" />
 		<param name="modal1Match" type="radio" default="regex" label=" " description="">
-			<option value="exact">Exact match</option>
-			<option value="regex">Regular expression</option>
+			<option value="exact">Match pattern exactly</option>
+			<option value="regex">Regular expression matching</option>
 		</param>
 		<param name="modal1Size" type="text" default="90% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit" />
 		<param name="@spacer" type="spacer" default=" " label="" description="" />
-		<param name="modal2" type="radio" default="1" label="Rule #3" description="">
+		<param name="modal2" type="radio" default="0" label=" " description="">
 			<option value="1">Enable</option>
 			<option value="0">Disable</option>
 		</param>
 		<param name="modal2Attr" type="text" default="target" label="Link Attribute" description="Attribute to test" />
-		<param name="modal2Pattern" type="text" default="_modal" label="Matching Pattern" description="" />
+		<param name="modal2Pattern" type="text" default="_blank" label="Matching Pattern" description="" />
 		<param name="modal2Match" type="radio" default="exact" label=" " description="">
-			<option value="exact">Exact match</option>
-			<option value="regex">Regular expression</option>
+			<option value="exact">Match pattern exactly</option>
+			<option value="regex">Regular expression matching</option>
 		</param>
 		<param name="modal2Size" type="text" default="90% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit" />
 		<param name="@spacer" type="spacer" default=" " label="" description="" />
-		<param name="modal3" type="radio" default="0" label="Rule #4" description="">
+		<param name="modal3" type="radio" default="0" label=" " description="">
 			<option value="1">Enable</option>
 			<option value="0">Disable</option>
 		</param>
 		<param name="modal3Attr" type="text" default="" label="Link Attribute" description="Attribute to test" />
 		<param name="modal3Pattern" type="text" default="" label="Matching Pattern" description="" />
 		<param name="modal3Match" type="radio" default="exact" label=" " description="">
-			<option value="exact">Exact match</option>
-			<option value="regex">Regular expression</option>
+			<option value="exact">Match pattern exactly</option>
+			<option value="regex">Regular expression matching</option>
 		</param>
 		<param name="modal3Size" type="text" default="90% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit" />
 		<param name="@spacer" type="spacer" default=" " label="" description="" />
-		<param name="modal4" type="radio" default="0" label="Rule #5" description="">
+		<param name="modal4" type="radio" default="0" label=" " description="">
 			<option value="1">Enable</option>
 			<option value="0">Disable</option>
 		</param>
 		<param name="modal4Attr" type="text" default="" label="Link Attribute" description="Attribute to test" />
 		<param name="modal4Pattern" type="text" default="" label="Matching Pattern" description="" />
 		<param name="modal4Match" type="radio" default="exact" label=" " description="">
-			<option value="exact">Exact match</option>
-			<option value="regex">Regular expression</option>
+			<option value="exact">Match pattern exactly</option>
+			<option value="regex">Regular expression matching</option>
 		</param>
 		<param name="modal4Size" type="text" default="90% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit" />
 		<param name="@spacer" type="spacer" default=" " label="" description="" />
-		<param name="modal5" type="radio" default="0" label="Rule #6" description="">
+		<param name="modal5" type="radio" default="0" label=" " description="">
 			<option value="1">Enable</option>
 			<option value="0">Disable</option>
 		</param>
 		<param name="modal5Attr" type="text" default="" label="Link Attribute" description="Attribute to test" />
 		<param name="modal5Pattern" type="text" default="" label="Matching Pattern" description="" />
 		<param name="modal5Match" type="radio" default="exact" label=" " description="">
-			<option value="exact">Exact match</option>
-			<option value="regex">Regular expression</option>
+			<option value="exact">Match pattern exactly</option>
+			<option value="regex">Regular expression matching</option>
 		</param>
 		<param name="modal5Size" type="text" default="90% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit" />
 		<param name="@spacer" type="spacer" default=" " label="" description="" />
-		<param name="modal6" type="radio" default="0" label="Rule #7" description="">
+		<param name="modal6" type="radio" default="0" label=" " description="">
 			<option value="1">Enable</option>
 			<option value="0">Disable</option>
 		</param>
 		<param name="modal6Attr" type="text" default="" label="Link Attribute" description="Attribute to test" />
 		<param name="modal6Pattern" type="text" default="" label="Matching Pattern" description="" />
 		<param name="modal6Match" type="radio" default="exact" label=" " description="">
-			<option value="exact">Exact match</option>
-			<option value="regex">Regular expression</option>
+			<option value="exact">Match pattern exactly</option>
+			<option value="regex">Regular expression matching</option>
 		</param>
 		<param name="modal6Size" type="text" default="90% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit" />
 		<param name="@spacer" type="spacer" default=" " label="" description="" />
-		<param name="modal7" type="radio" default="0" label="Rule #8" description="">
+		<param name="modal7" type="radio" default="0" label=" " description="">
 			<option value="1">Enable</option>
 			<option value="0">Disable</option>
 		</param>
 		<param name="modal7Attr" type="text" default="" label="Link Attribute" description="Attribute to test" />
 		<param name="modal7Pattern" type="text" default="" label="Matching Pattern" description="" />
 		<param name="modal7Match" type="radio" default="exact" label=" " description="">
-			<option value="exact">Exact match</option>
-			<option value="regex">Regular expression</option>
+			<option value="exact">Match pattern exactly</option>
+			<option value="regex">Regular expression matching</option>
 		</param>
 		<param name="modal7Size" type="text" default="90% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit" />
 		<param name="@spacer" type="spacer" default=" " label="" description="" />
-		<param name="modal8" type="radio" default="0" label="Rule #9" description="">
+		<param name="modal8" type="radio" default="0" label=" " description="">
 			<option value="1">Enable</option>
 			<option value="0">Disable</option>
 		</param>
 		<param name="modal8Attr" type="text" default="" label="Link Attribute" description="Attribute to test" />
 		<param name="modal8Pattern" type="text" default="" label="Matching Pattern" description="" />
 		<param name="modal8Match" type="radio" default="exact" label=" " description="">
-			<option value="exact">Exact match</option>
-			<option value="regex">Regular expression</option>
+			<option value="exact">Match pattern exactly</option>
+			<option value="regex">Regular expression matching</option>
 		</param>
 		<param name="modal8Size" type="text" default="90% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit" />
 		<param name="@spacer" type="spacer" default=" " label="" description="" />
-		<param name="modal9" type="radio" default="0" label="Rule #10" description="">
+		<param name="modal9" type="radio" default="0" label=" " description="">
 			<option value="1">Enable</option>
 			<option value="0">Disable</option>
 		</param>
 		<param name="modal9Attr" type="text" default="" label="Link Attribute" description="Attribute to test" />
 		<param name="modal9Pattern" type="text" default="" label="Matching Pattern" description="" />
 		<param name="modal9Match" type="radio" default="exact" label=" " description="">
-			<option value="exact">Exact match</option>
-			<option value="regex">Regular expression</option>
+			<option value="exact">Match pattern exactly</option>
+			<option value="regex">Regular expression matching</option>
 		</param>
 		<param name="modal9Size" type="text" default="90% x 80%" label="Modal Window Size" description="Modal window size (width x height) in px or % unit" />
-		<!-- Hidden Header Block Parameters -->
-		<param name="wrapperHeader" type="hidden" default="plain" />
-		<param name="modLogo" type="hidden" default="1" />
-		<param name="modLogoChrome" type="hidden" default="raw" />
-		<param name="modUser3" type="hidden" default="1" />
-		<param name="modUser3Chrome" type="hidden" default="raw" />
-		<param name="modTop" type="hidden" default="1" />
-		<param name="modTopChrome" type="hidden" default="raw" />
-		<!-- Hidden Main Block Parameters -->
-		<param name="wrapperPage" type="hidden" default="plain" />
-		<param name="wrapperTop" type="hidden" default="plain" />
-		<param name="modUser1" type="hidden" default="1" />
-		<param name="modUser1Chrome" type="hidden" default="jezRounded6Imgs" />
-		<param name="modUser4" type="hidden" default="1" />
-		<param name="modUser4Chrome" type="hidden" default="jezRounded6Imgs" />
-		<param name="modUser2" type="hidden" default="1" />
-		<param name="modUser2Chrome" type="hidden" default="jezRounded6Imgs" />
-		<param name="wrapperContent" type="hidden" default="plain" />
-		<param name="modLeft" type="hidden" default="1" />
-		<param name="modLeftChrome" type="hidden" default="jezRounded6Imgs" />
-		<param name="wrapperMain" type="hidden" default="round6imgs" />
-		<param name="modBreadcrumb" type="hidden" default="1" />
-		<param name="modBreadcrumbChrome" type="hidden" default="raw" />
-		<param name="modRight" type="hidden" default="1" />
-		<param name="modRightChrome" type="hidden" default="jezRounded6Imgs" />
-		<param name="modBottom" type="hidden" default="1" />
-		<param name="modBottomChrome" type="hidden" default="xhtml" />
-		<param name="modTool" type="hidden" default="1" />
-		<param name="modToolChrome" type="hidden" default="raw" />
-		<!-- Hidden Extras Block Parameters -->
-		<param name="wrapperExtras" type="hidden" default="plain" />
-		<param name="modUser5" type="hidden" default="1" />
-		<param name="modUser5Chrome" type="hidden" default="xhtml" />
-		<param name="modUser6" type="hidden" default="1" />
-		<param name="modUser6Chrome" type="hidden" default="xhtml" />
-		<param name="modUser7" type="hidden" default="1" />
-		<param name="modUser7Chrome" type="hidden" default="xhtml" />
-		<param name="modUser8" type="hidden" default="1" />
-		<param name="modUser8Chrome" type="hidden" default="xhtml" />
-		<param name="modUser9" type="hidden" default="1" />
-		<param name="modUser9Chrome" type="hidden" default="xhtml" />
-		<!-- Hidden Footer Block Parameters -->
-		<param name="wrapperFooter" type="hidden" default="plain" />
-		<param name="modFooter" type="hidden" default="1" />
-		<param name="modFooterChrome" type="hidden" default="raw" />
-		<param name="modSyndicate" type="hidden" default="1" />
-		<param name="modSyndicateChrome" type="hidden" default="raw" />
-		<!-- Dev Mode Parameters -->
-		<param name="@title" type="title" default="" label="Dev Mode" open="1"><![CDATA[
-			<p style="margin-top:0">
-				By enabling dev mode, you can easily turn on/off any position right in frontend via page URL to see how
-				your site looks like when that position is empty or turn on/off any other template parameter to see how
-				that parameter works.
-			</p>
-			<p style="margin-bottom:0">
-				<strong>ENABLING DEV MODE IS NOT RECOMMENDED FOR PRODUCTION SITE!</strong>
-			</p>
-		]]></param>
-		<param name="dev" type="radio" default="0" label="Enable?" description="">
-			<option value="1">Yes</option>
-			<option value="0">No</option>
-		</param>
-		<param name="dev_rememberParams" type="radio" default="0" label="Remember Params" description="Use cookie to remember parameters passed in via page URL or form submission">
-			<option value="1">Yes</option>
-			<option value="0">No</option>
-		</param>
-		<param name="dev_cookieLifetime" type="text" default="0" label="Cookie Lifetime" description="Days to remember parameters passed in via page URL or form submission. 0 to remember till end of current browsing session" />
-		<param name="dev_panel" type="radio" default="1" label="Dev Mode Panel" description="If dev mode is enabled, show dev panel in frontend?">
-			<option value="1">Show</option>
-			<option value="0">Hide</option>
-		</param>
+		<param name="@spacer" type="spacer" default="&lt;hr&gt;" label="" description="" />
 	</params>
 </install>

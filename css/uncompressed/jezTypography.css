@@ -51,6 +51,9 @@ hr {
 }
 
 /* heading */
+h1 {
+	font-family: Georgia, "Times New Roman", serif;
+}
 h1, h2 {
 	letter-spacing: 2px;
 	word-spacing: .1em;

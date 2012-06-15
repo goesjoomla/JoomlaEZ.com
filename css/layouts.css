@@ -1,511 +1,2242 @@
 /*
-* JEZ Rego Joomla! 1.5 Template :: Stylesheets :: layout styling
+* JEZ Thema Joomla! 1.5 Theme Base :: Stylesheets :: layout styling
 *
-* @package		JEZ Rego
-* @version		1.5.0
+* @package		JEZ Thema
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
 * @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 
 /*----------------------------------------------------------------------------*/
 
-/*********
-* Header *
-*********/
+/********************************
+* General rounded corners rules *
+********************************/
 
-#jezHeader {
-	background: #393a35 url(../images/bg_header.png) 0 100% repeat-x;
-	height: 75px;
-	width: 100%;
-}
-#jezHeader > .container {
-	min-width: 800px;
+/* Joomla xhtml module chrome */
+.moduletable, .moduletable_menu, .moduletable_text {
+	margin-bottom: 1.5em; /* 18px */
 }
 
-#jezLogo {
-	margin: 16px 0 0 5.667em;
+/* Joomla rounded module chrome */
+.module, .module_menu, .module_text {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
 }
-#jezLogo img.logo {
-	height: 46px;
-	width: 111px;
+.module div, .module_menu div, .module_text div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
 }
-
-#jezNav {
-	height: 75px;
-	position: relative;
-	width: auto;
-	z-index: 10;
+.module div div, .module_menu div div, .module_text div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
 }
-#modUser3 {
-	height: 30px;
-	margin: 45px 18.917em 0 0;
-}
-#modTop {
-	bottom: 8px;
-	min-width: 122px;
-	position: absolute;
-	right: 3.833em;
+.module div div div, .module_menu div div div, .module_text div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
 }
 
-/* font resizer */
-#increaseFontSize, #resetFontSize, #decreaseFontSize {
-	color: #f4e0e2;
-	display: block;
-	float: left;
-	font-weight: bold;
-	height: 19px;
-	line-height: 19px;
-	text-align: center;
-	text-decoration: none;
-	width: 19px;
+/* rounded using 6 images and 6 nested divs (creates rounded corners the same way as Joomla`s technique for rounded module wrapper) */
+.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
 }
-#increaseFontSize {
-	font-size: 15px;
+.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
 }
-#resetFontSize {
-	font-size: 13px;
+.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
 }
-#decreaseFontSize {
-	font-size: 11px;
+.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
 }
-#increaseFontSize:hover, #resetFontSize:hover, #decreaseFontSize:hover {
-	background: url(../images/font_resizer-a.png) 0 0 no-repeat;
-	color: #626262;
+.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images (creates rounded corners using schillmania.com`s `More Rounded Corners With CSS` technique) */
+.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image (creates rounded corners using schillmania.com`s `Even More Rounded Corners With CSS` technique) */
+.jezRounded1Img .inner, .jezRounded1Img .t, .jezRounded1Img .b, .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
 }
 
 /*----------------------------------------------------------------------------*/
 
-/*******
-* Body *
-*******/
+/***************
+* Page wrapper *
+***************/
 
 #jezPage {
-	background-color: #d4d3cf;
-	padding-top: 10px;
+	margin: 1.5em auto; /* 18px auto */
 }
-#jezMain {
-	margin: 0 0 0 19.333em;
-	padding-bottom: 10px;
+
+/* Joomla rounded module */
+#jezPage.module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
 }
-#jezLocal, #jezSub {
-	padding: 3px 0 5px;
+#jezPage.module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
 }
-#modUser4 {
-	margin-left: 19.333em;
+#jezPage.module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
 }
-#modUser1, #modUser2,
-#jezLocal, #jezSub {
-	width: 16.417em;
+#jezPage.module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
 }
-#modUser2,
-#jezSub {
-	margin-right: 2.5em;
+
+/* rounded using 6 images and 6 nested divs */
+#jezPage.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
 }
-#modUser4.tc, #modUser1.tc,
-#jezMain.tc, #jezLocal.tc {
+#jezPage.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezPage.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezPage.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezPage.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezPage.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezPage.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezPage.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezPage.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezPage.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezPage.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezPage.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezPage.jezRounded1Img .inner, #jezPage.jezRounded1Img .t,
+#jezPage.jezRounded1Img .b, #jezPage.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*****************
+* Header wrapper *
+*****************/
+
+#jezHeader {
+	height: 4.5em; /* 54px */
+	margin-bottom: 1.5em; /* 18px */
+}
+
+/* Joomla rounded module */
+#jezHeader.module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezHeader.module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezHeader.module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezHeader.module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezHeader.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezHeader.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezHeader.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezHeader.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezHeader.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezHeader.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezHeader.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezHeader.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezHeader.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezHeader.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezHeader.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezHeader.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezHeader.jezRounded1Img .inner, #jezHeader.jezRounded1Img .t,
+#jezHeader.jezRounded1Img .b, #jezHeader.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/* Nested wrappers and module positions */
+#jezLogo {
+	max-width: 25em; /* 300px */
+}
+#jezTop {
+	max-width: 55em; /* 660px */
+}
+
+/*----------------------------------------------------------------------------*/
+
+/***********************************
+* Modules chromes at logo position *
+***********************************/
+
+/* Joomla rounded module */
+#jezLogo .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezLogo .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezLogo .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezLogo .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezLogo .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezLogo .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezLogo .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezLogo .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezLogo .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezLogo .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezLogo .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezLogo .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezLogo .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezLogo .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezLogo .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezLogo .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezLogo .jezRounded1Img .inner, #jezLogo .jezRounded1Img .t,
+#jezLogo .jezRounded1Img .b, #jezLogo .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*************************
+* Top navigation wrapper *
+*************************/
+
+#jezTop {}
+
+/* Joomla rounded module */
+#jezTop.module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezTop.module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezTop.module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezTop.module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezTop.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezTop.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezTop.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezTop.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezTop.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezTop.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezTop.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezTop.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezTop.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezTop.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezTop.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezTop.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezTop.jezRounded1Img .inner, #jezTop.jezRounded1Img .t,
+#jezTop.jezRounded1Img .b, #jezTop.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/**********************************
+* Modules chromes at top position *
+**********************************/
+
+/* Joomla rounded module */
+#jezTop .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezTop .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezTop .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezTop .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezTop .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezTop .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezTop .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezTop .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezTop .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezTop .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezTop .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezTop .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezTop .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezTop .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezTop .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezTop .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezTop .jezRounded1Img .inner, #jezTop .jezRounded1Img .t,
+#jezTop .jezRounded1Img .b, #jezTop .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/******************
+* Content wrapper *
+******************/
+
+#jezContent {
+	position: relative;
+}
+
+/* Joomla rounded module */
+#jezContent.module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezContent.module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezContent.module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezContent.module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezContent.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezContent.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezContent.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezContent.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezContent.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezContent.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezContent.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezContent.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezContent.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezContent.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezContent.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezContent.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezContent.jezRounded1Img .inner, #jezContent.jezRounded1Img .t,
+#jezContent.jezRounded1Img .b, #jezContent.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/* Nested wrappers and module positions */
+#jezMain, #jezSub, #jezLocal {
+	margin-top: 6em; /* 72px */
+}
+#jezMain.tc, #jezLocal.tc, #jezSub {
 	margin-right: 0;
 }
 
-.gr3 #modUser4,
 .gr3 #jezMain {
-	width: 41.333em;
+	margin-left: 21em; /* 252px */
+	width: 38em; /* 456px */
 }
-.gr3 #modUser1,
+.gr3 #jezSub {
+	width: 19em; /* 228px */
+}
 .gr3 #jezLocal {
-	margin-left: -58.167em;
+	margin-left: -59em; /* -708px */
+	width: 19em; /* 228px */
 }
 
-.gr2 #modUser4,
 .gr2 #jezMain {
-	width: 58.5em;
+	margin-left: 28em; /* 336px */
+	width: 52em; /* 624px */
 }
-.gr2 #modUser4.tc,
 .gr2 #jezMain.tc {
-	margin-left: 2.167em;
+	margin-left: 0;
 }
-.gr2 #modUser1.expandLeft, .gr2 #modUser2.expandRight,
-.gr2 #jezLocal.expandLeft, .gr2 #jezSub.expandRight {
-	width: 57.833em;
+.gr2 #jezSub {
+	width: 26em; /* 312px */
 }
-.gr2 #modUser1,
-.gr2 #jezLocal {
-	margin-left: -75.333em;
+.gr2 #jezSub.expandBoth {
+	width: 39em; /* 468px */
 }
-.gr2 #modUser1.expandBoth, .gr2 #modUser1.expandLeft,
-.gr2 #jezLocal.expandBoth, .gr2 #jezLocal.expandLeft {
-	margin-left: 2.5em;
-}
-.gr2 #modUser1.expandBoth, .gr2 #modUser2.expandBoth,
-.gr2 #jezLocal.expandBoth, .gr2 #jezSub.expandBoth {
-	width: 37.083em;
-}
-.gr2 #modUser2.expandRight,
 .gr2 #jezSub.expandRight {
 	float: left;
-	margin: 0 .333em 0 19.667em;
+	margin-left: 28em; /* 336px */
+	width: 52em; /* 624px */
+}
+.gr2 #jezLocal {
+	margin-left: -80em; /* -960px */
+	width: 26em; /* 312px */
+}
+.gr2 #jezLocal.expandBoth {
+	margin-left: 0;
+	width: 39em; /* 468px */
+}
+.gr2 #jezLocal.expandLeft {
+	margin-left: 0;
+	width: 52em; /* 624px */
 }
 
-.gr1 #modUser4,
-.gr1 #jezMain {
-	margin-left: 2.167em;
-	width: 75.667em;
-}
-.gr1 #modUser1, .gr1 #modUser2,
-.gr1 #jezLocal, .gr1 #jezSub {
+.gr1 #jezLocal, .gr1 #jezMain, .gr1 #jezSub {
 	float: left;
-	margin-left: 2.5em;
-	width: 75em;
+	width: 80em; /* 960px */
 }
 
-/* Top block */
-#jezPage.hasTop {
-	position: relative;
-	padding-top: 214px;
-}
-#jezTop {
-	height: 194px;
-	overflow: hidden;
-	position: absolute;
-	top: 14px;
-	z-index: 5;
-}
+/*----------------------------------------------------------------------------*/
 
-/* user4 module position :: `_special` class suffix */
-#modUser4.special {
-	height: inherit;
-	overflow: hidden;
-	position: relative;
-}
-#modUser4.special h3 {
-	display: none;
-}
-#modUser4.special .user4SpecialTL,
-#modUser4.special .user4SpecialTR,
-#modUser4.special .user4SpecialBL,
-#modUser4.special .user4SpecialBR {
-	width: 12px;
-	height: 50%;
-	position: absolute;
-}
-#modUser4.special .user4SpecialTL {
-	background: transparent url(../images/mod_user4-tl.png) 0 0 no-repeat;
+/****************************
+* Global navigation wrapper *
+****************************/
+
+#jezNav {
 	left: 0;
+	position: absolute;
 	top: 0;
-}
-#modUser4.special .user4SpecialTR {
-	background: transparent url(../images/mod_user4-tr.png) 0 0 no-repeat;
-	right: 0;
-	top: 0;
-}
-#modUser4.special .user4SpecialBL {
-	background: transparent url(../images/mod_user4-bl.png) 0 100% no-repeat;
-	bottom: 0;
-	left: 0;
-}
-#modUser4.special .user4SpecialBR {
-	background: transparent url(../images/mod_user4-br.png) 0 100% no-repeat;
-	bottom: 0;
-	right: 0;
+	width: 80em; /* 960px */
 }
 
-/* user1 (heading only) & left module position :: rounded corners */
-#jezLocal .jezRounded6Imgs {
-	margin-bottom: 9px;
+/* Joomla rounded module */
+#jezNav.module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
 }
+#jezNav.module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezNav.module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezNav.module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezNav.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezNav.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezNav.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezNav.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezNav.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezNav.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezNav.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezNav.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezNav.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezNav.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezNav.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezNav.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezNav.jezRounded1Img .inner, #jezNav.jezRounded1Img .t,
+#jezNav.jezRounded1Img .b, #jezNav.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/* Nested wrappers and module positions */
+#modUser3 {
+	height: 3em; /* 36px */
+}
+#modUser4 {
+	height: 3em; /* 36px */
+	width: 20%;
+}
+
+#modBreadcrumb {
+	height: 3em; /* 36px */
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************************
+* Modules chromes at user3 position *
+************************************/
+
+/* Joomla rounded module */
+#modUser3 .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser3 .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser3 .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modUser3 .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modUser3 .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser3 .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser3 .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser3 .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser3 .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser3 .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modUser3 .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser3 .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser3 .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser3 .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser3 .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser3 .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modUser3 .jezRounded1Img .inner, #modUser3 .jezRounded1Img .t,
+#modUser3 .jezRounded1Img .b, #modUser3 .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************************
+* Modules chromes at user4 position *
+************************************/
+
+/* Joomla rounded module */
+#modUser4 .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser4 .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser4 .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modUser4 .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modUser4 .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser4 .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser4 .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser4 .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser4 .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser4 .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modUser4 .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser4 .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser4 .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser4 .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser4 .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser4 .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modUser4 .jezRounded1Img .inner, #modUser4 .jezRounded1Img .t,
+#modUser4 .jezRounded1Img .b, #modUser4 .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*****************************************
+* Modules chromes at breadcrumb position *
+*****************************************/
+
+/* Joomla rounded module */
+#modBreadcrumb .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modBreadcrumb .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modBreadcrumb .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modBreadcrumb .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modBreadcrumb .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modBreadcrumb .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modBreadcrumb .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modBreadcrumb .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modBreadcrumb .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modBreadcrumb .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modBreadcrumb .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modBreadcrumb .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modBreadcrumb .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modBreadcrumb .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modBreadcrumb .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modBreadcrumb .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modBreadcrumb .jezRounded1Img .inner, #modBreadcrumb .jezRounded1Img .t,
+#modBreadcrumb .jezRounded1Img .b, #modBreadcrumb .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/***************************
+* Local navigation wrapper *
+***************************/
+
+#jezLocal {}
+
+/* Joomla rounded module */
+#jezLocal.module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezLocal.module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezLocal.module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezLocal.module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezLocal.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezLocal.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezLocal.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezLocal.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezLocal.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezLocal.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezLocal.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezLocal.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezLocal.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezLocal.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezLocal.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezLocal.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezLocal.jezRounded1Img .inner, #jezLocal.jezRounded1Img .t,
+#jezLocal.jezRounded1Img .b, #jezLocal.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/***********************************
+* Modules chromes at left position *
+***********************************/
+
+/* Joomla rounded module */
+#jezLocal .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezLocal .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezLocal .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezLocal .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezLocal .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezLocal .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezLocal .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezLocal .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezLocal .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezLocal .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
 #jezLocal .jezRounded6Imgs .hd {
-	background-image: url(../images/mod_left-hl.png);
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
 }
 #jezLocal .jezRounded6Imgs .hd .c {
-	background-image: url(../images/mod_left-hr.png);
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
 }
 #jezLocal .jezRounded6Imgs .bd {
-	background-image: url(../images/mod_left-bl.png);
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
 }
 #jezLocal .jezRounded6Imgs .bd .c {
-	background-image: url(../images/mod_left-br.png);
-	color: #fff;
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
 }
 #jezLocal .jezRounded6Imgs .ft {
-	background-image: url(../images/mod_left-fl.png);
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
 }
 #jezLocal .jezRounded6Imgs .ft .c {
-	background-image: url(../images/mod_left-fr.png);
-}
-#modUser1 .jezRounded6Imgs h3,
-#jezLocal .jezRounded6Imgs h3 {
-	background: url(../images/mod_left-hd.png) no-repeat;
-	color: #2c2c2c;
-	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
-	font-size: 1em;
-	height: 36px;
-	line-height: 36px;
-	margin-bottom: -11px;
-	overflow: hidden;
-	position: relative;
-	text-align: center;
-	text-transform: uppercase;
-	top: -18px;
-	width: 107px;
-}
-#modUser1 .jezRounded6Imgs h3,
-#jezLocal .black h3 {
-	color: #de6400;
-	margin-bottom: -8px;
-}
-#jezLocal .jezRounded6Imgs a {
-	color: #fff;
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
 }
 
-/* user1, user2, left (` black` class suffix) and right module positions :: rounded corners */
-#modUser1 .jezRounded6Imgs,
-#modUser2 .jezRounded6Imgs,
-#jezSub .jezRounded6Imgs,
-#jezLocal .black {
-	margin-bottom: 9px;
-}
-#modUser1 .jezRounded6Imgs .hd,
-#modUser2 .jezRounded6Imgs .hd,
-#jezSub .jezRounded6Imgs .hd,
-#jezLocal .black .hd {
-	background-image: url(../images/mod_right-hl.png);
-}
-#modUser1 .jezRounded6Imgs .hd .c,
-#modUser2 .jezRounded6Imgs .hd .c,
-#jezSub .jezRounded6Imgs .hd .c,
-#jezLocal .black .hd .c {
-	background-image: url(../images/mod_right-hr.png);
-}
-#modUser1 .jezRounded6Imgs .bd,
-#modUser2 .jezRounded6Imgs .bd,
-#jezSub .jezRounded6Imgs .bd,
-#jezLocal .black .bd {
-	background-image: url(../images/mod_right-bl.png);
-}
-#modUser1 .jezRounded6Imgs .bd .c,
-#modUser2 .jezRounded6Imgs .bd .c,
-#jezSub .jezRounded6Imgs .bd .c,
-#jezLocal .black .bd .c {
-	background-image: url(../images/mod_right-br.png);
-}
-#modUser1 .jezRounded6Imgs .bd .c .s,
-#modUser2 .jezRounded6Imgs .bd .c .s,
-#jezSub .jezRounded6Imgs .bd .c .s,
-#jezLocal .black .bd .c .s {
-	margin: 0 1px;
-	background-image: url(../images/mod_right-s.png);
-}
-#modUser1 .jezRounded6Imgs .bd .c .s,
-#modUser2 .jezRounded6Imgs .bd .c .s {
-	color: #d4d3cf;
-	height: 158px;
-}
-#jezSub .jezRounded6Imgs .bd .c .s {
-	color: #fff;
-}
-#modUser1 .jezRounded6Imgs .ft,
-#modUser2 .jezRounded6Imgs .ft,
-#jezSub .jezRounded6Imgs .ft,
-#jezLocal .black .ft {
-	background-image: url(../images/mod_right-fl.png);
-}
-#modUser1 .jezRounded6Imgs .ft .c,
-#modUser2 .jezRounded6Imgs .ft .c,
-#jezSub .jezRounded6Imgs .ft .c,
-#jezLocal .black .ft .c {
-	background-image: url(../images/mod_right-fr.png);
-}
-#modUser2 .jezRounded6Imgs h3,
-#jezSub .jezRounded6Imgs h3 {
-	font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif;
-	font-size: 1.083em;
-	position: relative;
-	margin-bottom: -8px;
-	text-transform: uppercase;
-	top: -14px;
-}
-#jezSub .jezRounded6Imgs h3 {
-	background: url(../images/mod_right-hd.png) 100% 50% no-repeat;
-	color: #40feff;
-}
-#modUser2 .jezRounded6Imgs h3,
-#jezSub .orange h3 {
-	background: url(../images/mod_right-hd_orange.png) 100% 50% no-repeat;
-	color: #ff7300;
+/* rounded using 1 image */
+#jezLocal .jezRounded1Img .inner, #jezLocal .jezRounded1Img .t,
+#jezLocal .jezRounded1Img .b, #jezLocal .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
 }
 
-/* user4 module position and component output wrapper :: rounded corners */
-#modUser4 .jezRounded6Imgs {
-	margin-top: -3px;
+/*----------------------------------------------------------------------------*/
+
+/***********************
+* Main content wrapper *
+***********************/
+
+#jezMain {}
+
+/* Joomla rounded module */
+#jezMain.module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
 }
-#modUser4 .jezRounded6Imgs .hd,
+#jezMain.module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezMain.module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezMain.module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezMain.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezMain.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezMain.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezMain.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezMain.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezMain.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
 #jezMain.jezRounded6Imgs .hd {
-	background-image: url(../images/com_hl.png);
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
 }
-#modUser4 .jezRounded6Imgs .hd .c,
 #jezMain.jezRounded6Imgs .hd .c {
-	background-image: url(../images/com_hr.png);
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
 }
-#modUser4 .jezRounded6Imgs .bd,
 #jezMain.jezRounded6Imgs .bd {
-	background-image: url(../images/com_bl.png);
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
 }
-#modUser4 .jezRounded6Imgs .bd .c,
 #jezMain.jezRounded6Imgs .bd .c {
-	background-image: url(../images/com_br.png);
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
 }
-#modUser4 .jezRounded6Imgs .bd .c .s {
-	height: 158px;
-	padding: 3px 1.5em;
-}
-#modUser4 .jezRounded6Imgs .ft,
 #jezMain.jezRounded6Imgs .ft {
-	background-image: url(../images/com_fl.png);
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
 }
-#modUser4 .jezRounded6Imgs .ft .c,
 #jezMain.jezRounded6Imgs .ft .c {
-	background-image: url(../images/com_fr.png);
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
 }
 
-/* bottom module position */
-#modBottom .moduletable {
-	margin-bottom: 0;
-	padding-bottom: 14px;
-}
-
-/* tool module position */
-#modTool {
-	position: absolute;
-	right: 18px;
-	top: 18px;
-}
-
-/* theme switcher */
-#jezThemeSwitcher {
-	background: url(../images/theme_switcher.png) 0 0 no-repeat;
-	height: auto;
-	position: absolute;
-	padding-top: 18px;
-	right: 6px;
-	top: 93px;
-	width: 18px;
-}
-#jezPage.hasTop #jezThemeSwitcher {
-	top: 14px;
-}
-#jezThemeSwitcher a {
-	display: block;
-	height: 12px;
-	margin-top: 6px;
-	width: 18px;
-}
-#jezThemeSwitcher #activeTheme {
-	cursor: default;
-}
-#jezThemeSwitcher .black {
-	background: url(../images/theme_black.png) 0 0 no-repeat;
-}
-#jezThemeSwitcher .blue {
-	background: url(../images/theme_blue.png) 0 0 no-repeat;
-}
-#jezThemeSwitcher .green {
-	background: url(../images/theme_green.png) 0 0 no-repeat;
-}
-#jezThemeSwitcher .leaf {
-	background: url(../images/theme_leaf.png) 0 0 no-repeat;
-}
-#jezThemeSwitcher .orange {
-	background: url(../images/theme_orange.png) 0 0 no-repeat;
-}
-#jezThemeSwitcher .violet {
-	background: url(../images/theme_violet.png) 0 0 no-repeat;
+/* rounded using 1 image */
+#jezMain.jezRounded1Img .inner, #jezMain.jezRounded1Img .t,
+#jezMain.jezRounded1Img .b, #jezMain.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
 }
 
 /*----------------------------------------------------------------------------*/
 
-/*********
-* Extras *
-*********/
+/****************
+* Users wrapper *
+****************/
 
-#jezExtras {
-	background: #000 url(../images/bg_extras.png) 0 0 repeat-x;
-	width: 100%;
-}
+#jezUsers {}
 
-#jezExtras .gr4 .moduletable {
-	width: 16.417em;
+/* Joomla rounded module */
+#jezUsers.module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
 }
-#jezExtras .gr4 .fl .moduletable {
-	margin-left: 3.083em;
+#jezUsers.module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
 }
-#jezExtras .gr4 #modUser7 .moduletable {
-	margin-left: 3.167em;
+#jezUsers.module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
 }
-
-#jezExtras .gr3 .moduletable {
-	width: 23em;
-}
-#jezExtras .gr3 .fl .moduletable {
-	margin-left: 3em;
+#jezUsers.module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
 }
 
-#jezExtras .gr2 .moduletable {
-	width: 36.25em;
+/* rounded using 6 images and 6 nested divs */
+#jezUsers.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
 }
-#jezExtras .gr2 .fl .moduletable {
-	margin-left: 2.5em;
+#jezUsers.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
 }
-
-#jezExtras .gr1 .moduletable {
-	margin-left: 2.5em;
-	width: 75em;
+#jezUsers.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
 }
-
-#jezExtras .first .moduletable {
-	margin-left: 2.5em;
+#jezUsers.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
 }
-#jezExtras .fr .moduletable {
-	margin-right: 2.5em;
+#jezUsers.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
 }
-
-#jezExtras .moduletable {
-	color: #fff;
-	margin-bottom: 29px;
-	margin-top: 13px;
-}
-#jezExtras .moduletable h3 {
-	color: #dd8200;
-	font-family: "MS Reference Sans Serif", Helvetica, Jamrul, sans-serif;
-	margin-bottom: 2px;
+#jezUsers.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
 }
 
-#modUser9 {
-	float: right;
-	margin-right: 18.917em;
+/* rounded using 6 images */
+#jezUsers.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
 }
-#jezExtras #modUser9 .moduletable {
-	margin: 0;
-	width: auto;
+#jezUsers.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
 }
-#jezExtras #modUser9 .moduletable h3 {
-	display: none;
+#jezUsers.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezUsers.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezUsers.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezUsers.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezUsers.jezRounded1Img .inner, #jezUsers.jezRounded1Img .t,
+#jezUsers.jezRounded1Img .b, #jezUsers.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
 }
 
 /*----------------------------------------------------------------------------*/
 
-/*********
-* Footer *
-*********/
+/************************************
+* Modules chromes at user1 position *
+************************************/
 
-#jezFooter {
-	background: #fff url(../images/bg_footer.png) 0 0 repeat-x;
-	padding-top: 17px;
+/* Joomla rounded module */
+#modUser1 .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
 }
-#modFooter {
-	margin-left: 2.5em;
+#modUser1 .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
 }
-#modSyndicate {
-	margin-right: 2.5em;
+#modUser1 .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modUser1 .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modUser1 .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser1 .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser1 .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser1 .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser1 .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser1 .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modUser1 .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser1 .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser1 .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser1 .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser1 .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser1 .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modUser1 .jezRounded1Img .inner, #modUser1 .jezRounded1Img .t,
+#modUser1 .jezRounded1Img .b, #modUser1 .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************************
+* Modules chromes at user2 position *
+************************************/
+
+/* Joomla rounded module */
+#modUser2 .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser2 .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser2 .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modUser2 .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modUser2 .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser2 .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser2 .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser2 .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser2 .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser2 .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modUser2 .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser2 .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser2 .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser2 .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser2 .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser2 .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modUser2 .jezRounded1Img .inner, #modUser2 .jezRounded1Img .t,
+#modUser2 .jezRounded1Img .b, #modUser2 .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/***************************
+* Component output wrapper *
+***************************/
+
+#jezComponent {}
+
+/* Joomla rounded module */
+#jezComponent.module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezComponent.module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezComponent.module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezComponent.module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezComponent.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezComponent.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezComponent.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezComponent.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezComponent.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezComponent.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezComponent.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezComponent.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezComponent.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezComponent.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezComponent.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezComponent.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezComponent.jezRounded1Img .inner, #jezComponent.jezRounded1Img .t,
+#jezComponent.jezRounded1Img .b, #jezComponent.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*************************************
+* Modules chromes at bottom position *
+*************************************/
+
+/* Joomla rounded module */
+#modBottom .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modBottom .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modBottom .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modBottom .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modBottom .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modBottom .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modBottom .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modBottom .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modBottom .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modBottom .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modBottom .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modBottom .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modBottom .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modBottom .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modBottom .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modBottom .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modBottom .jezRounded1Img .inner, #modBottom .jezRounded1Img .t,
+#modBottom .jezRounded1Img .b, #modBottom .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/**********************
+* Sub content wrapper *
+**********************/
+
+#jezSub {}
+
+/* Joomla rounded module */
+#jezSub.module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezSub.module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezSub.module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezSub.module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezSub.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezSub.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezSub.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezSub.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezSub.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezSub.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezSub.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezSub.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezSub.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezSub.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezSub.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezSub.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezSub.jezRounded1Img .inner, #jezSub.jezRounded1Img .t,
+#jezSub.jezRounded1Img .b, #jezSub.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************************
+* Modules chromes at right position *
+************************************/
+
+/* Joomla rounded module */
+#jezSub .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezSub .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezSub .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezSub .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezSub .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezSub .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezSub .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezSub .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezSub .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezSub .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezSub .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezSub .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezSub .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezSub .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezSub .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezSub .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezSub .jezRounded1Img .inner, #jezSub .jezRounded1Img .t,
+#jezSub .jezRounded1Img .b, #jezSub .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*****************
+* Extras wrapper *
+*****************/
+
+#jezExtras {}
+
+/* Joomla rounded module */
+#jezExtras.module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezExtras.module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezExtras.module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezExtras.module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezExtras.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezExtras.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezExtras.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezExtras.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezExtras.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezExtras.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezExtras.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezExtras.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezExtras.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezExtras.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezExtras.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezExtras.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezExtras.jezRounded1Img .inner, #jezExtras.jezRounded1Img .t,
+#jezExtras.jezRounded1Img .b, #jezExtras.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************************
+* Modules chromes at user5 position *
+************************************/
+
+/* Joomla rounded module */
+#modUser5 .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser5 .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser5 .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modUser5 .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modUser5 .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser5 .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser5 .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser5 .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser5 .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser5 .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modUser5 .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser5 .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser5 .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser5 .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser5 .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser5 .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modUser5 .jezRounded1Img .inner, #modUser5 .jezRounded1Img .t,
+#modUser5 .jezRounded1Img .b, #modUser5 .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************************
+* Modules chromes at user6 position *
+************************************/
+
+/* Joomla rounded module */
+#modUser6 .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser6 .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser6 .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modUser6 .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modUser6 .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser6 .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser6 .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser6 .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser6 .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser6 .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modUser6 .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser6 .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser6 .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser6 .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser6 .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser6 .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modUser6 .jezRounded1Img .inner, #modUser6 .jezRounded1Img .t,
+#modUser6 .jezRounded1Img .b, #modUser6 .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************************
+* Modules chromes at user7 position *
+************************************/
+
+/* Joomla rounded module */
+#modUser7 .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser7 .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser7 .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modUser7 .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modUser7 .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser7 .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser7 .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser7 .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser7 .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser7 .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modUser7 .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser7 .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser7 .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser7 .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser7 .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser7 .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modUser7 .jezRounded1Img .inner, #modUser7 .jezRounded1Img .t,
+#modUser7 .jezRounded1Img .b, #modUser7 .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************************
+* Modules chromes at user8 position *
+************************************/
+
+/* Joomla rounded module */
+#modUser8 .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser8 .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser8 .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modUser8 .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modUser8 .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser8 .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser8 .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser8 .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser8 .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser8 .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modUser8 .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modUser8 .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modUser8 .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modUser8 .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modUser8 .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modUser8 .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modUser8 .jezRounded1Img .inner, #modUser8 .jezRounded1Img .t,
+#modUser8 .jezRounded1Img .b, #modUser8 .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/****************************
+* Bottom navigation wrapper *
+****************************/
+
+#jezBottom {}
+
+/* Joomla rounded module */
+#jezBottom.module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezBottom.module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezBottom.module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezBottom.module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezBottom.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezBottom.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezBottom.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezBottom.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezBottom.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezBottom.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezBottom.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezBottom.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezBottom.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezBottom.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezBottom.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezBottom.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezBottom.jezRounded1Img .inner, #jezBottom.jezRounded1Img .t,
+#jezBottom.jezRounded1Img .b, #jezBottom.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************************
+* Modules chromes at inset position *
+************************************/
+
+/* Joomla rounded module */
+#modInset .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modInset .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modInset .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modInset .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modInset .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modInset .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modInset .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modInset .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modInset .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modInset .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modInset .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modInset .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modInset .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modInset .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modInset .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modInset .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modInset .jezRounded1Img .inner, #modInset .jezRounded1Img .t,
+#modInset .jezRounded1Img .b, #modInset .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/****************************************
+* Modules chromes at syndicate position *
+****************************************/
+
+/* Joomla rounded module */
+#modSyndicate .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modSyndicate .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modSyndicate .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modSyndicate .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modSyndicate .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modSyndicate .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modSyndicate .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modSyndicate .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modSyndicate .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modSyndicate .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modSyndicate .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modSyndicate .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modSyndicate .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modSyndicate .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modSyndicate .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modSyndicate .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modSyndicate .jezRounded1Img .inner, #modSyndicate .jezRounded1Img .t,
+#modSyndicate .jezRounded1Img .b, #modSyndicate .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*****************
+* Footer wrapper *
+*****************/
+
+#jezFooter {}
+
+/* Joomla rounded module */
+#jezFooter .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezFooter .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezFooter .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#jezFooter .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#jezFooter.jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezFooter.jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezFooter.jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezFooter.jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezFooter.jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezFooter.jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#jezFooter.jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#jezFooter.jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#jezFooter.jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#jezFooter.jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#jezFooter.jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#jezFooter.jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#jezFooter.jezRounded1Img .inner, #jezFooter.jezRounded1Img .t,
+#jezFooter.jezRounded1Img .b, #jezFooter.jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*************************************
+* Modules chromes at footer position *
+*************************************/
+
+/* Joomla rounded module */
+#modFooter .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modFooter .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modFooter .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modFooter .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modFooter .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modFooter .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modFooter .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modFooter .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modFooter .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modFooter .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modFooter .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modFooter .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modFooter .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modFooter .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modFooter .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modFooter .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modFooter .jezRounded1Img .inner, #modFooter .jezRounded1Img .t,
+#modFooter .jezRounded1Img .b, #modFooter .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
+}
+
+/*----------------------------------------------------------------------------*/
+
+/************************************
+* Modules chromes at debug position *
+************************************/
+
+/* Joomla rounded module */
+#modDebug .module {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modDebug .module div {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modDebug .module div div {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+#modDebug .module div div div {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images and 6 nested divs */
+#modDebug .jezRounded6ImgsNested {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modDebug .jezRounded6ImgsNested .in1 {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modDebug .jezRounded6ImgsNested .in2 {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modDebug .jezRounded6ImgsNested .in3 {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modDebug .jezRounded6ImgsNested .in4 {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modDebug .jezRounded6ImgsNested .in5 {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 6 images */
+#modDebug .jezRounded6Imgs .hd {
+	/*background-image: url(../images/put the image name for left top corner here then uncomment this line);*/
+}
+#modDebug .jezRounded6Imgs .hd .c {
+	/*background-image: url(../images/put the image name for right top corner here then uncomment this line);*/
+}
+#modDebug .jezRounded6Imgs .bd {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the left side here then uncomment this line);*/
+}
+#modDebug .jezRounded6Imgs .bd .c {
+	/*background-image: url(../images/put the image name to repeat (vertically) at the right side here then uncomment this line);*/
+}
+#modDebug .jezRounded6Imgs .ft {
+	/*background-image: url(../images/put the image name for left bottom corner here then uncomment this line);*/
+}
+#modDebug .jezRounded6Imgs .ft .c {
+	/*background-image: url(../images/put the image name for right bottom corner here then uncomment this line);*/
+}
+
+/* rounded using 1 image */
+#modDebug .jezRounded1Img .inner, #modDebug .jezRounded1Img .t,
+#modDebug .jezRounded1Img .b, #modDebug .jezRounded1Img .b div {
+	/*background-image: url(../images/put the rounded corner image name here then uncomment this line);*/
 }

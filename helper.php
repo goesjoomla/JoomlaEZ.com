@@ -1,14 +1,14 @@
 <?php
 /*
-* JEZ Rego Joomla! 1.5 Template :: Template Helper
+* JEZ Thema Joomla! 1.5 Theme Base :: Template Helper
  *
- * @package		JEZ Rego
- * @version		1.5.0
+ * @package		JEZ Thema
+ * @version		1.1.0
  * @author		JoomlaEZ.com
  * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
  * @license		Commercial Proprietary
  *
- * Please visit http://www.joomlaez.com/ for more information
+ * Please visit http://joomlaez.com/ for more information
  */
 
 // no direct access
@@ -91,17 +91,18 @@ class jezThemeBaseHelper {
 		$request = $request != null ? $request : JRequest::getCmd($param, null, 'POST');
 		$value = $request != null ? $request : (isset($_COOKIE[$param]) ? $_COOKIE[$param] : null);
 
-		if ($value != null && $remember) {
+		if ($value != null) {
 			// save only custom parameter which is not already saved
-			if (!isset($_COOKIE[$param]) || $value != $_COOKIE[$param]) {
+			if ($remember && (!isset($_COOKIE[$param]) || $value != $_COOKIE[$param])) {
 				if ($days != 0)
 					setcookie($param, $value, time() + ($days * 24 * 60 * 60), $baseurl[2], $baseurl[1], strtolower($baseurl[0]) == 'https' ? 1 : 0);
 				else
 					setcookie($param, $value);
 			}
+			return $value;
 		}
 
-		return $value;
+		return null;
 	}
 
 	// function to load required or specified scripts

@@ -1,5 +1,5 @@
-JEZ Rego template for Joomla! 1.5 series
-========================================
+JEZ Thema template framework for Joomla! 1.5 series
+===================================================
 
 Install Git client by following the guide at the URL below:
 
@@ -9,7 +9,7 @@ Then, clone the repository at following URL:
 
 https://github.com/goesjoomla/JoomlaEZ.com.git
 
-Finally, checkout templates/Rego branch to get JEZ Rego template.
+Finally, checkout templates/Thema branch to get JEZ Thema template framework.
 
 --
 Manh-Cuong Nguyen

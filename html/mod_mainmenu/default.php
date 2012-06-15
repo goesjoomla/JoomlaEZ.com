@@ -1,38 +1,19 @@
 <?php
 /*
-* JEZ Rego Joomla! 1.5 Template :: Output Overrides
+* JEZ Thema Joomla! 1.5 Theme Base :: Output Overrides
 *
-* @package		JEZ Rego
-* @version		1.5.0
+* @package		JEZ Thema
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
 * @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 
 /*----------------------------------------------------------------------------*/
 
 defined('_JEXEC') or die('Restricted access');
-
-if (!(isset($_COOKIE['jezTplName']) && isset($_COOKIE['jezTplDir']))) {
-	// get template directory
-	$tpl_dir = dirname(dirname(dirname(__FILE__)));
-	setcookie('jezTplDir', $tpl_dir);
-
-	// get the active template
-	$template = basename($tpl_dir);
-	setcookie('jezTplName', $template);
-} else {
-	$tpl_dir = $_COOKIE['jezTplDir'];
-	$template = $_COOKIE['jezTplName'];
-}
-
-// is language loaded?
-if ( preg_match('/\?*JEZ_REGO\?*/', JText::_('JEZ_REGO')) ) {
-	$lang =& JFactory::getLanguage();
-	$lang->load( "tpl_{$template}", $tpl_dir );
-}
 
 if ( !defined('modMainMenuXMLCallbackDefined') ) {
 	function modMainMenuXMLCallback(&$node, $args) 	{
@@ -84,8 +65,8 @@ if ( !defined('modMainMenuXMLCallbackDefined') ) {
 			else
 				$node->addAttribute('class', 'level'.(($node->level() - 1) / 2));
 
+			// mark parent
 			if ( isset($node->ul) ) {
-				// mark parent
 				if ($node->attributes('class'))
 					$node->addAttribute('class', $node->attributes('class').' parent');
 				else
@@ -169,6 +150,7 @@ if ( !defined('modMainMenuXMLCallbackDefined') ) {
 					$node->addAttribute('class', $node->attributes('class').' '.$mItemClass);
 				else
 					$node->addAttribute('class', $mItemClass);
+
 			}
 		}
 
@@ -198,24 +180,6 @@ if ( !defined('modMainMenuXMLCallbackDefined') ) {
 		$node->removeAttribute('level');
 		$node->removeAttribute('access');
 	}
-
-	// include template helper class
-	require_once($tpl_dir.DS.'helper.php');
-	jezThemeBaseHelper::loadScripts( 'jezBase.js', 'templates/'.$template.'/scripts/' );
-
-	// remove menu item's title attribute (for disabling tooltip)
-	// to fix Suckerfish lost focus issue in Safari for Windows
-	$document =& JFactory::getDocument();
-	$document->addScriptDeclaration('
-if (typeof navigator.vendor != "undefined" && navigator.vendor.indexOf("Apple") > -1 && navigator.platform.indexOf("Win") > -1) {
-	jezAddEvent(window, "load", function() {
-		var links = document.getElementById("jezNav").getElementsByTagName("a");
-		for (var i = 0; i < links.length; i++) {
-			if (links[i].parentNode.tagName.toLowerCase() == "li")
-				links[i].removeAttribute("title");
-		}
-	});
-}');
 
 	define('modMainMenuXMLCallbackDefined', true);
 }

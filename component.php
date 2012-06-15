@@ -1,14 +1,14 @@
 <?php
 /*
-* JEZ Rego Joomla! 1.5 Template :: Wrappers :: raw component output
+* JEZ Thema Joomla! 1.5 Theme Base :: Wrappers :: raw component output
 *
-* @package		JEZ Rego
-* @version		1.5.0
+* @package		JEZ Thema
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
 * @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 
 // no direct access
@@ -32,14 +32,17 @@ require_once(TEMPLATE_PATH.DS.'custom.php');
 </head>
 
 <body<?php echo $this->params->get('_standardPage') ? '' : ' class="raw"'; ?>>
-	<?php
-	if ($this->params->get('rawShowHeader') && (($this->params->get('_modLogo') || $this->params->get('logo') != '' || $this->params->get('_navCount'))))
-		jezWrapper($this->params->get('wrapperHeader'), 'header', $this->params, 'jezHeader');
+	<?php if ($this->params->get('grids')) : ?>
+	<div class="showgrids">
+	<?php endif;
 
-	jezWrapper($this->params->get('wrapperPage'), 'page', $this->params, 'jezPage');
+	jezWrapper($this->params->get('wrapperPage'), 'page', $this->params, 'jezPage', $this->params->get('_standardPage') ? 'container' : 'fluid');
 
 	if ($this->params->get('rawShowFooter') && ($this->params->get('_modFooter') || $this->params->get('_debug')))
-		jezWrapper($this->params->get('wrapperFooter'), 'footer', $this->params, 'jezFooter');
-	?>
+		jezWrapper($this->params->get('wrapperFooter'), 'footer', $this->params, 'jezFooter', 'container');
+
+	if ($this->params->get('grids')) : ?>
+	</div>
+	<?php endif; ?>
 </body>
 </html>

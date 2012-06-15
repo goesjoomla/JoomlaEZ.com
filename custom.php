@@ -1,14 +1,14 @@
 <?php
 /*
-* JEZ Rego Joomla! 1.5 Template :: Template Customizer
+* JEZ Thema Joomla! 1.5 Theme Base :: Template Customizer
 *
-* @package		JEZ Rego
-* @version		1.5.0
+* @package		JEZ Thema
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
 * @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 
 // no direct access
@@ -25,7 +25,7 @@ $params = &$mainframe->getParams();
 if ( is_object($params) )
 	$this->params->set( 'pageclass_sfx', $params->get('pageclass_sfx') );
 
-// require JEZ Rego helpers
+// require JEZ Thema helpers
 require_once(TEMPLATE_PATH.DS.'helper.php');
 require_once(TEMPLATE_PATH.DS.'wrappers'.DS.'wrapper.php');
 
@@ -82,7 +82,7 @@ if ( $this->params->get('dev') ) {
 	if ( !isset($themeLoaded) || empty($themeLoaded) )
 		$themeLoaded = array();
 
-	if ( $theme != '' && !in_array($theme, $themeLoaded) && @is_readable(TEMPLATE_PATH.DS.'themes'.DS.$theme.DS.'params.ini') ) {
+	if ( $theme != '' && !in_array($theme, $themeLoaded) ) {
 		// set cookie to indicate that theme is loaded
 		$themeLoaded[] = $theme;
 		setcookie( 'jezThemeBaseThemeLoaded', rawurlencode( serialize($themeLoaded) ) );
@@ -134,9 +134,7 @@ if ( $theme && @file_exists(TEMPLATE_PATH.DS.'themes'.DS.$theme.DS.'custom.php')
 // final preparation
 if (JRequest::getCmd('layout') == 'form' || JRequest::getCmd('task') == 'edit') {
 	$this->params->set('_modRight', 0);
-
-	if ($this->params->get('keepVR'))
-		$jsQuery[] = 'hasEditor=1';
+	$jsQuery[] = 'hasEditor=1';
 }
 
 // detect current page type
@@ -149,23 +147,18 @@ $this->params->set('_message', $this->getBuffer('message'));
 $this->params->set('_component', !$this->params->get('homeShowComponent') && jezThemeBaseHelper::jezIsRootPage() ? 0 : 1);
 
 if ($this->params->get('_standardPage')) {
-	// set logo alternative text if not defined
-	if ($this->params->get('logoAlt') == '') {
-		$document =& JFactory::getDocument();
-		$this->params->set('logoAlt', $document->getTitle());
-	}
-
 	// count module in global nav
-	$this->params->set('_navCount', $this->params->get('_modUser3') + $this->params->get('_modTop'));
+	$this->params->set('_navCount', $this->params->get('_modUser3') + $this->params->get('_modUser4') + $this->params->get('_modBreadcrumb'));
 
 	// do we have menu in global nav?
-	$hasNav = jezThemeBaseHelper::jezModulePresents('mod_mainmenu', 'user3');
+	$hasNav = jezThemeBaseHelper::jezModulePresents('mod_mainmenu', 'user3') || jezThemeBaseHelper::jezModulePresents('mod_mainmenu', 'user4');
 
 	if ($this->params->get('_navCount') && $hasNav) {
 		// set parameters for global navigation
-		if ($this->params->get('navFx')) {
-			$jsQuery[] = 'navFx='.$this->params->get('navFx');
+		$jsQuery[] = 'nav=1';
+		$jsQuery[] = 'navFx='.$this->params->get('navFx');
 
+		if ($this->params->get('navFx')) {
 			// JoomlaEZ.com's Menu Effects script default options
 			$navFxDefaultOpts['navFx_fxDuration'] = 500; // effect duration (milliseconds)
 			$navFxDefaultOpts['navFx_firstSubDirection'] = 'both'; // 1st level sub-menu slideout effect direction (vertical | horizontal | both)
@@ -180,36 +173,20 @@ if ($this->params->get('_standardPage')) {
 }
 
 if (!defined('RAW_OUTPUT')) {
-	// set appropriated style for user1, user4 and user2 blocks of top position
-	$this->params->set('_blksCount', $this->params->get('_modUser4') + $this->params->get('_modUser1') + $this->params->get('_modUser2'));
-
-	$this->params->set('_user1Style', $this->params->get('_blksCount') == 1 ? '' : 'tc');
-	$this->params->set('_user4Style', $this->params->get('_blksCount') == 3 || ($this->params->get('_blksCount') == 2 && $this->params->get('_modUser2')) ? 'tc' : '');
-
-	if ($this->params->get('_blksCount') == 2 && !$this->params->get('_modUser4')) {
-		switch ($this->params->get('topNoCenterExpand')) {
-			case 'right':
-				$this->params->set('_user2Style', 'expandRight');
-				break;
-			case 'left':
-				$this->params->set('_user1Style', $this->params->get('_user1Style').' expandLeft');
-				break;
-			case 'both':
-			default:
-				$this->params->set('_user1Style', $this->params->get('_user1Style').' expandBoth');
-				$this->params->set('_user2Style', 'expandBoth');
-				break;
-		}
-	}
+	// get page class suffix
+	$params = &$mainframe->getParams();
+	if ( is_object($params) )
+		$this->params->set( 'pageclass_sfx', $params->get('pageclass_sfx') );
 
 	// set appropriated style for left, center and right columns of main position
-	$this->params->set('_colsCount', ($this->getBuffer('message') || $this->params->get('_modBreadcrumb') || $this->params->get('_component') ? 1 : 0) + $this->params->get('_modLeft') + $this->params->get('_modRight'));
+	$this->params->set('_usersCount', $this->params->get('_modUser1') + $this->params->get('_modUser2'));
+	$this->params->set('_colsCount', ($this->getBuffer('message') || $this->params->get('_usersCount') || $this->params->get('_component') || $this->params->get('_modBottom') ? 1 : 0) + $this->params->get('_modRight') + $this->params->get('_modLeft'));
 
 	$this->params->set('_leftStyle', $this->params->get('_colsCount') == 1 ? '' : 'tc');
 	$this->params->set('_centerStyle', $this->params->get('_colsCount') == 3 || ($this->params->get('_colsCount') == 2 && $this->params->get('_modRight')) ? 'tc' : '');
 
-	if ($this->params->get('_colsCount') == 2 && !($this->getBuffer('message') || $this->params->get('_modBreadcrumb') || $this->params->get('_component'))) {
-		switch ($this->params->get('contentNoCenterExpand')) {
+	if ($this->params->get('_colsCount') == 2 && !($this->getBuffer('message') || $this->params->get('_usersCount') || $this->params->get('_component') || $this->params->get('_modBottom'))) {
+		switch ($this->params->get('noCenterExpand')) {
 			case 'right':
 				$this->params->set('_rightStyle', 'expandRight');
 				break;
@@ -225,97 +202,25 @@ if (!defined('RAW_OUTPUT')) {
 	}
 
 	// set appropriated style for user5, user6, user7 and user8 positions of extras block
-	$this->params->set('_extsCount', $this->params->get('_modUser5') + $this->params->get('_modUser6') + $this->params->get('_modUser7') + $this->params->get('_modUser8'));
+	$this->params->set('_extrasCount', $this->params->get('_modUser5') + $this->params->get('_modUser6') + $this->params->get('_modUser7') + $this->params->get('_modUser8'));
 	for ($i = 8; $i >= 5; $i--) {
 		if ($this->params->get('_modUser'.$i)) {
-			$first = true;
-			for ($j = 5; $j < $i; $j++) {
-				if ($this->params->get('_modUser'.$j)) {
-					if (isset($first) && $first) {
-						$this->params->set('_modUser'.$j.'Style', 'fl first');
-						unset($first);
-					} else
-						$this->params->set('_modUser'.$j.'Style', 'fl');
-				}
-			}
+			for ($j = 5; $j < $i; $j++)
+				$this->params->set('_modUser'.$j.'Style', 'fl tc');
 
 			$this->params->set('_modUser'.$i.'Style', 'fr');
 			break;
 		}
 	}
-} else
+} else {
 	$this->params->set('_colsCount', $this->getBuffer('message') || $this->params->get('_component') ? 1 : 0);
+
+	if (!$this->params->get('_standardPage'))
+		$this->params->set('wrapperContent', 'plain');
+}
 
 // store base URL to params
 $this->params->set('_baseurl', $this->baseurl);
-
-/*----------------------------------------------------------------------------*/
-
-/*****************************
-* Set general layout options *
-*****************************/
-
-// font set
-if ($this->params->get('fontSet') != 'mixed')
-	$cssQuery[] = 'fontSet='.$this->params->get('fontSet');
-
-// layout unit
-if (
-	!(
-		$this->params->get('layoutUnit') == 'elastic'
-		&&
-		$this->params->get('tplWidth') == '80'
-		&&
-		$this->params->get('leftWidth') == '16.417'
-		&&
-		$this->params->get('rightWidth') == '16.417'
-	)
-	||
-	$this->params->get('hdHeight') != '75px'
-	||
-	$this->params->get('topHeight') != '194px'
-	||
-	$this->params->get('logoWidth') != '111px'
-	||
-	$this->params->get('logoHeight') != '46px'
-)
-	$cssQuery[] = 'layoutUnit='.$this->params->get('layoutUnit');
-
-// template, left and right column width
-if (
-	!(
-		$this->params->get('layoutUnit') == 'elastic'
-		&&
-		$this->params->get('tplWidth') == '80'
-		&&
-		$this->params->get('leftWidth') == '16.417'
-		&&
-		$this->params->get('rightWidth') == '16.417'
-	)
-) {
-	$cssQuery[] = 'tplWidth='.$this->params->get('tplWidth');
-	$cssQuery[] = 'leftWidth='.$this->params->get('leftWidth');
-	$cssQuery[] = 'rightWidth='.$this->params->get('rightWidth');
-}
-
-// header height
-if ($this->params->get('hdHeight') != '75px')
-	$cssQuery[] = 'hdHeight='.$this->params->get('hdHeight');
-
-// top block height
-if ($this->params->get('topHeight') != '194px')
-	$cssQuery[] = 'topHeight='.$this->params->get('topHeight');
-
-// logo dimension
-if ($this->params->get('logoWidth') != '111px')
-	$cssQuery[] = 'logoWidth='.$this->params->get('logoWidth');
-
-if ($this->params->get('logoHeight') != '46px')
-	$cssQuery[] = 'logoHeight='.$this->params->get('logoHeight');
-
-// process internal (sub-)domains
-if ($this->params->get('internalLinks') != '')
-	$cssQuery[] = 'internalLinks='.rawurlencode($this->params->get('internalLinks'));
 
 /*----------------------------------------------------------------------------*/
 
@@ -331,21 +236,31 @@ if ($this->params->get('png24Fix'))
 if ($this->params->get('keepVR'))
 	$jsQuery[] = 'keepVR=1';
 
+// add support for hover and focus state in IE6 (form elements only) by automatically adding `hover` / `focus`
+// class to input, select, textarea and button elements when they are hovered / focused
+if ($this->params->get('ie6Hover'))
+	$jsQuery[] = 'ie6Hover=1';
+
 // modal window links creation
 $modalLinks = false;
 
-// modalize icons links if in com_content page
-if (
-	JRequest::getCmd('option') == 'com_content'
-	&&
-	($this->params->get('modalPdf') || $this->params->get('modalPrint') || $this->params->get('modalEmail'))
-) {
+if ($this->params->get('modalPdf') || $this->params->get('modalPrint') || $this->params->get('modalEmail')) {
+	// only modalize icons links if in com_content page
 	$comOutput = $this->getBuffer('component');
+	if (JRequest::getCmd('option') == 'com_content' && preg_match_all('#<a\s+[^>]*href="([^"^>]+)"[^>]*>#si', $comOutput, $matches, PREG_SET_ORDER) > 0) {
+		$modalLinks = true;
 
-	if (preg_match_all('/<a\s+[^>]*href="([^"^>]+)"[^>]*>/si', $comOutput, $matches, PREG_SET_ORDER) > 0) {
+		// prepare modal window dimension for each icon link types
+		foreach (array('Pdf', 'Print', 'Email') AS $icon) {
+			if ($this->params->get('modal'.$icon)) {
+				list($w, $h) = preg_split("/\s*x\s*/i", str_replace('px', '', $this->params->get('modal'.$icon.'Size')), 2);
+				$jsQuery[] = 'modalIcons[modal'.$icon.'][w]='.rawurlencode($w).'&amp;modalIcons[modal'.$icon.'][h]='.rawurlencode($h);
+			}
+		}
+
+		// modalize icons links
 		foreach ($matches AS $match) {
 			$found = false;
-
 			if ($this->params->get('modalPdf') && (preg_match('/format=pdf/i', $match[1]) || preg_match('/\.pdf$/i', $match[1])))
 				$found = 'modalPdf';
 			elseif ($this->params->get('modalPrint') && (preg_match('/print=1/i', $match[1]) || preg_match('/\/print\.html$/i', $match[1])))
@@ -354,14 +269,6 @@ if (
 				$found = 'modalEmail';
 
 			if ($found) {
-				$modalLinks = true;
-
-				// prepare modal window dimension for icon link determined
-				if (!isset(${$found})) {
-					${$found} = true;
-					$jsQuery[] = $found.'='.rawurlencode(str_replace('px', '', $this->params->get($found.'Size')));
-				}
-
 				// add class attribute
 				if (preg_match('/class=/', $match[0]))
 					$found = preg_replace('/class="([^"^>]+)"/i', 'class="'.$found.' \\1"', $match[0]);
@@ -377,32 +284,32 @@ if (
 				$comOutput = str_replace($match[0], $found, $comOutput);
 			}
 		}
-	}
 
-	// set new buffer
-	if ($modalLinks)
+		// set new buffer
 		$this->setBuffer($comOutput, 'component');
+	}
 }
 
 // process custom modalization rules
 for ($i = 0; $i < 10; $i++) {
 	if ($this->params->get('modal'.$i) && $this->params->get('modal'.$i.'Attr') != '' && $this->params->get('modal'.$i.'Pattern') != '') {
-		// we have custom modalization rule set
+		// has custom modalization set
 		$modalLinks = true;
+		$sels = explode(',', $this->params->get('modal'.$i.'Pattern'));
 
 		if ($this->params->get('modal'.$i.'Match') != 'exact') {
 			// regular expression matching
-			$jsQuery[] = 'modalRegex['.$i.']['.$this->params->get('modal'.$i.'Attr').']='.rawurlencode(trim($this->params->get('modal'.$i.'Pattern')));
+			foreach ($sels AS $sel)
+				$jsQuery[] = 'modalRegex['.$i.']['.$this->params->get('modal'.$i.'Attr').'][]='.rawurlencode(trim($sel));
 		} else {
 			// match pattern exactly
-			$jsQuery[] = 'modalExact['.$i.']['.$this->params->get('modal'.$i.'Attr').']='.rawurlencode(trim($this->params->get('modal'.$i.'Pattern')));
+			foreach ($sels AS $sel)
+				$jsQuery[] = 'modalExact['.$i.']['.$this->params->get('modal'.$i.'Attr').'][]='.rawurlencode(trim($sel));
 		}
 
 		// prepare custom modalization window dimension
-		if (!isset(${'modal'.$i})) {
-			${'modal'.$i} = true;
-			$jsQuery[] = 'modalSize['.$i.']='.rawurlencode(str_replace('px', '', $this->params->get('modal'.$i.'Size')));
-		}
+		list($w, $h) = preg_split("/\s*x\s*/i", str_replace('px', '', $this->params->get('modal'.$i.'Size')), 2);
+		$jsQuery[] = 'modalSize['.$i.'][w]='.rawurlencode($w).'&amp;modalSize['.$i.'][h]='.rawurlencode($h);
 	}
 }
 
@@ -413,51 +320,44 @@ for ($i = 0; $i < 10; $i++) {
 ************************************/
 
 // convert array of name/value pairs to query string
-$jsQuery = @count($jsQuery) ? implode('&amp;', $jsQuery) : '';
-$cssQuery = @count($cssQuery) ? implode('&amp;', $cssQuery) : '';
+$jsQuery = count($jsQuery) ? implode('&amp;', $jsQuery) : '';
 
 // load JoomlaEZ.com's CSS Framework and template specific stylesheets
 jezThemeBaseHelper::loadStylesheets('jezFramework.css', 'templates/'.$this->template.'/css/');
+
+if ($this->params->get('layout') == 'fixed')
+	jezThemeBaseHelper::loadStylesheets('jezGridFixed.css', 'templates/'.$this->template.'/css/');
+else
+	jezThemeBaseHelper::loadStylesheets('jezGridElastic.css', 'templates/'.$this->template.'/css/');
+
+if ($this->params->get('internalLinks') != '') {
+	$inLinks = explode(',', $this->params->get('internalLinks'));
+	$this->addStyleDeclaration('
+a[href^="http://'.implode('"],a[href^="http://', $inLinks).'"] {
+	padding: 0;
+	background: none;
+}
+');
+}
+
 jezThemeBaseHelper::loadStylesheets('layouts.css', 'templates/'.$this->template.'/css/', true);
 jezThemeBaseHelper::loadStylesheets('template.css', 'templates/'.$this->template.'/css/', true);
 
-// pass query string to CSS customization script
-if ($cssQuery)
-	$this->addStyleSheet($this->baseurl.'/templates/'.$this->template.'/css/customize.css.php?'.$cssQuery);
-
-$this->addCustomTag('
-<!--[if lte IE 7]><link rel="stylesheet" href="'.$this->baseurl.'/templates/'.$this->template.'/css/ie7compat.css" type="text/css" /><![endif]-->
-');
-
-if ($this->params->get('ie6Warning'))
+if ($this->params->get('ie6warning')) {
 	$this->addCustomTag('
 <!--[if lte IE 6]><link rel="stylesheet" href="'.$this->baseurl.'/templates/'.$this->template.'/css/ie6warning.css" type="text/css" /><![endif]-->
-<!--[if lte IE 6]><style type="text/css">body { padding-top: 2em; }</style><![endif]-->
 ');
+}
 
-// add support for hover and focus state in IE6 using CSS Hover v3 behavior file
-// visit http://www.xs4all.nl/~peterned/csshover.html for details
-if ($this->params->get('ie6Hover'))
-	$this->addCustomTag('
-<!--[if lte IE 6]><style type="text/css">body { behavior: url("'.$this->baseurl.'/templates/'.$this->template.'/css/csshover3.htc"); }</style><![endif]-->
+$this->addCustomTag('
+<!--[if IE 7]><link rel="stylesheet" href="'.$this->baseurl.'/templates/'.$this->template.'/css/ie7compat.css" type="text/css" /><![endif]-->
 ');
 
 // load JoomlaEZ.com's Base JavaScript library
-if (
-	$this->params->get('png24Fix')
-	||
-	$this->params->get('keepVR')
-	||
-	(!$this->params->get('_modTop') && $this->params->get('fontResizer'))
-)
-	jezThemeBaseHelper::loadScripts('jezBase.js', 'templates/'.$this->template.'/scripts/');
+jezThemeBaseHelper::loadScripts('jezBase.js', 'templates/'.$this->template.'/scripts/');
 
 // load Mootools and other effects libraries?
-if (
-	($this->params->get('_standardPage') && $this->params->get('_navCount') && $hasNav && $this->params->get('navFx'))
-	||
-	$modalLinks
-) {
+if (($this->params->get('_standardPage') && $this->params->get('navFx')) || $modalLinks) {
 	JHTML::_('behavior.mootools');
 
 	if ($this->params->get('navFx')) {
@@ -473,17 +373,14 @@ if (
 	}
 }
 
-// load template specific JavaScript libraries
-if ( !$this->params->get('_modTop') && $this->params->get('fontResizer') )
-	jezThemeBaseHelper::loadScripts('jezFontResizer.js', 'templates/'.$this->template.'/scripts/');
-
+// load additional JavaScript libraries
 if ($this->params->get('png24Fix'))
 	jezThemeBaseHelper::loadScripts('jezPngFix.js', 'templates/'.$this->template.'/scripts/');
 
 if ($this->params->get('reflection'))
 	jezThemeBaseHelper::loadScripts('reflection.js', 'templates/'.$this->template.'/scripts/3rd-party/reflection/');
 
-// pass query string to JavaScript initialization script
+// pass customized parameters to initialization script
 if ($jsQuery)
 	$this->addScript($this->baseurl.'/templates/'.$this->template.'/scripts/initialize.js.php?'.$jsQuery);
 
@@ -502,21 +399,18 @@ if ( $theme ) {
 			if ($files !== false) {
 				foreach ($files as $file) {
 					if ( substr($file, 0, 1) != '.' && strtolower($file) !== 'index.html' && @is_readable($basePath.DS.'css'.DS.$file) ) {
-						if ($file == 'ie7compat.css')
-							$this->addCustomTag('
-<!--[if lte IE 7]><link rel="stylesheet" href="'.$this->baseurl.'/templates/'.$this->template.'/themes/'.$theme.'/css/ie7compat.css" type="text/css" /><![endif]-->
-');
-						elseif ($file == 'ie6warning.css')
+						if ($file == 'ie6warning.css')
 							$this->addCustomTag('
 <!--[if lte IE 6]><link rel="stylesheet" href="'.$this->baseurl.'/templates/'.$this->template.'/themes/'.$theme.'/css/ie6warning.css" type="text/css" /><![endif]-->
 ');
-						elseif ($file != 'customize.css.php')
+						elseif ($file == 'ie7compat.css')
+							$this->addCustomTag('
+<!--[if IE 7]><link rel="stylesheet" href="'.$this->baseurl.'/templates/'.$this->template.'/themes/'.$theme.'/css/ie7compat.css" type="text/css" /><![endif]-->
+');
+						else
 							jezThemeBaseHelper::loadStylesheets($file, 'templates/'.$this->template.'/themes/'.$theme.'/css/', true);
 					}
 				}
-
-				if (@file_exists($basePath.DS.'css'.DS.'customize.css.php') && @is_readable($basePath.DS.'css'.DS.'customize.css.php') && $cssQuery)
-					$this->addStyleSheet($this->baseurl.'/templates/'.$this->template.'/themes/'.$theme.'/css/customize.css.php?'.$cssQuery);
 			}
 		}
 
@@ -527,13 +421,12 @@ if ( $theme ) {
 			if ($files !== false) {
 				foreach ($files as $file) {
 					if ( substr($file, 0, 1) != '.' && strtolower($file) !== 'index.html' && @is_readable($basePath.DS.'scripts'.DS.$file) ) {
-						if ($file != 'initialize.js.php')
+						if ($file == 'initialize.js.php')
+							$this->addScript($this->baseurl.'/templates/'.$this->template.'/themes/'.$theme.'/scripts/initialize.js.php?'.$jsQuery);
+						else
 							jezThemeBaseHelper::loadScripts($file, 'templates/'.$this->template.'/themes/'.$theme.'/scripts/', true);
 					}
 				}
-
-				if (@file_exists($basePath.DS.'scripts'.DS.'initialize.js.php') && @is_readable($basePath.DS.'scripts'.DS.'initialize.js.php') && $jsQuery)
-					$this->addScript($this->baseurl.'/templates/'.$this->template.'/themes/'.$theme.'/scripts/initialize.js.php?'.$jsQuery);
 			}
 		}
 	}

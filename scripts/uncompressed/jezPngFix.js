@@ -7,7 +7,7 @@
  * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
  * @license		http://www.opensource.org/licenses/mit-license.html
  *
- * Please visit http://www.joomlaez.com/ for more information
+ * Please visit http://joomlaez.com/ for more information
  */
 
 /*
@@ -59,12 +59,17 @@ be a single pixel transparent GIF available as given below.
 
 */
 
+var selective = false;
+
 function jezFixPNGs() {
+	var images = document.images;
 	if (window.attachEvent && jezIEVer <= 6) { // client browser is IE <= 6
-		var images = document.images;
 		for (var i = 0; i < images.length; i++)
 			jezFixPNG(images[i]);
 		setTimeout("jezShowPNGs()", 200);
+	} else {
+		for (var i = 0; i < images.length; i++)
+			images[i].style.visibility = "visible";
 	}
 }
 

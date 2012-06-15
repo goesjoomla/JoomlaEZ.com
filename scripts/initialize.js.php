@@ -1,78 +1,48 @@
 <?php
 /*
-* JEZ Rego Joomla! 1.5 Template :: Template Customizer
+* JEZ Thema Joomla! 1.5 Theme Base :: Template Customizer
 *
-* @package		JEZ Rego
-* @version		1.5.0
+* @package		JEZ Thema
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
-* @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 
 /********** Preparing Params **********/
 foreach ($_GET AS $k => $v)
 	$vars[str_replace('amp;', '', $k)] = str_replace(array('\\"', "\\'"), array('"', "'"), $v);
-
 unset($_GET);
 
 // parsing parameters
 $varsName = array(
-	'png24Fix', 'png24Fix_for', 'spacer', 'keepVR', 'navFx', 'navFxOpts', 'hasEditor',
-	'modalPdf', 'modalPrint', 'modalEmail', 'modalRegex', 'modalExact', 'modalSize'
+	'png24Fix', 'png24Fix_for', 'spacer', 'keepVR', 'ie6Hover', 'nav', 'navFx', 'navFxOpts',
+	'modalIcons', 'modalRegex', 'modalExact', 'modalSize', 'hasEditor'
 );
-
 foreach ($varsName AS $varName)
 	${$varName} = isset($vars[$varName]) ? $vars[$varName] : '';
-
 unset($vars);
 
 $js = '';
 
-/********** Fix Editor's Height **********/
-if ($hasEditor) {
-	$js .= '
-jezAddEvent(window, "load", function() {
-	jezKeepVertRhythm("table", "mceEditor");
-});
-';
-}
-
-/********** Navigation **********/
-if ($navFx) {
-	$js .= '
-window.addEvent("domready", function() {
-	new jezMenuFx($("jezNav"), {
-		'.($navFxOpts ? str_replace(array(':', ','), array(': ', ",\n\t\t"), $navFxOpts) : '').'
-	});
-});
-';
-}
-
-/********** Fix PNG-24 for IE6 **********/
+/********** General **********/
 if ($png24Fix) {
 	if ($spacer) {
 		$js .= '
-if (window.attachEvent && jezIEVer <= 6) { // client browser is IE <= 6
-	var SPACER = "'.$spacer.'";';
+var SPACER = "'.$spacer.'";';
 	}
 
 	if ($png24Fix_for == 'selective') {
 		$js .= '
-	var selective = true;
-	var pngClass = "png24";';
-	} else {
-		$js .= '
-	var selective = false;';
+var selective = true;
+var pngClass = "png24";';
 	}
-
 	$js .= '
-	jezAddEvent(window, "load", jezFixPNGs);
-}';
+jezAddEvent(window, "load", jezFixPNGs);
+';
 }
 
-/********** Keep Typography's Vertical Rhythm **********/
 if ($keepVR) {
 	$js .= '
 jezAddEvent(window, "load", function() {
@@ -81,8 +51,42 @@ jezAddEvent(window, "load", function() {
 ';
 }
 
+if ($ie6Hover) {
+	$js .= '
+if (window.attachEvent && jezIEVer <= 6) { // client browser is IE <= 6
+	jezAddEvent(window, "load", function() {
+		// add hover & focus states to form elements
+		jezSwitchState("jezWrapper", ["input", "select", "textarea", "button"], true, true);
+	});
+}
+';
+}
+
+/********** Navigation **********/
+if ($nav) {
+	$js .= '
+if (window.attachEvent && jezIEVer <= 6) { // client browser is IE <= 6
+	jezAddEvent(window, "load", function() {
+		// add hover state to li elements of global nav
+		jezSwitchState("jezNav", "li", true);
+	});
+}
+';
+	if ($navFx) {
+		$js .= '
+window.addEvent("domready", function() {
+	new jezMenuFx($("jezNav"), {
+		'.($navFxOpts ? str_replace(array(':', ','), array(': ', ",\n\t\t"), $navFxOpts)."," : '').'
+		subItemActiveCss: {"background-color": "#444444"},
+		subItemInactiveCss: {"background-color": "#888888"}
+	});
+});
+';
+	}
+}
+
 /********** Modal Links Creation **********/
-if ($modalPdf || $modalPrint || $modalEmail || $modalRegex || $modalExact) {
+if ($modalIcons || $modalRegex || $modalExact) {
 	$js .= '
 window.addEvent("load", function() {
 	SqueezeBox.initialize();
@@ -101,14 +105,13 @@ window.addEvent("load", function() {
 	}';
 
 	// modalize article's icons links
-	foreach ( array('modalPdf', 'modalPrint', 'modalEmail') AS $modalIcon ) {
-		if (${$modalIcon}) {
-			list($w, $h) = preg_split("/\s*x\s*/i", ${$modalIcon}, 2);
+	if ($modalIcons) {
+		foreach ($modalIcons AS $className => $dimension) {
 			$js .= '
-	$$("a.'.$modalIcon.'").each(function(el) {
+	$$("a.'.$className.'").each(function(el) {
 		el.removeProperty("rel").addEvent("click", function(e) {
 			new Event(e).stop();
-			SqueezeBox.fromElement(el, {"handler": "iframe", "size": {"x" : '.(substr($w, -1) == '%' ? 'parseInt((SqueezeBox.winWidth / 100) * '.(int) $w.')' : $w).', "y" : '.(substr($h, -1) == '%' ? 'parseInt((SqueezeBox.winHeight / 100) * '.(int) $h.')' : $h).'}});
+			SqueezeBox.fromElement(el, {"handler": "iframe", "size": {"x" : '.(substr($dimension['w'], -1) == '%' ? 'parseInt((SqueezeBox.winWidth / 100) * '.(int) $dimension['w'].')' : $dimension['w']).', "y" : '.(substr($dimension['h'], -1) == '%' ? 'parseInt((SqueezeBox.winHeight / 100) * '.(int) $dimension['h'].')' : $dimension['h']).'}});
 			return false;
 		});
 	});
@@ -120,15 +123,14 @@ window.addEvent("load", function() {
 	if ($modalRegex) {
 		for ($i = 0; $i < 10; $i++) {
 			if (isset($modalRegex[$i])) {
-				foreach ($modalRegex[$i] AS $attr => $pattern) {
+				foreach ($modalRegex[$i] AS $attr => $patterns) {
 					if ($attr == 'class')
 						$attr = 'className';
 
-					list($w, $h) = preg_split("/\s*x\s*/i", $modalSize[$i], 2);
-					$tmp[] = 'if ($defined(el.'.$attr.') && el.'.$attr.'.match(/'.str_replace('\\\\', '\\', $pattern).'/i)) {
+					$tmp[] = 'if ($defined(el.'.$attr.') && (el.'.$attr.'.match(/'.implode('/i) || el.'.$attr.'.match(/', str_replace('\\\\', '\\', $patterns)).'/i))) {
 			el.removeProperty("rel").addEvent("click", function(e) {
 				new Event(e).stop();
-				SqueezeBox.fromElement(el, {"handler": "iframe", "size": {"x" : '.(substr($w, -1) == '%' ? 'parseInt((SqueezeBox.winWidth / 100) * '.(int) $w.')' : $w).', "y" : '.(substr($h, -1) == '%' ? 'parseInt((SqueezeBox.winHeight / 100) * '.(int) $h.')' : $h).'}});
+				SqueezeBox.fromElement(el, {"handler": "iframe", "size": {"x" : '.(substr($modalSize[$i]['w'], -1) == '%' ? 'parseInt((SqueezeBox.winWidth / 100) * '.(int) $modalSize[$i]['w'].')' : $modalSize[$i]['w']).', "y" : '.(substr($modalSize[$i]['h'], -1) == '%' ? 'parseInt((SqueezeBox.winHeight / 100) * '.(int) $modalSize[$i]['h'].')' : $modalSize[$i]['h']).'}});
 				return false;
 			});
 		}';
@@ -149,16 +151,15 @@ window.addEvent("load", function() {
 	if ($modalExact) {
 		for ($i = 0; $i < 10; $i++) {
 			if (isset($modalExact[$i])) {
-				foreach ($modalExact[$i] AS $attr => $pattern) {
+				foreach ($modalExact[$i] AS $attr => $patterns) {
 					if ($attr == 'class')
 						$attr = 'className';
 
-					list($w, $h) = preg_split("/\s*x\s*/i", $modalSize[$i], 2);
 					$js .= '
-	$$("a['.$attr.'='.$pattern.']").each(function(el) {
+	$$("a['.$attr.'='.implode(']", "a['.$attr.'=', $patterns).']").each(function(el) {
 		el.removeProperty("rel").addEvent("click", function(e) {
 			new Event(e).stop();
-			SqueezeBox.fromElement(el, {"handler": "iframe", "size": {"x" : '.(substr($w, -1) == '%' ? 'parseInt((SqueezeBox.winWidth / 100) * '.(int) $w.')' : $w).', "y" : '.(substr($h, -1) == '%' ? 'parseInt((SqueezeBox.winHeight / 100) * '.(int) $h.')' : $h).'}});
+			SqueezeBox.fromElement(el, {"handler": "iframe", "size": {"x" : '.(substr($modalSize[$i]['w'], -1) == '%' ? 'parseInt((SqueezeBox.winWidth / 100) * '.(int) $modalSize[$i]['w'].')' : $modalSize[$i]['w']).', "y" : '.(substr($modalSize[$i]['h'], -1) == '%' ? 'parseInt((SqueezeBox.winHeight / 100) * '.(int) $modalSize[$i]['h'].')' : $modalSize[$i]['h']).'}});
 			return false;
 		});
 	});';
@@ -168,6 +169,15 @@ window.addEvent("load", function() {
 	}
 
 	$js .= '
+});
+';
+}
+
+/********** Fix Editor's Height **********/
+if ($hasEditor) {
+	$js .= '
+jezAddEvent(window, "load", function() {
+	jezKeepVertRhythm("table", "mceEditor");
 });
 ';
 }

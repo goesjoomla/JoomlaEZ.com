@@ -1,23 +1,23 @@
 JoomlaEZ - An easy way to Joomla!
 
 --------------------------------------------------------------------------------
- JEZ Rego - Premium Quality, Multi-purpose, Multi-column Joomla! 1.5 Template
+ JEZ Thema - Professional Joomla! 1.5 Template Framework
 
  Copyright (c) 2009 JoomlaEZ ( http://www.joomlaez.com/ ).
  All rights reserved unless otherwise stated.
 
- Thank you for choosing our JEZ Rego Joomla! 1.5 Template. JEZ Rego is a
- professional, flexible, fully customizable, multi-purpose, multi-column and
- search engine friendly Joomla 1.5 template. Equipped with powerful features,
- this template allows you to present content in whatever way you like.
+ Thank you for choosing our JEZ Thema Joomla! 1.5 Template Framework, the
+ professional solution to create Joomla! 1.5 template easier and faster. By
+ creating Joomla template yourself, you pay less, even free, but have an unique
+ template which suites you best then separates your site from the crowd.
 --------------------------------------------------------------------------------
 
 ----------------
 1. Key Features:
 ----------------
 
-To ensure you just need to care about content copywritting after installing JEZ
-Rego, the template is equipped with following key features:
+To ensure you just need to care about graphic design when creating Joomla
+template, JEZ Thema is equipped with following key features:
 
 1.1. General:
 -------------
@@ -41,17 +41,23 @@ Rego, the template is equipped with following key features:
 	* 100% tableless design.
 	* Select from either fixed (px unit based) or elastic (em unit based)
 	  grid-based layout.
-	* Ability to re-style any individual page entirely, not just the
+	* Ability to create individual styling for entire page, not just the
 	  component output, by defining page class suffix for appropriated menu
 	  item.
-	* 5 fully customizable general wrappers such as header, body, footer,
+	* 6 fully customizable general wrappers such as header, body, footer,
 	  etc.
-	* 17 fully collapsible module positions.
+	* 6 wrapper formats to implement from simple graphic to special rounded
+	  corners using alpha channel graphic for general wrappers.
+	* 18 fully customizable module positions.
+	* 4 advanced module chromes to implement from simple graphic to special
+	  rounded corners using alpha channel graphic for Joomla modules output.
+	* Ability to turn on / off or switching wrapper format / module chrome
+	  for any individual position on-the-fly without breaking overall layout.
 	* Styles for creating tableless layout predefined.
-	* Express individual module re-styling: all module chromes have applied
-	  smart technique for easily re-styling any module at any position
-	  without the need of applying module class suffix. This allow
-	  unlimited module styling for both background graphic and module title.
+	* Express individual module styling: advanced module chromes have been
+	  applied smart technique for easily creating individual style for any
+	  module at any position without the need of applying module class
+	  suffix.
 
 1.3. Typography:
 ----------------
@@ -63,11 +69,9 @@ Rego, the template is equipped with following key features:
 	* 14 text colors predefined.
 	* 3 styles predefined for message box.
 	* Text links iconized.
-	* Menu module's view has been overriden for link title support.
-	* Express individual menu item re-styling: menu module's view has been
-	  overriden for easily re-styling any menu item of any menu module at
-	  any position. This allow unlimited menu item styling for both
-	  background graphic and link text.
+	* Express individual menu item styling: menu module's view has been
+	  overriden for link title support and easily creating individual style
+	  for any menu item of any menu module at any position.
 
 1.4. Effects:
 -------------
@@ -95,15 +99,15 @@ Rego, the template is equipped with following key features:
 2. Editions:
 ------------
 
-JEZ Rego is released in 2 editions: free and PRO. Below is the major
+JEZ Thema is released in 2 editions: free and PRO. Below is the major
 difference between these editions.
 
 2.1. Free Edition:
 ------------------
 
-Following features are not included in JEZ Rego Free Edition:
-	* Express individual module re-styling.
-	* Express individual menu item re-styling.
+Following features are not included in JEZ Thema Free Edition:
+	* Express individual module styling.
+	* Express individual menu item styling.
 	* Dev panel.
 
 License 		: Creative Commons BY-NC-SA 3.0 Unported. Read details
@@ -130,25 +134,25 @@ Support channel		: Dedicated technical and on-site administration support.
 3. PRO Edition Pricing:
 -----------------------
 
-JEZ Rego PRO edition is distributed under 2 license types: single domain and
+JEZ Thema PRO edition is distributed under 2 license types: single domain and
 unlimited domains. Below is the major difference between these license types.
 
-JEZ Rego PRO edition can be purchased at:
-http://www.joomlaez/component/memman/view-private/3-jez-rego-pro-edition.html
+JEZ Thema PRO edition can be purchased at:
+http://www.joomlaez/component/memman/view-private/1-jez-thema-pro-edition.html
 
 3.1. Single Domain License:
 ---------------------------
 
 Allowed use		: Unlimited websites sharing one single (sub-)domain.
 Support channel  	: Dedicated technical support.
-Price			: 19.90 USD
+Price			: 14.90 USD
 
 3.2. Unlimited Domains License:
 -------------------------------
 
 Allowed use		: Unlimited websites on unlimited numer of domains.
 Support channel  	: Dedicated technical and on-site administration support.
-Price			: 39.90 USD
+Price			: 29.90 USD
 
 --------------------
 4. Support Channels:

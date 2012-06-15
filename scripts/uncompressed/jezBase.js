@@ -7,7 +7,7 @@
  * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
  * @license		Commercial Proprietary
  *
- * Please visit http://www.joomlaez.com/ for more information
+ * Please visit http://joomlaez.com/ for more information
  */
 
 /***** Dean Edwards's addEvent solution ***************************************/
@@ -42,6 +42,49 @@ function jezReadCookie(name) {
 			return c.substring(name.length, c.length); // return cookie data
     }
     return null;
+}
+
+function jezSwitchState(element, childTags, hoverClass, focusClass) {
+	element = typeof element == 'object' ? element : (document.getElementById ? document.getElementById(element) : document.all[element]);
+
+	// get all children matching childTags
+	var elements = [], tmp;
+	if (childTags) {
+		childTags = typeof childTags == 'string' ? [childTags] : childTags;
+		for (var i = 0; i < childTags.length; i++) {
+			tmp = element.getElementsByTagName(childTags[i]);
+			if (tmp.length > 0) {
+				for (var j = 0; j < tmp.length; j++) {
+					if (childTags[i].toLowerCase() != 'input' || tmp[j].type != 'hidden')
+						elements.push(tmp[j]);
+				}
+			}
+		}
+	}
+
+	if (elements.length > 0) {
+		for (var i = 0; i < elements.length; i++) {
+			// add hoverClass to elements onMouseOver
+			if (hoverClass) {
+				jezAddEvent(elements[i], 'mouseover', function() {
+					this.className += " hover";
+				});
+				jezAddEvent(elements[i], 'mouseout', function() {
+					this.className = this.className.replace(/ hover\b/, '');
+				});
+			}
+
+			// add focusClass to elements onFocus
+			if (focusClass) {
+				jezAddEvent(elements[i], 'focus', function() {
+					this.className += " focus";
+				});
+				jezAddEvent(elements[i], 'blur', function() {
+					this.className = this.className.replace(/ focus\b/, '');
+				});
+			}
+		}
+	}
 }
 
 function jezGetVertRhythm(element) {

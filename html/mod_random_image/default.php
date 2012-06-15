@@ -1,21 +1,21 @@
 <?php
 /*
-* JEZ Rego Joomla! 1.5 Template :: Output Overrides
+* JEZ Thema Joomla! 1.5 Theme Base :: Output Overrides
 *
-* @package		JEZ Rego
-* @version		1.5.0
+* @package		JEZ Thema
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
 * @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 
 /*----------------------------------------------------------------------------*/
 
 defined('_JEXEC') or die;
 ?>
-<div class="mod_randomimage<?php echo $params->get( 'moduleclass_sfx' ); ?> tac">
+<div class="tac mod_randomimage<?php echo $params->get( 'moduleclass_sfx' ); ?>">
 <?php if ($link) : ?>
 <a href="<?php echo $link; ?>" title="<?php echo $image->name; ?>" target="_self">
 <?php endif;

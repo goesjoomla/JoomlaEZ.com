@@ -1,37 +1,18 @@
 <?php
 /*
-* JEZ Rego Joomla! 1.5 Template :: Wrappers :: standard output
+* JEZ Thema Joomla! 1.5 Theme Base :: Wrappers :: standard output
 *
-* @package		JEZ Rego
-* @version		1.5.0
+* @package		JEZ Thema
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
 * @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 
 // no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
-
-if (!(isset($_COOKIE['jezTplName']) && isset($_COOKIE['jezTplDir']))) {
-	// get template directory
-	$tpl_dir = dirname(__FILE__);
-	setcookie('jezTplDir', $tpl_dir);
-
-	// get the active template
-	$template = basename($tpl_dir);
-	setcookie('jezTplName', $template);
-} else {
-	$tpl_dir = $_COOKIE['jezTplDir'];
-	$template = $_COOKIE['jezTplName'];
-}
-
-// is language loaded?
-if ( preg_match('/\?*JEZ_REGO\?*/', JText::_('JEZ_REGO')) ) {
-	$lang =& JFactory::getLanguage();
-	$lang->load( "tpl_{$template}", $tpl_dir );
-}
 
 // customize template
 define( 'TEMPLATE_PATH', dirname(__FILE__) );
@@ -48,20 +29,21 @@ require_once(TEMPLATE_PATH.DS.'custom.php');
 </head>
 
 <body<?php echo $this->params->get('pageclass_sfx') != '' ? ' class="'.$this->params->get('pageclass_sfx').'"' : ''; ?>>
-	<?php
-	if ($this->params->get('_modLogo') || $this->params->get('logo') != '' || $this->params->get('_navCount'))
-		jezWrapper($this->params->get('wrapperHeader'), 'header', $this->params, 'jezHeader');
+	<?php if ($this->params->get('grids')) : ?>
+	<div class="showgrids">
+	<?php endif;
 
-	jezWrapper($this->params->get('wrapperPage'), 'page', $this->params, 'jezPage', ($this->params->get('_blksCount') ? 'hasTop' : ''));
+	jezWrapper($this->params->get('wrapperPage'), 'page', $this->params, 'jezPage', 'container');
 
-	if (!defined('RAW_OUTPUT') && ($this->params->get('_extsCount') || $this->params->get('_modUser9')))
-		jezWrapper($this->params->get('wrapperExtras'), 'extras', $this->params, 'jezExtras');
+	if ($this->params->get('_modFooter') || $this->params->get('_debug'))
+		jezWrapper($this->params->get('wrapperFooter'), 'footer', $this->params, 'jezFooter', 'container');
 
-	if ($this->params->get('_modFooter') || $this->params->get('_modSyndicate'))
-		jezWrapper($this->params->get('wrapperFooter'), 'footer', $this->params, 'jezFooter');
+	if ($this->params->get('grids')) : ?>
+	</div>
+	<?php endif;
 
 	if ($this->params->get('dev') && $this->params->get('dev_panel')) : ?>
-	<a href="<?php echo $_SERVER['REQUEST_URI'].(strpos($_SERVER['REQUEST_URI'], '?') === false ? '?' : '&').'tmpl=devpanel'; ?>" onclick="window.open(this.href, 'jezDevPanel', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=640,height=480'); return false;" id="dev_panel_link" class="button" title="<?php echo JText::_('Open Dev Mode Panel'); ?>" rel="nofollow"><?php echo JText::_('Dev Mode Panel'); ?></a>
+	<a href="<?php echo $this->params->get('_baseurl'); ?>/index.php?tmpl=devpanel" onclick="window.open(this.href, 'jezDevPanel', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=640,height=480'); return false;" id="dev_panel_link" class="button" title="<?php echo JText::_('Open Dev Mode Panel'); ?>"><?php echo JText::_('Dev Mode Panel'); ?></a>
 	<?php endif; ?>
 </body>
 </html>

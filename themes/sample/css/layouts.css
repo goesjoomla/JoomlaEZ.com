@@ -1,0 +1,206 @@
+/*
+* JEZ Thema Joomla! 1.5 Theme Base :: Sample :: Stylesheets :: layout styling
+*
+* @package		JEZ Thema
+* @version		1.1.0
+* @author		JoomlaEZ.com
+* @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
+* @license		Commercial Proprietary
+*
+* Please visit http://joomlaez.com/ for more information
+*/
+
+/*----------------------------------------------------------------------------*/
+
+/********************************
+* General rounded corners rules *
+********************************/
+
+/* Joomla rounded module chrome */
+.module, .module_menu, .module_text {
+	background-image: url(../images/round4imgs-bl.png);
+}
+.module div, .module_menu div, .module_text div {
+	background-image: url(../images/round4imgs-tl.png);
+}
+.module div div, .module_menu div div, .module_text div div {
+	background-image: url(../images/round4imgs-br.png);
+}
+.module div div div, .module_menu div div div, .module_text div div div {
+	background-image: url(../images/round4imgs-tr.png);
+}
+
+/* rounded using 6 images and 6 nested divs (creates rounded corners the same way as Joomla`s technique for rounded module wrapper) */
+.jezRounded6ImgsNested {
+	background-image: url(../images/round6imgs-bl_nested.png);
+}
+.jezRounded6ImgsNested .in1 {
+	background-image: url(../images/round6imgs-br_nested.png);
+}
+.jezRounded6ImgsNested .in2 {
+	background-image: url(../images/round6imgs-hl_nested.png);
+}
+.jezRounded6ImgsNested .in3 {
+	background-image: url(../images/round6imgs-hr_nested.png);
+}
+.jezRounded6ImgsNested .in4 {
+	background-image: url(../images/round6imgs-fl_nested.png);
+}
+.jezRounded6ImgsNested .in5 {
+	background-image: url(../images/round6imgs-fr_nested.png);
+}
+
+/* rounded using 6 images (creates rounded corners using schillmania.com`s `More Rounded Corners With CSS` technique) */
+.jezRounded6Imgs .hd {
+	background-image: url(../images/round6imgs-hl.png);
+}
+.jezRounded6Imgs .hd .c {
+	background-image: url(../images/round6imgs-hr.png);
+}
+.jezRounded6Imgs .bd {
+	background-image: url(../images/round6imgs-bl.png);
+}
+.jezRounded6Imgs .bd .c {
+	background-image: url(../images/round6imgs-br.png);
+}
+.jezRounded6Imgs .ft {
+	background-image: url(../images/round6imgs-fl.png);
+}
+.jezRounded6Imgs .ft .c {
+	background-image: url(../images/round6imgs-fr.png);
+}
+
+/* rounded using 1 image (creates rounded corners using schillmania.com`s `Even More Rounded Corners With CSS` technique) */
+.jezRounded1Img .inner, .jezRounded1Img .t, .jezRounded1Img .b, .jezRounded1Img .b div {
+	background-image: url(../images/round1img.png);
+}
+
+/*----------------------------------------------------------------------------*/
+
+/***************
+* Page wrapper *
+***************/
+
+#jezPage {
+	margin-bottom: 0;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*****************
+* Header wrapper *
+*****************/
+
+#jezHeader {
+	height: auto;
+}
+
+/* rounded using 1 image */
+#jezHeader.jezRounded1Img .inner {
+	height: 4.5em; /* 54px */
+	padding: 1.5em 2.5em 0 1em; /* 18px 30px 0 12px */
+}
+
+/* nested wrappers and module positions */
+#jezLogo {
+	max-width: 22em; /* 264px */
+}
+#jezTop {
+	height: 3em; /* 36px */
+	max-width: 52em; /* 624px */
+}
+
+/*----------------------------------------------------------------------------*/
+
+/******************
+* Content wrapper *
+******************/
+
+/* nested wrappers and module positions */
+.gr3 #jezSub {
+	width: 20em; /* 240px */
+}
+.gr3 #jezLocal {
+	width: 20em; /* 240px */
+}
+
+.gr2 #jezMain {
+	margin-left: 27.667em; /* 332px */
+	width: 52.333em; /* 628px */
+}
+.gr2 #jezSub {
+	width: 26.667em; /* 320px */
+}
+.gr2 #jezSub.expandBoth {
+	width: 39.5em; /* 462px */
+}
+.gr2 #jezSub.expandRight {
+	margin-left: 27.667em; /* 332px */
+	width: 52.333em; /* 628px */
+}
+.gr2 #jezLocal {
+	width: 26.667em; /* 320px */
+}
+.gr2 #jezLocal.expandBoth {
+	width: 39.5em; /* 462px */
+}
+.gr2 #jezLocal.expandLeft {
+	width: 52.333em; /* 628px */
+}
+
+.gr1 #jezLocal, .gr1 #jezMain, .gr1 #jezSub {
+	margin: 6em 0 0 0; /* 72px 0 0 0 */
+}
+
+/*----------------------------------------------------------------------------*/
+
+/****************************
+* Global navigation wrapper *
+****************************/
+
+#jezNav {
+	height: 3em; /* 36px */
+	width: 78.5em; /* 942px */
+}
+
+/* nested wrappers and module positions */
+#modUser3, #modUser4 {
+	margin-top: -1.5em; /* -18px */
+	position: absolute;
+}
+#modUser3 {
+	z-index: 99;
+}
+#modUser4 {
+	width: 78em; /* 936px */
+}
+
+#modBreadcrumb {
+	bottom: -5.25em; /* -63px */
+	padding-left: 1em; /* 12px */
+	position: absolute;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/****************************
+* Bottom navigation wrapper *
+****************************/
+
+/* rounded using 1 image */
+#jezBottom.jezRounded1Img .inner {
+	height: 0;
+	overflow: visible;
+}
+
+/* nested wrappers and module positions */
+#modInset, #modSyndicate {
+	margin-top: -.75em; /* 9px */
+	position: absolute;
+}
+#modInset {
+	z-index: 99;
+}
+#modSyndicate {
+	right: 1em; /* 12px */
+}

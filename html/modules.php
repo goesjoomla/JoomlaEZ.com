@@ -1,14 +1,14 @@
 <?php
 /*
- * JEZ Rego Joomla! 1.5 Template :: Custom Module Chromes
+ * JEZ Thema Joomla! 1.5 Theme Base :: Custom Module Chromes
  *
- * @package		JEZ Rego
- * @version		1.5.0
+ * @package		JEZ Thema
+ * @version		1.1.0
  * @author		JoomlaEZ.com
  * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
  * @license		Free for personal use with link back
  * @license		For other purposes, please purchase commercial license
- * @link		http://www.joomlaez.com/
+ * @link		http://joomlaez.com/
  */
 
 // no direct access

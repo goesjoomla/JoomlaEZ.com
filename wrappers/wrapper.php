@@ -1,14 +1,14 @@
 <?php
 /*
-* JEZ Rego Joomla! 1.5 Template :: Wrappers Helper
+* JEZ Thema Joomla! 1.5 Theme Base :: Wrappers Helper
 *
-* @package		JEZ Rego
-* @version		1.5.0
+* @package		JEZ Thema
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
 * @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 
 // no direct access

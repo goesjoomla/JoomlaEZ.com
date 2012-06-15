@@ -1,101 +1,94 @@
 <?php
 /*
-* JEZ Rego Joomla! 1.5 Template :: Output Overrides
+* JEZ Thema Joomla! 1.5 Theme Base :: Output Overrides
 *
-* @package		JEZ Rego
-* @version		1.5.0
+* @package		JEZ Thema
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
 * @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 
 /*----------------------------------------------------------------------------*/
 
 defined('_JEXEC') or die('Restricted access');
 
-if (!(isset($_COOKIE['jezTplName']) && isset($_COOKIE['jezTplDir']))) {
-	// get template directory
-	$tpl_dir = dirname(dirname(dirname(dirname(__FILE__))));
-	setcookie('jezTplDir', $tpl_dir);
-
-	// get the active template
-	$template = basename($tpl_dir);
-	setcookie('jezTplName', $template);
-} else {
-	$tpl_dir = $_COOKIE['jezTplDir'];
-	$template = $_COOKIE['jezTplName'];
-}
-
-// is language loaded?
-if ( preg_match('/\?*JEZ_REGO\?*/', JText::_('JEZ_REGO')) ) {
-	$lang =& JFactory::getLanguage();
-	$lang->load( "tpl_{$template}", $tpl_dir );
-}
+// get the active template
+$template = basename(dirname(dirname(dirname(dirname(__FILE__)))));
 
 $titleStyle	= $this->params->get('show_login_title', 1) ? '' : ' hide';
 
 if (JPluginHelper::isEnabled('authentication', 'openid')) { // support OpenID authentication
+	$lang = &JFactory::getLanguage();
+	$lang->load( 'plg_authentication_openid', JPATH_ADMINISTRATOR );
+	$langScript = 	'var JLanguage = {};'.
+					' JLanguage.WHAT_IS_OPENID = \''.str_replace( 'OpenId', 'OpenID', JText::_('WHAT_IS_OPENID') ).'\';'.
+					' JLanguage.LOGIN_WITH_OPENID = \''.JText::_( 'LOGIN_WITH_OPENID' ).'\';'.
+					' JLanguage.NORMAL_LOGIN = \''.JText::_( 'NORMAL_LOGIN' ).'\';'.
+					' var comlogin = 1;';
 	$document =& JFactory::getDocument();
+	$document->addScriptDeclaration( $langScript );
+	JHTML::_('script', 'openid.js');
 
-	// format OpenID links
-	require_once($tpl_dir.DS.'helper.php');
-	jezThemeBaseHelper::loadScripts( 'jezBaseFx.js', 'templates/'.$template.'/scripts/' );
+	// reformat OpenID links
+	$head = $document->getHeadData();
+	$loaded = false;
+	foreach ($head['scripts'] AS $k => $v) {
+		if (preg_match("/jezBaseFx\.js$/", $k)) {
+			$loaded = true;
+			break;
+		}
+	}
+	if (!$loaded)
+		JHTML::_('script', 'jezBaseFx.js', 'templates/'.$template.'/scripts/');
 
 	$document->addScriptDeclaration('
-window.addEvent("load", function() {
-	var list = $("com-form-login").getElement("ul");
-	var state = Cookie.get("login-openid");
+		window.addEvent("load", function() {
+			var thisForm = $("com-form-login");
+			var list = thisForm.getElement("ul");
+			var links = thisForm.getElements("a");
+			var p = new Element("p").injectBefore(list);
 
-	if (state == 1) {
-		$("username").addClass("system-openid");
-		$("com-openid-link").setHTML("'.JText::_( 'Normal Login' ).'");
-		list.setStyle("display", "none");
-	} else {
-		$("username").removeClass("system-openid");
-		$("com-openid-link").setHTML("'.JText::_( 'OpenID Login' ).'");
-		list.setStyle("display", "block");
-	}
+			for (var i = 0; i < links.length; i++) {
+				if (links[i].id == "com-openid-link")
+					links[i].setStyle("display", "block").injectInside(p);
+				else if (links[i].href.match(/openid\.net/)) {
+					links[i].removeProperty("style").injectInside(p);
+					if (!$defined(SqueezeBox))
+						links[i].setProperty("target", "_blank");
+				}
+			}
 
-	var passwdField = new jezFxStyle($("com-form-login-password"), {
-		addEventHandler: false,
-		activeCss: {"opacity": 1, "height": $("com-form-login-password").offsetHeight, "margin-bottom": $("com-form-login-password").getStyle("margin-bottom")},
-		inactiveCss: {"opacity": 0, "margin-bottom": 0},
-		activeFx: {duration: 500, transition: Fx.Transitions.expoOut},
-		inactiveFx: {duration: 500, transition: Fx.Transitions.expoIn},
-		preset: state == 0 ? "active" : "inactive"
-	});
+			var state = Cookie.get("login-openid");
+			var vR = jezGetVertRhythm(list);
 
-	var forgotList = new jezFxStyle(list, {
-		addEventHandler: false,
-		activeCss: {"opacity": 1, "height": list.offsetHeight, "margin-bottom": list.getStyle("margin-bottom")},
-		inactiveCss: {"opacity": 0, "height": 0, "margin-bottom": 0},
-		activeFx: {duration: 500, transition: Fx.Transitions.expoOut},
-		inactiveFx: {duration: 500, transition: Fx.Transitions.expoIn},
-		preset: state == 0 ? "active" : "inactive"
-	});
+			new jezFxStyle(list, {
+				activateOn: "click",
+				deactivateOn: "click",
+				activeCss: {"opacity": 1, "height": list.offsetHeight, "margin-bottom": (vR.fontSize * 1.5)},
+				inactiveCss: {"opacity": 0, "height": 0, "margin-bottom": 0},
+				activeFx: {duration: 500, transition: Fx.Transitions.expoOut},
+				inactiveFx: {duration: 500, transition: Fx.Transitions.expoIn},
+				preset: state == 0 ? "active" : "inactive"
+			}, $("com-openid-link"));
 
-	$("com-openid-link").addEvent("click", function(passwdField, forgotList) {
-		var newState = 1 - (Cookie.get("login-openid") ? Cookie.get("login-openid") : 0);
-
-		if (newState == 1) {
-			passwdField.deactivate();
-			forgotList.deactivate();
-			$("username").addClass("system-openid");
-			this.setHTML("'.JText::_( 'Normal Login' ).'");
-		} else {
-			passwdField.activate();
-			forgotList.activate();
-			$("username").removeClass("system-openid");
-			this.setHTML("'.JText::_( 'OpenID Login' ).'");
-		}
-
-		Cookie.set("login-openid", newState);
-	}.pass([passwdField, forgotList], $("com-openid-link")));
-});
-');
+			new jezFxStyle($("com-form-login-password"), {
+				activateOn: "click",
+				deactivateOn: "click",
+				activeCss: {"opacity": 1, "margin-bottom": (vR.fontSize * 1.5)},
+				inactiveCss: {"opacity": 0, "margin-bottom": 0},
+				activeFx: {duration: 500, transition: Fx.Transitions.expoOut},
+				inactiveFx: {duration: 500, transition: Fx.Transitions.expoIn},
+				preset: state == 0 ? "active" : "inactive"
+			}, $("com-openid-link"));
+		});
+	');
 }
+
+// get the active template
+$template = basename(dirname(dirname(dirname(dirname(__FILE__)))));
 ?>
 <div id="jezComOutput" class="user_login<?php echo $this->escape($this->params->get('pageclass_sfx')); ?> tr">
 <?php if ($this->params->get('header_login') != '') : ?>
@@ -152,12 +145,6 @@ window.addEvent("load", function() {
 	</fieldset>
 	</div>
 	<div class="fr w30p mt1_5">
-	<?php if (JPluginHelper::isEnabled('authentication', 'openid')) : ?>
-	<p>
-		<a id="com-openid-link" style="cursor: pointer"></a>
-		<br /><a href="http://openid.net" target="_blank"><?php echo JText::_('What is OpenID?'); ?></a>
-	</p>
-	<?php endif; ?>
 	<ul>
 		<li>
 			<a href="<?php echo JRoute::_( 'index.php?option=com_user&view=reset' ); ?>" title="<?php echo JText::_('FORGOT_YOUR_PASSWORD'); ?>"><?php echo JText::_('FORGOT_YOUR_PASSWORD'); ?></a>

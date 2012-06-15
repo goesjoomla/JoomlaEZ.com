@@ -8,7 +8,7 @@
  * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
  * @license		Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported
  *
- * Please visit http://www.joomlaez.com/ for more information
+ * Please visit http://joomlaez.com/ for more information
  */
 
 /*----------------------------------------------------------------------------*/

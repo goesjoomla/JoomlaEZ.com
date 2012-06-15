@@ -1,0 +1,64 @@
+/*
+* JEZ Thema Joomla! 1.5 Theme Base :: Sample :: Stylesheets :: IE 6 only
+*
+* @package		JEZ Thema
+* @version		1.1.0
+* @author		JoomlaEZ.com
+* @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
+* @license		Commercial Proprietary
+*
+* Please visit http://joomlaez.com/ for more information
+*/
+
+/*----------------------------------------------------------------------------*/
+
+/* rounded using 6 images (creates rounded corners using schillmania.com`s `More Rounded Corners With CSS` technique) */
+.jezRounded6Imgs .hd {
+	background-image: url(../images/round6imgs-hl_nested.png);
+}
+.jezRounded6Imgs .hd .c {
+	background-image: url(../images/round6imgs-hr_nested.png);
+}
+.jezRounded6Imgs .bd {
+	background-image: url(../images/round6imgs-bl_nested.png);
+}
+.jezRounded6Imgs .bd .c {
+	background-image: url(../images/round6imgs-br_nested.png);
+}
+.jezRounded6Imgs .ft {
+	background-image: url(../images/round6imgs-fl_nested.png);
+}
+.jezRounded6Imgs .ft .c {
+	background-image: url(../images/round6imgs-fr_nested.png);
+}
+
+/* rounded using 1 image (creates rounded corners using schillmania.com`s `Even More Rounded Corners With CSS` technique) */
+.jezRounded1Img .inner, .jezRounded1Img .t, .jezRounded1Img .b, .jezRounded1Img .b div {
+	background-image: url(../images/ie6/round1img.png);
+}
+
+.gr2 #jezSub.expandRight {
+	margin-left: 27.667em; /* 332px */
+	margin-right: 0;
+	width: 51.333em; /* 616px */
+}
+.gr2 #jezLocal.expandLeft {
+	margin-left: 1em; /* 12px */
+	width: 51.333em; /* 616px */
+}
+
+/* global nav */
+#jezNav.jezRounded1Img .inner {
+	overflow-y: visible;
+}
+#jezNav.jezRounded1Img .t {
+	height: 1.5em;
+}
+
+/* bottom */
+#jezBottom.jezRounded1Img .inner {
+	overflow-y: visible;
+}
+#jezBottom.jezRounded1Img .t {
+	height: 1.5em;
+}

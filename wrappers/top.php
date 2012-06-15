@@ -1,42 +1,41 @@
 <?php
 /*
-* JEZ Rego Joomla! 1.5 Template :: Wrappers :: top position
+* JEZ Thema Joomla! 1.5 Theme Base :: Wrappers :: top position
 *
-* @package		JEZ Rego
-* @version		1.5.0
+* @package		JEZ Thema
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
 * @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 
 // no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-if ($params->get('_modUser4')) :
-	jimport('joomla.application.module.helper');
-	$user4Mod =& JModuleHelper::getModules('user4');
-	$modParams = new JParameter($user4Mod[0]->params); ?>
-<div id="modUser4" class="fl <?php echo ($modParams->get('moduleclass_sfx') == '_special' ? 'special ' : '').$params->get('_user4Style'); ?>">
-	<jdoc:include type="modules" name="user4<?php echo $modParams->get('moduleclass_sfx') == '_special' ? '' : $params->get('_user4Chrome'); ?>" />
-	<?php if ( $modParams->get('moduleclass_sfx') == '_special' ) : ?>
-	<div class="user4SpecialTL"><!-- Top left corner --></div>
-	<div class="user4SpecialTR"><!-- Top right corner --></div>
-	<div class="user4SpecialBL"><!-- Bottom left corner --></div>
-	<div class="user4SpecialBR"><!-- Bottom right corner --></div>
-	<?php endif; ?>
-</div>
+if ($params->get('topNav') && ($params->get('_colsCount') || $params->get('_navCount'))) : ?>
+<ul class="menu"><li><span class="separator bold"><?php echo JText::_('Jump to'); ?>:</span></li><li>
+	<?php
+	$topNav = array();
+
+	if ($params->get('_message') || $params->get('_usersCount') || $params->get('_component') || $params->get('_modBottom'))
+		$topNav[] = '<a href="#jezMain" title="'.JText::_('Main Content').'">'.JText::_('Main Content').'</a>';
+
+	if ($params->get('_modRight'))
+		$topNav[] = '<a href="#jezSub" title="'.JText::_('Sub Content').'">'.JText::_('Sub Content').'</a>';
+
+	if ($params->get('_modLeft'))
+		$topNav[] = '<a href="#jezLocal" title="'.JText::_('Local Menu').'">'.JText::_('Local Menu').'</a>';
+
+	if ($params->get('_navCount'))
+		$topNav[] = '<a href="#jezNav" title="'.JText::_('Global Menu').'">'.JText::_('Global Menu').'</a>';
+
+	echo implode('</li><li>', $topNav);
+	?>
+</li></ul>
 <?php endif;
 
-if ($params->get('_modUser2')) : ?>
-<div id="modUser2" class="fr <?php echo $params->get('_user2Style'); ?>">
-	<jdoc:include type="modules" name="user2<?php echo $params->get('_user2Chrome'); ?>" />
-</div>
-<?php endif;
-
-if ($params->get('_modUser1')) : ?>
-<div id="modUser1" class="fl <?php echo $params->get('_user1Style'); ?>">
-	<jdoc:include type="modules" name="user1<?php echo $params->get('_user1Chrome'); ?>" />
-</div>
+if ($params->get('_modTop')) : ?>
+<jdoc:include type="modules" name="top<?php echo $params->get('_topChrome'); ?>" />
 <?php endif; ?>

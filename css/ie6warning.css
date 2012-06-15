@@ -2,27 +2,31 @@
 * JEZ Rego Joomla! 1.5 Template :: Stylesheets :: IE 6 warning
 *
 * @package		JEZ Rego
-* @version		1.5.0
+* @version		1.1.0
 * @author		JoomlaEZ.com
 * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
 * @license		Commercial Proprietary
 *
-* Please visit http://www.joomlaez.com/ for more information
+* Please visit http://joomlaez.com/ for more information
 */
 
 /*----------------------------------------------------------------------------*/
 
-#ie6Warning {
+body {
+	padding-top: 2em;
+}
+
+#ie6warning {
 	background: #ffffe1;
 	color: #000;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	position: absolute;
 	top: 0;
 }
-#ie6Warning .container {
+#ie6warning .container {
 	margin: .25em auto;
 }
-#ie6Warning img {
+#ie6warning img {
 	margin-right: .25em;
 	vertical-align: middle;
 }

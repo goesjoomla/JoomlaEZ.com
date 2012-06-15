@@ -4,6 +4,10 @@ return returnValue;};function jezFixEvent(event){event.preventDefault=jezFixEven
 function jezReadCookie(name){name=name+"=";var ca=document.cookie.split(';');for(var i=0;i<ca.length;i++){var c=ca[i];while(c.charAt(0)==' ')c=c.substring(1,c.length);if(c.indexOf(name)==0)
 return c.substring(name.length,c.length);}
 return null;}
+function jezSwitchState(element,childTags,hoverClass,focusClass){element=typeof element=='object'?element:(document.getElementById?document.getElementById(element):document.all[element]);var elements=[],tmp;if(childTags){childTags=typeof childTags=='string'?[childTags]:childTags;for(var i=0;i<childTags.length;i++){tmp=element.getElementsByTagName(childTags[i]);if(tmp.length>0){for(var j=0;j<tmp.length;j++){if(childTags[i].toLowerCase()!='input'||tmp[j].type!='hidden')
+elements.push(tmp[j]);}}}}
+if(elements.length>0){for(var i=0;i<elements.length;i++){if(hoverClass){jezAddEvent(elements[i],'mouseover',function(){this.className+=" hover";});jezAddEvent(elements[i],'mouseout',function(){this.className=this.className.replace(/ hover\b/,'');});}
+if(focusClass){jezAddEvent(elements[i],'focus',function(){this.className+=" focus";});jezAddEvent(elements[i],'blur',function(){this.className=this.className.replace(/ focus\b/,'');});}}}}
 function jezGetVertRhythm(element){var original=element=typeof element=='object'?element:(document.getElementById?document.getElementById(element):document.all[element]);var fontSize,curFontSize,lineHeight;while(element.tagName.toLowerCase()!='html'){if(document.defaultView)
 curFontSize=document.defaultView.getComputedStyle(element,null).getPropertyValue("font-size");else if(element.currentStyle)
 curFontSize=element.currentStyle['fontSize'];if(!fontSize){if(/\%$/.test(curFontSize))
