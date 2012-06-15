@@ -31,12 +31,12 @@ class JElementSections extends JElement {
 		$options = $db->loadObjectList();
 
 		// set size for select list
-		if ( empty($size) || $size > count($options) )
+		if ( empty($size) )
 			$size = count($options);
 
 		// prepare selected item(s)
-		if ( !empty($value) && !is_array($value) )
-			$value = preg_split('/\s*(,|\|)\s*/', $value);
+		if ( !empty($value) )
+			$value = preg_split('/\s*,\s*/', $value);
 
 		// build multiple selection select list then return
 		return JHTML::_('select.genericlist', $options, $control_name.'['.$name.'][]', 'multiple="multiple" size="'.$size.'"', 'id', 'title', $value, $control_name.$name);

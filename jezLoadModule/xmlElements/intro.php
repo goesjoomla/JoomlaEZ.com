@@ -1,14 +1,14 @@
 <?php
 /*
- * JoomlaEZ.com's XML Elements Styler :: title element
+ * JoomlaEZ.com's XML Elements Styler :: intro element
  *
  * @package		JEZ XML Elements Styler
  * @version		1.0.0
  * @author		JoomlaEZ.com
- * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
+ * @copyright	Copyright (C) 2008 JoomlaEZ.com. All rights reserved
  * @license		Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported
  *
- * Please visit http://www.joomlaez.com/ for more information
+ * Please visit http://joomlaez.com/ for more information
  */
 
 /*----------------------------------------------------------------------------*/
@@ -18,9 +18,9 @@ defined('_JEXEC') or die( 'Restricted access' );
 
 jimport('joomla.user.helper');
 
-// title element parser class
-class JElementTitle extends JElement {
-	var	$_name = 'Title';
+// intro element parser class
+class JElementIntro extends JElement {
+	var	$_name = 'Intro';
 
 	// disable tool-tip?
 	function fetchTooltip($label, $description, &$node, $control_name, $name) {
@@ -36,7 +36,6 @@ class JElementTitle extends JElement {
 	function fetchElement($name, $value, &$node, $control_name) {
 		$title			= $node->attributes('label');
 		$description	= $node->attributes('description');
-		$description	= empty($description) ? $node->data() : $description;
 		$image			= $node->attributes('image');
 		$imageAlign		= $node->attributes('imageAlign');
 		$url			= $node->attributes('url');
@@ -58,7 +57,7 @@ class JElementTitle extends JElement {
 			$image = $url.'<img src="'.$image.'" border="0"'.$imageAlign.' />'.($url != '' ? '</a>' : '');
 
 		if ($title) {
-			$title = '<h3 style="background:#ccc;margin:12px 0 6px;text-align:center"><span style="background:#fff;padding:0 .5em">'.$url.html_entity_decode(JText::_($title)).($url != '' ? '</a>' : '');
+			$title = '<h3 style="margin-top:0">'.$url.html_entity_decode(JText::_($title)).($url != '' ? '</a>' : '');
 
 			if (!empty($image) || !empty($description)) {
 				$title .= ' <small><small>(<a href="javascript:void(0)" onclick="var thisIntro = document.getElementById(\''.$id.'\');'
@@ -71,12 +70,12 @@ class JElementTitle extends JElement {
 				.JText::_('Show / hide details').'</a>)</small></small>';
 			}
 
-			$title .= '</span></h3>';
+			$title .= '</h3>';
 		}
 
-		$html = '<div class="panel"><div>'
-		.$title.'<div id="'.$id.'" style="margin-bottom:6px;display:'.($open ? 'block' : 'none').'">'
-		.$image.$description.($image ? '<div style="clear:both;height:0"><!-- clear float --></div>' : '').'</div>'
+		$html = '<div id="" class="panel"><div style="padding:.5em">'
+		.$title.'<div id="'.$id.'" style="display:'.($open ? 'block' : 'none').'">'
+		.$image.$description.($image ? '<div style="clear:both;height:0"></div>' : '').'</div>'
 		.'</div></div>';
 
 		return $html;

@@ -1,14 +1,14 @@
 <?php
 /*
- * JoomlaEZ.com's XML Elements Styler :: desc element
+ * JoomlaEZ.com's XML Elements Styler :: cdata element
  *
  * @package		JEZ XML Elements Styler
  * @version		1.0.0
  * @author		JoomlaEZ.com
- * @copyright	Copyright (C) 2008, 2009 JoomlaEZ. All rights reserved unless otherwise stated.
+ * @copyright	Copyright (C) 2008 JoomlaEZ.com. All rights reserved
  * @license		Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported
  *
- * Please visit http://www.joomlaez.com/ for more information
+ * Please visit http://joomlaez.com/ for more information
  */
 
 /*----------------------------------------------------------------------------*/
@@ -18,9 +18,9 @@ defined('_JEXEC') or die( 'Restricted access' );
 
 jimport('joomla.user.helper');
 
-// desc element parser class
-class JElementDesc extends JElement {
-	var	$_name = 'Desc';
+// cdata element parser class
+class JElementCdata extends JElement {
+	var	$_name = 'Cdata';
 
 	// disable tool-tip?
 	function fetchTooltip($label, $description, &$node, $control_name, $name) {
@@ -35,11 +35,10 @@ class JElementDesc extends JElement {
 	// parse element attributes
 	function fetchElement($name, $value, &$node, $control_name) {
 		$title			= $node->attributes('label');
-		$description	= $node->attributes('description');
-		$description	= empty($description) ? $node->data() : $description;
 		$image			= $node->attributes('image');
 		$imageAlign		= $node->attributes('imageAlign');
 		$url			= $node->attributes('url');
+		$data			= $node->data();
 		$open			= $node->attributes('open');
 		$id				= JUtility::getHash(JUserHelper::genRandomPassword());
 
@@ -54,29 +53,29 @@ class JElementDesc extends JElement {
 		if ($image)
 			$image = $url.'<img src="'.$image.'" border="0"'.$imageAlign.' />'.($url != '' ? '</a>' : '');
 
-		if ($description)
-			$description = html_entity_decode(JText::_($description));
+		if ($data)
+			$data = html_entity_decode(JText::_($data));
 
 		if ($title) {
-			$title = '<h4 style="margin:6px 0">'.$url.html_entity_decode(JText::_($title)).($url != '' ? '</a>' : '');
+			$title = '<h3 style="margin-top:0">'.$url.html_entity_decode(JText::_($title)).($url != '' ? '</a>' : '');
 
-			if (!empty($image) || !empty($description)) {
-				$title .= ' <small>(<a href="javascript:void(0)" onclick="var thisIntro = document.getElementById(\''.$id.'\');'
+			if (!empty($image) || !empty($data)) {
+				$title .= ' <small><small>(<a href="javascript:void(0)" onclick="var thisIntro = document.getElementById(\''.$id.'\');'
 				.' var thisSlider = thisIntro; while (!thisSlider.className || !thisSlider.className.match(/jpane-slider/))'
 				.' { if ( thisSlider.parentNode.tagName.toLowerCase() != \'html\' ) thisSlider = thisSlider.parentNode; else break; }'
 				.' if (thisIntro.style.display == \'none\') { thisIntro.style.display = \'block\'; if (thisSlider.style.height)'
 				.' { thisSlider.style.height = (parseInt(thisSlider.style.height) + thisIntro.offsetHeight) + \'px\'; } }'
 				.' else { if (thisSlider.style.height) { thisSlider.style.height = (parseInt(thisSlider.style.height) -'
 				.' thisIntro.offsetHeight) + \'px\'; } thisIntro.style.display = \'none\'; }" title="'.JText::_('Show / hide details').'">'
-				.JText::_('Show / hide details').'</a>)</small>';
+				.JText::_('Show / hide details').'</a>)</small></small>';
 			}
 
 			$title .= '</h3>';
 		}
 
-		$html = '<div class="panel"><div>'
-		.$title.'<div id="'.$id.'" style="margin-bottom:6px;display:'.($open ? 'block' : 'none').'">'
-		.$image.$description.($image ? '<div style="clear:both;height:0"><!-- clear float --></div>' : '').'</div>'
+		$html = '<div class="panel"><div style="padding:.5em">'
+		.$title.'<div id="'.$id.'" style="display:'.($open ? 'block' : 'none').'">'
+		.$image.$data.($image ? '<div style="clear:both;height:0"></div>' : '').'</div>'
 		.'</div></div>';
 
 		return $html;
