@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * JEZ reCAPTCHA Integrator Joomla! 1.5 plugin :: Installer
+ *
+ * @package		JEZ reCAPTCHA Integrator
+ * @version		1.0.0
+ * @author		JoomlaEZ.com
+ * @copyright	Copyright (C) 2008 JoomlaEZ.com. All rights reserved
+ * @license		Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported
+ *
+ * Please visit http://joomlaez.com/ for more information
+ */
+-->
+<install version="1.5" type="plugin" group="system">
+	<name>System - JEZ reCAPTCHA Integrator</name>
+	<author>JoomlaEZ.com</author>
+	<creationDate>December 2008</creationDate>
+	<copyright>Copyright (C) 2008 JoomlaEZ.com. All rights reserved</copyright>
+	<license>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported</license>
+	<authorEmail>support@joomlaez.com</authorEmail>
+	<authorUrl>http://joomlaez.com/</authorUrl>
+	<version>1.0.0</version>
+	<description>JEZ reCAPTCHA Integrator implementation plugin.</description>
+	<files>
+		<filename plugin="jezReCaptcha">jezReCaptcha.php</filename>
+		<filename>jezReCaptcha.xml</filename>
+		<filename>jezReCaptcha/helper.php</filename>
+		<filename>jezReCaptcha/index.html</filename>
+		<filename>jezReCaptcha/logo.png</filename>
+		<filename>jezReCaptcha/recaptcha-php-1.10/example-captcha.php</filename>
+		<filename>jezReCaptcha/recaptcha-php-1.10/example-mailhide.php</filename>
+		<filename>jezReCaptcha/recaptcha-php-1.10/index.html</filename>
+		<filename>jezReCaptcha/recaptcha-php-1.10/LICENSE</filename>
+		<filename>jezReCaptcha/recaptcha-php-1.10/README</filename>
+		<filename>jezReCaptcha/recaptcha-php-1.10/recaptchalib.php</filename>
+		<filename>jezReCaptcha/xmlElements/categories.php</filename>
+		<filename>jezReCaptcha/xmlElements/cdata.php</filename>
+		<filename>jezReCaptcha/xmlElements/checkbox.php</filename>
+		<filename>jezReCaptcha/xmlElements/editor.php</filename>
+		<filename>jezReCaptcha/xmlElements/index.html</filename>
+		<filename>jezReCaptcha/xmlElements/intro.php</filename>
+		<filename>jezReCaptcha/xmlElements/lists.php</filename>
+		<filename>jezReCaptcha/xmlElements/sections.php</filename>
+	</files>
+	<params addpath="/plugins/system/jezReCaptcha/xmlElements">
+		<param name="@cdata" type="cdata" default="" label="JEZ reCAPTCHA Integrator implementation Joomla! 1.5 plugin v1.0.0" url="http://joomlaez.com/" image="../plugins/system/jezReCaptcha/logo.png">
+		<![CDATA[
+			<p>
+				<strong>JEZ reCAPTCHA Integrator implementation Joomla! 1.5 plugin</strong>, or <strong>JEZ reCAPTCHA Integrator</strong> for short, is a
+				system plugin which implement <a href="http://recaptcha.net/" title="reCAPTCHA's home page" target="_blank">
+				reCAPTCHA</a> for Joomla! 1.5 site.
+			</p>
+			<p>
+				<strong>JEZ reCAPTCHA Integrator</strong> is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"
+				title="Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported license" target="_blank">Creative Commons
+				Attribution-Noncommercial-Share Alike 3.0 Unported</a> license.
+			</p>
+			<p>
+				Please visit <a href="http://joomlaez.com/" title="JoomlaEZ.com's home page" target="_blank">JoomlaEZ.com</a>
+				for getting started guide, documentation and get support on using / implementing <strong>JEZ reCAPTCHA Integrator</strong>.
+			</p>
+		]]>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="reCAPTCHA Public Key" url="https://admin.recaptcha.net/recaptcha/sites/" description="Your reCAPTCHA public key, from the API Signup Page" />
+		<param name="public_key" type="text" size="50" default="" label="reCAPTCHA Public Key" description="" />
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@intro" type="intro" default="" label="reCAPTCHA Private Key" url="https://admin.recaptcha.net/recaptcha/sites/" description="Your reCAPTCHA private key, from the API Signup Page" />
+		<param name="private_key" type="text" size="50" default="" label="reCAPTCHA Private Key" description="" />
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Use Inclusion Syntax"><![CDATA[
+			<ul>
+				<li>
+					If <strong>Use Inclusion Syntax</strong> option is enabled, all you need to do is insert the string
+					<strong>{</strong><strong>captcha</strong><strong>}</strong>
+					where you want the captcha displays. This allows you to inject captcha anywhere you want from within an article,
+					within a custom HTML module to the output of any Joomla! extension.
+				</li>
+				<li style="margin-top:.75em">
+					If <strong>Use Inclusion Syntax</strong> option is disabled, you need to manually insert the following PHP
+					code to where you want the captcha displays in the view file of individual Joomla! extension:
+<pre style="display:block;margin-top:.75em;border-left:.5em solid #999;padding-left:1em">global $mainframe;
+$mainframe->triggerEvent('onCaptchaDisplay');</pre>
+				</li>
+			</ul>
+		]]></param>
+		<param name="@intro" type="intro" default="" label="&lt;span style=&quot;border-bottom:.25em solid red;color:red&quot;&gt;IMPORTANT NOTE&lt;/span&gt;" description="&lt;p style=&quot;color:red&quot;&gt;The captcha verification only effective when it is placed inside a form. So, regardless of which method you choose to inject the captcha, it must be placed after &lt;strong&gt;&lt;&lt;/strong&gt;&lt;strong&gt;form&lt;/strong&gt;&lt;strong&gt;&gt;&lt;/strong&gt; and before &lt;strong&gt;&lt;&lt;/strong&gt;&lt;strong&gt;/form&lt;/strong&gt;&lt;strong&gt;&gt;&lt;/strong&gt; HTML tags.&lt;/p&gt;" />
+		<param name="inclusion_syntax" type="radio" default="0" label="Inclusion Syntax" description="">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+		<param name="@cdata" type="cdata" default="" label="Auto-verify with reCAPTCHA"><![CDATA[
+			<ul>
+				<li>
+					If <strong>Auto-verify with reCAPTCHA</strong> option is enabled, the plugin will check if captcha verification data exists
+					then automatically connect to reCAPTCHA and ask for confirmation. This method requires a little more system resource on every
+					page load but really useful if you have many pages need captcha verification.
+				</li>
+				<li style="margin-top:.75em">
+					If you don't want to enable captcha verification globally but for just few pages then you might want to disable <strong>
+					Auto-verify with reCAPTCHA</strong> option. To verify user response, insert the following PHP code to the controller file of
+					individual Joomla! extension where captcha verification needed:
+<pre style="display:block;margin-top:.75em;border-left:.5em solid #999;padding-left:1em">global $mainframe;
+$mainframe->triggerEvent('onCaptchaConfirm');</pre>
+				</li>
+			</ul>
+		]]></param>
+		<param name="auto_verify" type="radio" default="0" label="Auto-verify" description="">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="@spacer" type="spacer" default=" " label="" description="" />
+	</params>
+</install>
